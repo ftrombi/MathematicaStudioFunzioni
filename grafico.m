@@ -33,7 +33,7 @@ GraficoFunzione::usage =
 
 Begin["`Private`"]
 
-GraficoFunzione[f_, x_, x0_, x1_]:=Plot[f,{x, x0, x1}];
+GraficoFunzione[f_, x_, x0_, x1_]:=Plot[f,{x, x0, x1}]; 
 
 End[]
 EndPackage[]
