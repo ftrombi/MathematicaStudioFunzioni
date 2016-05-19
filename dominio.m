@@ -77,6 +77,12 @@ CalcolaContenutiLogaritmoDaControllare[listaContenutiLogaritmoDaControllare_,x_]
 	Null,
 	listaContenutiLogaritmoDaControllare=Append[listaContenutiLogaritmoDaControllare,PrendiContenutoLogaritmo[PrendiSecondoContenutoSeHeadUgualeTimes[x]]]];
 
+SetAttributes[CalcolaContenutiDenominatoreDaControllare,HoldFirst];
+CalcolaContenutiDenominatoreDaControllare[risultatoControlloDenominatore_,listaContenutiDenominatoreDaControllare_]:=(
+risultatoControlloDenominatore=Union[risultatoControlloDenominatore,Reduce[#<0,x]&/@listaContenutiDenominatoreDaControllare];
+risultatoControlloDenominatore=Union[risultatoControlloDenominatore,Reduce[#>0,x]&/@listaContenutiDenominatoreDaControllare];
+);
+
 End[]
 EndPackage[]
 
