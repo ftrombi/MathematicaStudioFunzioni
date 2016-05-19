@@ -7,8 +7,8 @@
 (* :Author: Francesco Trombi *)
 
 (* :Summary:
-   Versione preliminare di funzione per determinare la parità
-   o la disparità di una funzione.
+   Versione preliminare di funzione per determinare la parit\[AGrave]
+   o la disparit\[AGrave] di una funzione.
  *)
 
 (* :Copyright: Trombi *)
@@ -28,17 +28,17 @@
 BeginPackage["PariDispari`"]
 
 ControlloPariDispari::usage =
-	"ControlloPariDispari[f, x] determina se una funzione è pari o dispari."
+	"ControlloPariDispari[f, x] determina se una funzione \[EGrave] pari o dispari."
 
 Begin["`Private`"]
 
 ControlloPariDispari[f_, x_]:= (
   risultatoPari = FullSimplify[ForAll[x, f[x] == f[-x]]];
   risultatoDispari = FullSimplify[ForAll[x, -f[x] == f[-x]]];
-  If[risultatoPari == True, Print["La funzione è pari."], 
-   Print["La funzione non è pari."]];
-  If[risultatoDispari == True, Print["La funzione è dispari."], 
-   Print["La funzione non è dispari."]];
+  If[risultatoPari, Print["La funzione \[EGrave] pari."], 
+   Print["La funzione non \[EGrave] pari."]];
+  If[risultatoDispari, Print["La funzione \[EGrave] dispari."], 
+   Print["La funzione non \[EGrave] dispari."]];
   ); 
 
 End[]
