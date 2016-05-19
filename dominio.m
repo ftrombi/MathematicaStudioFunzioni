@@ -47,6 +47,9 @@ CalcolaContenutiRadiciDaControllare::usage =
 CalcolaContenutiLogaritmoDaControllare::usage =
 	"CalcolaContenutiLogaritmoDaControllare[listaContenutiLogaritmoDaControllare,x] restituisce una lista con i polinomi contenuti dentro i logaritmi."
 
+CalcolaContenutiDenominatoreDaControllare::usage =
+	"CalcolaContenutiDenominatoreDaControllare[risultatoControlloDenominatore,listaContenutiDenominatoreDaControllare] restituisce una lista con i polinomi contenuti dentro il denominatore."
+
 Begin["`Private`"]
 
 VerificaRazionale[x_]:=If[Simplify[x\[Element]Rationals],True,False,Null];
@@ -79,8 +82,8 @@ CalcolaContenutiLogaritmoDaControllare[listaContenutiLogaritmoDaControllare_,x_]
 
 SetAttributes[CalcolaContenutiDenominatoreDaControllare,HoldFirst];
 CalcolaContenutiDenominatoreDaControllare[risultatoControlloDenominatore_,listaContenutiDenominatoreDaControllare_]:=(
-risultatoControlloDenominatore=Union[risultatoControlloDenominatore,Reduce[#<0,x]&/@listaContenutiDenominatoreDaControllare];
-risultatoControlloDenominatore=Union[risultatoControlloDenominatore,Reduce[#>0,x]&/@listaContenutiDenominatoreDaControllare];
+	risultatoControlloDenominatore=Union[risultatoControlloDenominatore,Reduce[#<0,x]&/@listaContenutiDenominatoreDaControllare];
+	risultatoControlloDenominatore=Union[risultatoControlloDenominatore,Reduce[#>0,x]&/@listaContenutiDenominatoreDaControllare];
 );
 
 End[]
