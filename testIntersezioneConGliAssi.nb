@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     26637,        449]
-NotebookOptionsPosition[     25929,        423]
-NotebookOutlinePosition[     26262,        438]
-CellTagsIndexPosition[     26219,        435]
+NotebookDataLength[     27121,        452]
+NotebookOptionsPosition[     26413,        426]
+NotebookOutlinePosition[     26746,        441]
+CellTagsIndexPosition[     26703,        438]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -31,25 +31,30 @@ Cell[BoxData[
    RowBox[{
    "Print", "[", "\"\<La funzione da calcolare \[EGrave]: \>\"", "]"}], 
    "\[IndentingNewLine]", 
-   RowBox[{"funzioneDaCalcolare", "=", 
-    RowBox[{"(", 
-     RowBox[{"1", "+", 
-      RowBox[{
-       RowBox[{"Log", "[", "x", "]"}], "^", "3"}]}], ")"}]}], 
+   RowBox[{
+    RowBox[{
+     RowBox[{"funzioneDaCalcolare", "[", "x_", "]"}], ":=", 
+     RowBox[{"(", 
+      RowBox[{"1", "+", 
+       RowBox[{
+        RowBox[{"Log", "[", "x", "]"}], "^", "3"}]}], ")"}]}], ";"}], 
    "\[IndentingNewLine]", 
+   RowBox[{"funzioneDaCalcolare", "[", "x", "]"}], "\[IndentingNewLine]", 
    RowBox[{
    "Print", "[", 
     "\"\<Per scoprire dove interseca l'asse x poniamo il numeratore = 0: \
 \>\"", "]"}], "\[IndentingNewLine]", 
    RowBox[{
-    RowBox[{"Numerator", "[", "funzioneDaCalcolare", "]"}], "\[Equal]", "0"}],
+    RowBox[{"Numerator", "[", 
+     RowBox[{"funzioneDaCalcolare", "[", "x", "]"}], "]"}], "\[Equal]", "0"}],
     "\[IndentingNewLine]", 
    RowBox[{"Print", "[", "\"\<che risulta: \>\"", "]"}], 
    "\[IndentingNewLine]", 
    RowBox[{"Reduce", "[", 
     RowBox[{
-     RowBox[{"funzioneDaCalcolare", "==", "0"}], ",", "x", ",", "Reals"}], 
-    "]"}], " ", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"funzioneDaCalcolare", "[", "x", "]"}], "==", "0"}], ",", "x", 
+     ",", "Reals"}], "]"}], " ", "\[IndentingNewLine]", "\[IndentingNewLine]", 
    RowBox[{"(*", 
     RowBox[{
      RowBox[{
@@ -61,11 +66,8 @@ Cell[BoxData[
     "\"\<Per scoprire dove interseca l'asse y, calcoliamo f(x) con x=0 se il \
 dominio lo ammette e otteniamo che interseca l'asse y in\>\"", "]"}], 
    "\[IndentingNewLine]", 
-   RowBox[{
-    RowBox[{"x", "=", "0"}], ";"}], "\[IndentingNewLine]", 
-   RowBox[{"y", "==", "funzioneDaCalcolare"}], "\[IndentingNewLine]", 
-   RowBox[{
-    RowBox[{"Clear", "[", "x", "]"}], ";"}], 
+   RowBox[{"y", "==", 
+    RowBox[{"funzioneDaCalcolare", "[", "0", "]"}]}], 
    "\[IndentingNewLine]"}]}]], "Input",
  CellChangeTimes->{{3.6715122392674093`*^9, 3.671512240684141*^9}, {
    3.6715123339294147`*^9, 3.671512359877818*^9}, {3.671512389953721*^9, 
@@ -215,7 +217,8 @@ dominio lo ammette e otteniamo che interseca l'asse y in\>\"", "]"}],
    3.672568040147547*^9}, {3.67256851742183*^9, 3.67256852280425*^9}, {
    3.672568566458847*^9, 3.672568706146824*^9}, {3.672568756034667*^9, 
    3.672568783428768*^9}, {3.672568856004723*^9, 3.6725690067808037`*^9}, {
-   3.6725690756012506`*^9, 3.672569125795101*^9}}],
+   3.6725690756012506`*^9, 3.672569125795101*^9}, {3.672668664137697*^9, 
+   3.67266870879443*^9}}],
 
 Cell[BoxData["\<\"La funzione da calcolare \[EGrave]: \"\>"], "Print",
  CellChangeTimes->{
@@ -250,7 +253,7 @@ Cell[BoxData["\<\"La funzione da calcolare \[EGrave]: \"\>"], "Print",
    3.672568706933*^9}, {3.6725687649294977`*^9, 3.6725687807688293`*^9}, {
    3.672568871006042*^9, 3.6725689037063503`*^9}, {3.672568990752273*^9, 
    3.672569007498555*^9}, 3.6725690986220837`*^9, {3.672569129212532*^9, 
-   3.6725691343542633`*^9}}],
+   3.6725691343542633`*^9}, 3.672668714968939*^9, 3.672669886155596*^9}],
 
 Cell[BoxData[
  RowBox[{"1", "+", 
@@ -263,7 +266,7 @@ Cell[BoxData[
    3.6725687069578876`*^9}, {3.672568764950554*^9, 3.672568780789921*^9}, {
    3.672568871027851*^9, 3.672568903732342*^9}, {3.672568990773755*^9, 
    3.6725690075223722`*^9}, 3.6725690986473846`*^9, {3.6725691292328453`*^9, 
-   3.672569134384354*^9}}],
+   3.672569134384354*^9}, 3.672668714997242*^9, 3.672669886202195*^9}],
 
 Cell[BoxData["\<\"Per scoprire dove interseca l'asse x poniamo il numeratore \
 = 0: \"\>"], "Print",
@@ -299,7 +302,7 @@ Cell[BoxData["\<\"Per scoprire dove interseca l'asse x poniamo il numeratore \
    3.672568706933*^9}, {3.6725687649294977`*^9, 3.6725687807688293`*^9}, {
    3.672568871006042*^9, 3.6725689037063503`*^9}, {3.672568990752273*^9, 
    3.672569007498555*^9}, 3.6725690986220837`*^9, {3.672569129212532*^9, 
-   3.672569134387519*^9}}],
+   3.6725691343542633`*^9}, 3.672668714968939*^9, 3.6726698862147837`*^9}],
 
 Cell[BoxData[
  RowBox[{
@@ -313,7 +316,7 @@ Cell[BoxData[
    3.6725687069578876`*^9}, {3.672568764950554*^9, 3.672568780789921*^9}, {
    3.672568871027851*^9, 3.672568903732342*^9}, {3.672568990773755*^9, 
    3.6725690075223722`*^9}, 3.6725690986473846`*^9, {3.6725691292328453`*^9, 
-   3.672569134388276*^9}}],
+   3.672569134384354*^9}, 3.672668714997242*^9, 3.6726698862176657`*^9}],
 
 Cell[BoxData["\<\"che risulta: \"\>"], "Print",
  CellChangeTimes->{
@@ -348,7 +351,7 @@ Cell[BoxData["\<\"che risulta: \"\>"], "Print",
    3.672568706933*^9}, {3.6725687649294977`*^9, 3.6725687807688293`*^9}, {
    3.672568871006042*^9, 3.6725689037063503`*^9}, {3.672568990752273*^9, 
    3.672569007498555*^9}, 3.6725690986220837`*^9, {3.672569129212532*^9, 
-   3.6725691343900337`*^9}}],
+   3.6725691343542633`*^9}, 3.672668714968939*^9, 3.6726698862216988`*^9}],
 
 Cell[BoxData[
  RowBox[{"x", "\[Equal]", 
@@ -360,7 +363,7 @@ Cell[BoxData[
    3.6725687069578876`*^9}, {3.672568764950554*^9, 3.672568780789921*^9}, {
    3.672568871027851*^9, 3.672568903732342*^9}, {3.672568990773755*^9, 
    3.6725690075223722`*^9}, 3.6725690986473846`*^9, {3.6725691292328453`*^9, 
-   3.67256913439084*^9}}],
+   3.672569134384354*^9}, 3.672668714997242*^9, 3.6726698863164997`*^9}],
 
 Cell[BoxData["\<\"Per scoprire dove interseca l'asse y, calcoliamo f(x) con \
 x=0 se il dominio lo ammette e otteniamo che interseca l'asse y in\"\>"], \
@@ -397,7 +400,7 @@ x=0 se il dominio lo ammette e otteniamo che interseca l'asse y in\"\>"], \
    3.672568706933*^9}, {3.6725687649294977`*^9, 3.6725687807688293`*^9}, {
    3.672568871006042*^9, 3.6725689037063503`*^9}, {3.672568990752273*^9, 
    3.672569007498555*^9}, 3.6725690986220837`*^9, {3.672569129212532*^9, 
-   3.672569134393435*^9}}],
+   3.6725691343542633`*^9}, 3.672668714968939*^9, 3.67266988631875*^9}],
 
 Cell[BoxData[
  RowBox[{"y", "\[Equal]", 
@@ -409,7 +412,7 @@ Cell[BoxData[
    3.6725687069578876`*^9}, {3.672568764950554*^9, 3.672568780789921*^9}, {
    3.672568871027851*^9, 3.672568903732342*^9}, {3.672568990773755*^9, 
    3.6725690075223722`*^9}, 3.6725690986473846`*^9, {3.6725691292328453`*^9, 
-   3.6725691343946743`*^9}}]
+   3.672569134384354*^9}, 3.672668714997242*^9, 3.672669886319491*^9}]
 }, Open  ]],
 
 Cell[BoxData[""], "Input",
@@ -421,7 +424,7 @@ Cell[BoxData[""], "Input",
 Cell[BoxData[""], "Input",
  CellChangeTimes->{{3.671855034869142*^9, 3.67185503645434*^9}}]
 },
-WindowSize->{1182, 698},
+WindowSize->{1221, 776},
 WindowMargins->{{0, Automatic}, {Automatic, 0}},
 FrontEndVersion->"10.0 for Linux x86 (64-bit) (June 27, 2014)",
 StyleDefinitions->"Default.nb"
@@ -438,19 +441,19 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 12794, 195, 407, "Input"],
-Cell[13377, 219, 2394, 33, 23, "Print"],
-Cell[15774, 254, 639, 11, 34, "Output"],
-Cell[16416, 267, 2422, 34, 23, "Print"],
-Cell[18841, 303, 671, 12, 34, "Output"],
-Cell[19515, 317, 2371, 33, 23, "Print"],
-Cell[21889, 352, 625, 10, 50, "Output"],
-Cell[22517, 364, 2484, 35, 23, "Print"],
-Cell[25004, 401, 621, 10, 65, "Output"]
+Cell[580, 22, 12916, 198, 385, "Input"],
+Cell[13499, 222, 2438, 33, 23, "Print"],
+Cell[15940, 257, 683, 11, 34, "Output"],
+Cell[16626, 270, 2470, 34, 23, "Print"],
+Cell[19099, 306, 717, 12, 34, "Output"],
+Cell[19819, 320, 2417, 33, 23, "Print"],
+Cell[22239, 355, 672, 10, 50, "Output"],
+Cell[22914, 367, 2529, 35, 23, "Print"],
+Cell[25446, 404, 663, 10, 32, "Output"]
 }, Open  ]],
-Cell[25640, 414, 92, 1, 32, "Input"],
-Cell[25735, 417, 96, 1, 32, "Input"],
-Cell[25834, 420, 91, 1, 32, "Input"]
+Cell[26124, 417, 92, 1, 32, "Input"],
+Cell[26219, 420, 96, 1, 32, "Input"],
+Cell[26318, 423, 91, 1, 32, "Input"]
 }
 ]
 *)
