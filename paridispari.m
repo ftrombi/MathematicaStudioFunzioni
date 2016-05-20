@@ -36,9 +36,11 @@ ControlloPariDispari[f_, x_]:= (
   risultatoPari = FullSimplify[ForAll[x, f[x] == f[-x]]];
   risultatoDispari = FullSimplify[ForAll[x, -f[x] == f[-x]]];
   If[risultatoPari, Print["La funzione \[EGrave] pari."], 
-   Print["La funzione non \[EGrave] pari."]];
+   Print["La funzione non \[EGrave] pari."],
+	Print["La funzione non \[EGrave] pari."]];
   If[risultatoDispari, Print["La funzione \[EGrave] dispari."], 
-   Print["La funzione non \[EGrave] dispari."]];
+   Print["La funzione non \[EGrave] dispari."],
+	Print["La funzione non \[EGrave] dispari."]];
   ); 
 
 End[]
