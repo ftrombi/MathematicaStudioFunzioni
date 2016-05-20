@@ -4,7 +4,7 @@
 
 (* :Context: Segno` *)
 
-(* :Author: Francesco Trombi *)
+(* :Author: Francesco Trombi *)   
 
 (* :Summary:
    Versione preliminare di funzione per il
@@ -29,13 +29,13 @@ BeginPackage["Segno`"]
 
 SegnoFunzione::usage =
 	"SegnoFunzione[f, x] determina da quale valore
-	la funzione f è positiva."
+	la funzione f \[EGrave] positiva."
 
 Begin["`Private`"]
 
 SegnoFunzione[f_, x_]:= (
-	valore = N@Reduce[f[x] > 0, x];
-	"La funzione è positiva per " <> ToString[valore]
+	valore = Reduce[f[x] > 0, x, Reals];
+	Print["La funzione \[EGrave] positiva per " <> ToString[valore]];
 ); 
 
 End[]
