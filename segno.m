@@ -35,7 +35,8 @@ Begin["`Private`"]
 
 SegnoFunzione[f_, x_]:= (
 	valore = Reduce[f[x] > 0, x, Reals];
-	Print["La funzione \[EGrave] positiva per " <> ToString[valore]];
+	If[valore==False, Print["La funzione \[EGrave] negativa."],
+	Print["La funzione \[EGrave] positiva per " <> ToString[valore]]];
 ); 
 
 End[]
