@@ -1,0 +1,1771 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     59164,       1762]
+NotebookOptionsPosition[     52570,       1577]
+NotebookOutlinePosition[     53026,       1595]
+CellTagsIndexPosition[     52983,       1592]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["\<\
+Studio di funzioni:
+supporto all\[CloseCurlyQuote]insegnamento\
+\>", "Title",
+ CellChangeTimes->{
+  3.670734289014593*^9, {3.671943038915279*^9, 3.671943080194821*^9}},
+ TextAlignment->Center,
+ TextJustification->1,
+ FontFamily->"Times New Roman"],
+
+Cell["\<\
+Sebastian Davrieux
+Francesco Trombi\
+\>", "Subtitle",
+ CellChangeTimes->{{3.671943050334639*^9, 3.6719430678840647`*^9}},
+ TextAlignment->Center,
+ FontFamily->"Times New Roman"],
+
+Cell[CellGroupData[{
+
+Cell["Introduzione", "Chapter",
+ CellChangeTimes->{{3.671943100793674*^9, 3.671943103023505*^9}}],
+
+Cell["\<\
+Il seguente notebook \[EGrave] stato creato con l\[CloseCurlyQuote]intento di \
+fornire un supporto concreto all\[CloseCurlyQuote]insegnamento dell\
+\[CloseCurlyQuote]analisi matematica, in particolare per quanto riguarda lo \
+studio di funzioni, per docenti delle Scuole Secondarie Superiori.
+
+Tale strumento fornir\[AGrave] dunque aiuti visuali, che mostrino agli \
+studenti sia le motivazioni che determinano ogni passaggio dello studio di \
+funzione, sia i risultati che tali passaggi comportano.
+Questo strumento non vuole dunque porsi come una semplice \
+\[OpenCurlyDoubleQuote]calcolatrice\[CloseCurlyDoubleQuote], ma come \
+complemento alle lezioni ed alle esercitazioni in classe.\
+\>", "Text",
+ CellChangeTimes->{{3.671943163507862*^9, 3.671943178904311*^9}, {
+  3.6719434572830477`*^9, 3.671943484163527*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Funzionamento", "Subchapter",
+ CellChangeTimes->{{3.671943498940406*^9, 3.671943503477313*^9}}],
+
+Cell["\<\
+Innanzitutto \[EGrave] opportuno indicare il funzionamento di tale strumento.\
+\>", "Text",
+ CellChangeTimes->{{3.671943528365959*^9, 3.671943539429825*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Studio di funzione", "Chapter",
+ CellChangeTimes->{{3.672637401652878*^9, 3.67263740905088*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Studio del dominio", "Subchapter",
+ CellChangeTimes->{{3.67263743744361*^9, 3.672637439503529*^9}, {
+  3.672637484064172*^9, 3.672637490312668*^9}, {3.672637988877265*^9, 
+  3.672637991858048*^9}}],
+
+Cell["\<\
+Il dominio \[EGrave] l\[CloseCurlyQuote]insieme di definizione di una \
+funzione. In altre parole, definisce un sottoinsieme dello spazio in cui ha \
+senso valutare la funzione. Nel suo calcolo \[EGrave] necessario tenere a \
+mente che:
+- se ci sono denominatori vanno posti diversi da zero;
+- se ci sono logaritmi, i loro argomenti vanno posti strettamente maggiori di \
+zero;
+- \
+\>", "Text",
+ CellChangeTimes->{{3.672637958451289*^9, 3.6726380065781183`*^9}, {
+  3.67263814881288*^9, 3.6726382014043827`*^9}, {3.672638433776575*^9, 
+  3.67263852750206*^9}}]
+}, Open  ]],
+
+Cell["Studio di parit\[AGrave] e disparit\[AGrave]", "Subchapter",
+ CellChangeTimes->{{3.6726375029923477`*^9, 3.672637524000052*^9}}],
+
+Cell["Intersezione con gli assi", "Subchapter",
+ CellChangeTimes->{{3.6726376360566998`*^9, 3.672637639933694*^9}}],
+
+Cell["Studio del segno", "Subchapter",
+ CellChangeTimes->{{3.672637654863017*^9, 3.672637660020514*^9}}],
+
+Cell["Limiti agli estremi del dominio", "Subchapter",
+ CellChangeTimes->{{3.672637671621614*^9, 3.672637676938795*^9}}],
+
+Cell["Derivata prima, massimi e minimi, monotonia", "Subchapter",
+ CellChangeTimes->{{3.672637687675252*^9, 3.672637698719269*^9}}],
+
+Cell["Derivata seconda, convessit\[AGrave] e punti di flesso", "Subchapter",
+ CellChangeTimes->{{3.672637723989729*^9, 3.672637737145874*^9}}],
+
+Cell["Grafico della funzione", "Subchapter",
+ CellChangeTimes->{{3.6726377707650414`*^9, 3.672637775702868*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Conclusioni", "Chapter",
+ CellChangeTimes->{{3.672637423190981*^9, 3.672637425471691*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Studio della funzione f(x) = ((x-1)/(x-2))",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["e", 
+    RowBox[{"x", "-", "1"}]], TraditionalForm]]]
+}], "Section",
+ TextJustification->1,
+ FontFamily->"Times New Roman",
+ FontSize->36],
+
+Cell[TextData[{
+ " (Ricordatevi di ripulire le variabili f, x, e che la costante \"e\" vuole \
+la maiuscola in ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ ")."
+}], "Text",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Clear", "[", 
+   RowBox[{"f", ",", "x"}], "]"}], ";"}]], "Input",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", "x_", "]"}], ":=", " ", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"x", "-", "1"}], ")"}], "/", 
+      RowBox[{"(", 
+       RowBox[{"x", "-", "2"}], ")"}]}], ")"}], 
+    FormBox[
+     SuperscriptBox["E", 
+      RowBox[{"x", "-", "1"}]],
+     TraditionalForm]}]}], ";"}]], "Input",
+ TextJustification->1,
+ FontFamily->"Times New Roman"],
+
+Cell[TextData[{
+ StyleBox["Determinare",
+  FontWeight->"Bold"],
+ ": dominio, grafico, limiti, asintoti, zeri, massimi, minimi, crescenza, \
+decrescenza, flessi. Disegnare la tangente nel punto di flesso."
+}], "Text",
+ TextJustification->1,
+ FontFamily->"Times New Roman"],
+
+Cell[TextData[{
+ StyleBox["Dominio",
+  FontWeight->"Bold"],
+ ": tutti i numeri reali tranne x=2"
+}], "Text",
+ FontFamily->"Times New Roman"],
+
+Cell[TextData[{
+ StyleBox["Grafico. ",
+  FontWeight->"Bold"],
+ "Modificate il dominio della y (comando PlotRange -> {y1,y2}) in modo da \
+rendere il grafico pi\[UGrave] comprensibile."
+}], "Text",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"red", " ", "=", " ", 
+    RowBox[{"RGBColor", "[", 
+     RowBox[{"1", ",", "0", ",", "0"}], "]"}]}], ";"}], " "}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"yellow", " ", "=", "  ", 
+    RowBox[{"RGBColor", "[", 
+     RowBox[{"1", ",", "1", ",", "0"}], "]"}]}], ";"}], " "}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"blue", " ", "=", "  ", 
+    RowBox[{"RGBColor", "[", 
+     RowBox[{"0", ",", "0", ",", "1"}], "]"}]}], ";"}], " "}]}], "Input",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Plot", "[", 
+   RowBox[{
+    RowBox[{"f", "[", "x", "]"}], ",", " ", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", " ", 
+      RowBox[{"-", "1"}], ",", " ", "3"}], "}"}], ",", " ", 
+    RowBox[{"PlotStyle", " ", "->", " ", "red"}], ",", " ", 
+    RowBox[{"PlotRange", " ", "->", " ", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "10"}], ",", " ", "30"}], "}"}]}], ",", " ", 
+    RowBox[{"ImageSize", "->", "700"}]}], "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.6726375589205914`*^9, 3.672637568265564*^9}},
+ FontFamily->"Times New Roman"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["%6"], "Input",
+ NumberMarks->False],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {}, 
+   {RGBColor[1, 0, 0], AbsoluteThickness[1.6], Opacity[1.], 
+    LineBox[CompressedData["
+1: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
+5N+uT04l65bB9P+XBPl/Nua9+Q==
+     "]], LineBox[CompressedData["
+1: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
+WoH0g8TNXemNXiSel9/in7sZqMiUi+qCaMjRdavY+xlMsbOwKo2i0XNiknnv
+EdKftg7O1D5Iw+VSVPAU0r/Ep3Pk8g/T2JVqPmPlcdJvese+PBtDgwqwUXwa
+S+ohpsErOYXGl0nWkSOJpD6fbIyKKKQR3vnokJaEnJehiT6/i2n88hXZZ2aR
+/Zhy32ZbGQ2VDZHiSWcZlAfqKG6pJPk9jlqpQfqxsdxQ1sYbNFLHD+h7FjKY
+53Doum0DjeNZ0x8VV5F+8Dz/l+oIDYXa9+MdXzAIO+87/EiKC8dOo83bmxlk
+hQt/7OVwMfDpjPv5FgY/1PK/dYziwk3WTGFsGwOJZ15nuTwXmh8408d1kX4x
+mNNkPYMLkUywWddvBukq58t3OHLh8k2up0dTgLvdnqXazlyUFycmS2YI8O2a
+ZnHbKi6afR32rCbf0yXu5/KWrOeifZ78jxe6AvTlnZUo+HBRPzh57mhTARaZ
+nonJ383Fq9wz3TMdBehZn+n7KpeLVUF+ZVGRAnxJog3dCrgQF8p/jYoWoP+R
+9+/3RVw0tE5LP3RYgOF5esd6y7lg/VBCWqwAXPWbRexqLrJdboZ2nBJAvbW9
+T+spF6cqWSumXhTA0VUrPOQnFzt73pUqdwtw2bUoUsaah6crDr66tF6IC498
+rV7b8jDYnTD0y12IEjNmfKE9D2H/pQyZewmRrXo2zcaZB5vDK061BAiR2JRS
+dkTMw8fSGLt5e4UIXBb1dkw4D1pNT5ZWnRVCC2tNeed4KN0VffxorxDTilQ4
+jdk8GI85c9WyX4jJk5runsvjIUmzKld6SAilX8sdF5XwMOPC5Gsn2SJQlUs2
+RV7h4e5OveI3iiK0ahskc57ycGl67u/JpiK8Sv+67ulzHg7f+lSsvEBE+kLR
+tKwmMv+hDYqKi0V42DWjeMFrHly39X9WthfhyvnJtXs+8eDzasMjaw8RKpVa
+jth387DXxmFQ7CNCWWTK8im9PJgXHP1vh78Iue6Kr2v6/47/N6AqXISz9fVZ
+MYM8BNvLzm/dJULG/Bhv12EeXIZiL4/aL0JasY22zm8eWjsHmg0OipA0Wfr7
+nz881O1POrPhmAj/A+4kNiE=
+     "]], LineBox[{{1.9994309611515233`, -10.}, {1.999435458221856, 30.}}]}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImageSize->700,
+  Method->{"DefaultBoundaryStyle" -> Automatic, "ScalingFunctions" -> None},
+  PlotRange->{{-0.9999999183673469, 2.999999918367347}, {-10, 30}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {0, 0}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{3.671943005084763*^9}]
+}, Closed]],
+
+Cell[TextData[{
+ StyleBox["Limiti agli estremi del dominio:",
+  FontWeight->"Bold"],
+ " Calcolate i limiti per x-> -\[Infinity], x->2-, x->2+, x->+\[Infinity]."
+}], "Text",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[
+ RowBox[{"Limit", "[", 
+  RowBox[{
+   RowBox[{"f", "[", "x", "]"}], ",", " ", 
+   RowBox[{"x", " ", "->", " ", 
+    RowBox[{"-", "\[Infinity]"}]}]}], "]"}]], "Input",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[
+ RowBox[{"Limit", "[", 
+  RowBox[{
+   RowBox[{"f", "[", "x", "]"}], ",", " ", 
+   RowBox[{"x", " ", "->", " ", "2"}], ",", 
+   RowBox[{"Direction", "->", "1"}]}], "]"}]], "Input",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[
+ RowBox[{"Limit", "[", 
+  RowBox[{
+   RowBox[{"f", "[", "x", "]"}], ",", " ", 
+   RowBox[{"x", " ", "->", " ", "2"}], ",", 
+   RowBox[{"Direction", "->", 
+    RowBox[{"-", "1"}]}]}], "]"}]], "Input",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[
+ RowBox[{"Limit", "[", 
+  RowBox[{
+   RowBox[{"f", "[", "x", "]"}], ",", " ", 
+   RowBox[{"x", " ", "->", " ", 
+    RowBox[{"+", "\[Infinity]"}]}]}], "]"}]], "Input",
+ FontFamily->"Times New Roman"],
+
+Cell[TextData[{
+ StyleBox["Zeri.",
+  FontWeight->"Bold"],
+ " f[x]=0 se e solo se (x-1)=0. Dunque l'unico zero \[EGrave] in x=1. \
+Controlliamo risolvendo f[x]=0 meccanicamente (con Reduce, opp. Solve, opp. \
+FindRoot)."
+}], "Text",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"f", "[", "x", "]"}], "==", "0"}], ",", 
+   RowBox[{"{", "x", "}"}]}], "]"}]], "Input",
+ FontFamily->"Times New Roman"],
+
+Cell[TextData[{
+ StyleBox[" Segni",
+  FontWeight->"Bold"],
+ ". f[x] \[EGrave] continua, dunque ",
+ StyleBox["il suo segno non cambia in un intervallo in cui sia sempre \
+definita e non abbia zeri",
+  FontVariations->{"Underline"->True}],
+ ". Ne segue che il segno di f[x] \[EGrave] costante:\n in ]-\[Infinity],1[ \
+(dato che x=1 \[EGrave] uno zero di f[x]) \n in ]1,2[    (dato che x=2 \
+\[EGrave] un punto di non definizione)\n in ]2,+\[Infinity][.\n  In questi \
+intervalli, il segno si determina calcolando f[x] in un qualsiasi punto \
+dell'intervallo. Da -\[Infinity] a 1 la f \[EGrave] positiva, da 1 a 2 \
+\[EGrave] negativa, da 2 in poi positiva."
+}], "Text",
+ FontWeight->"Plain"],
+
+Cell[TextData[{
+ StyleBox[" Asintoti. ",
+  FontWeight->"Bold"],
+ "C'\[EGrave] un asintoto orizzontale y=0 in x=-\[Infinity], un asintoto \
+verticale in x=2. Non c'\[EGrave] nessun asintoto obliquo per \
+x->+\[Infinity]: la pendenza di tale asintoto dovrebbe essere il limite di \
+f[x]/x per x->+\[Infinity], ma tale limite \[EGrave] +\[Infinity]."
+}], "Text",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[
+ RowBox[{"Limit", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"f", "[", "x", "]"}], "/", "x"}], ",", " ", 
+   RowBox[{"x", " ", "->", " ", 
+    RowBox[{"+", "Infinity"}]}]}], "]"}]], "Input",
+ FontFamily->"Times New Roman"],
+
+Cell[TextData[{
+ StyleBox["Massimi e minimi, crescenza e decrescenza.",
+  FontWeight->"Bold"],
+ " Innanzitutto disegnamo ingranditi i comportamenti della funzione tra -4 e \
+2, e tra 2 e 4."
+}], "Text",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"f", "[", "x", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", 
+     RowBox[{"-", "4"}], ",", "1.5"}], "}"}], ",", " ", "\n", "\t", 
+   RowBox[{"PlotStyle", "->", "red"}], ",", " ", "\n", "\t", 
+   RowBox[{"ImageSize", "->", "700"}]}], "]"}]], "Input",
+ FontFamily->"Times New Roman"],
+
+Cell[TextData[{
+ " In [-\[Infinity],2] risulta evidente un andamento crescente e concavo da -\
+\[Infinity] fino a circa -0.5. L'andamento della funzione \[EGrave] quindi \
+crescente e convesso, con un massimo all'incirca in +0.5. Poi f[x] decresce \
+fino a x=+2, y=-\[Infinity]. ",
+ StyleBox["Queste impressioni dovranno venire confermate con lo studio della \
+derivata prima e seconda di f",
+  FontVariations->{"Underline"->True}],
+ "."
+}], "Text",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"f", "[", "x", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "2", ",", "4"}], "}"}], ",", " ", 
+   RowBox[{"PlotStyle", "->", "red"}], ",", 
+   RowBox[{"ImageSize", "->", "700"}]}], "]"}]], "Input",
+ FontFamily->"Times New Roman"],
+
+Cell["\<\
+ In [2,\[Infinity]] vediamo un andamento convesso, prima decrescente poi \
+crescente, con un minimo circa in x=+2.5. \
+\>", "Text",
+ FontFamily->"Times New Roman"],
+
+Cell["\<\
+ Per calcolare i massimi e i minimi, studiamo f'[x], e risolviamo l'equazione \
+f'[x]=0 in vicinanza di x=+0.5,+2.5. Gli zeri di f'[x] corrispondono a \
+massimi, minimi e flessi orizzontali di f[x].
+ Per stabilire se uno zero di f'[x] \[EGrave] un massimo, minimo o flesso, \
+dobbiamo studiare il segno di f'[x]. Di nuovo, usiamo il fatto che f'[x] \
+\[EGrave] continua e quindi non cambia segno in un intervallo in cui \
+\[EGrave] sempre definita e non ha zeri. 
+ f'[x]>0 significa f crescente in x, mentre f'[x]<0 significa f decrescente \
+in x. Un x tale che f'[x]=0 \[EGrave] un massimo se f \[EGrave] crescente \
+prima di x e decrescente dopo, un minimo se f \[EGrave] decrescente prima di \
+x, e crescente dopo, un flesso altrimenti.\
+\>", "Text",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"f", "'"}], "[", "x", "]"}]], "Input",
+ FontFamily->"Times New Roman"],
+
+Cell[" Semplifichiamo l'espressione per f'[x].", "Text"],
+
+Cell[BoxData[
+ RowBox[{"Simplify", "[", 
+  RowBox[{
+   RowBox[{"f", "'"}], "[", "x", "]"}], "]"}]], "Input",
+ FontFamily->"Times New Roman"],
+
+Cell["\<\
+ Disegnamo f'[x]. Per meglio rappresentare f'[x], \[EGrave] bene disegnare \
+separatamente il grafico prima e dopo il polo x=2.\
+\>", "Text",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"f", "'"}], "[", "x", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", 
+     RowBox[{"-", "2"}], ",", "1"}], "}"}], ",", "\n", "\t", 
+   RowBox[{"PlotStyle", "->", "yellow"}], ",", " ", 
+   RowBox[{"ImageSize", "->", "700"}]}], "]"}]], "Input",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"f", "'"}], "[", "x", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "2", ",", "4"}], "}"}], ",", 
+   RowBox[{"PlotRange", "->", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "10"}], ",", "10"}], "}"}]}], ",", 
+   RowBox[{"PlotStyle", "->", "yellow"}]}], "]"}]], "Input",
+ FontFamily->"Times New Roman"],
+
+Cell[TextData[{
+ " ",
+ StyleBox["L'andamento di f'[x]. ",
+  FontSlant->"Italic"],
+ "Vediamo un massimo in -0.5 circa, un segno positivo fino a uno zero in +0.5 \
+circa, quindi un andamento negativo fino ad uno zero in +2.5 circa. Ne segue \
+che f[x] \[EGrave] crescente fino a circa -0.5, decrescente fino a +2.5, \
+quindi di nuovo crescente. Il primo zero di f'[x] sar\[AGrave] quindi un \
+massimo di f[x], il secondo un minimo"
+}], "Text"],
+
+Cell[TextData[{
+ StyleBox["Calcolo del Massimo. ",
+  FontSlant->"Italic"],
+ " Il primo zero di f'[x] corrisponde a un massimo di f[x]. Troviamone il \
+valore (con Reduce opp. Solve opp. FindRoot)."
+}], "Text",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[
+ RowBox[{"FindRoot", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"f", "'"}], "[", "x", "]"}], " ", "==", " ", "0"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0.5"}], "}"}]}], "]"}]], "Input",
+ FontFamily->"Times New Roman"],
+
+Cell[TextData[{
+ StyleBox["Calcolo del Minimo. ",
+  FontSlant->"Italic"],
+ "Il secondo zero di f'[x] corrisponde a un minimo di f[x]."
+}], "Text",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[
+ RowBox[{"FindRoot", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"f", "'"}], "[", "x", "]"}], " ", "==", " ", "0"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "2.5"}], "}"}]}], "]"}]], "Input",
+ FontFamily->"Times New Roman"],
+
+Cell[TextData[{
+ StyleBox[" Concavit\[AGrave], Convessit\[AGrave], Flessi",
+  FontWeight->"Bold"],
+ ". Infine, individuiamo concavit\[AGrave], convessit\[AGrave] e flessi \
+obliqui di f[x] studiando f''[x]. Di nuovo, studiamo prima gli zeri di \
+f''[x], poi, usando il fatto che f''[x] \[EGrave] continua, il segno di \
+f''[x]. Quando f''[x]<0, allora f[x] ha concavit\[AGrave] verso in basso (\
+\[EGrave] convessa). Quando f''[x]>0, allora f[x] ha concavit\[AGrave] verso \
+l'alto (\[EGrave] concava). Quando f''[x]=0, allora f[x] ha un flesso \
+ascendente (un punto, cio\[EGrave], in cui la tangente ad f[x] \"trapassa\" \
+il grafico di f[x])."
+}], "Text",
+ FontFamily->"Times New Roman"],
+
+Cell[" Calcoliamo f''[x].", "Text"],
+
+Cell[BoxData[
+ RowBox[{"Simplify", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"f", "'"}], "'"}], "[", "x", "]"}], "]"}]], "Input",
+ FontFamily->"Times New Roman"],
+
+Cell[" Disegnamo f''[x].", "Text"],
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"f", "'"}], "'"}], "[", "x", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", 
+     RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", 
+   RowBox[{"PlotStyle", "->", "blue"}]}], "]"}]], "Input",
+ FontFamily->"Times New Roman"],
+
+Cell[TextData[{
+ StyleBox["Calcolo del Flesso e della sua pendenza. ",
+  FontSlant->"Italic"],
+ "f''[x] \[EGrave] negativa prima di (circa) -0.3, poi nulla, poi positiva. \
+Dunque f[x] ha prima concavit\[AGrave] verso il basso, poi un flesso in -0.3 \
+circa, poi concavit\[AGrave] verso l'alto. Troviamo l'unico x0 tale che \
+f''[x0]=0. "
+}], "Text",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[
+ RowBox[{"FindRoot", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"f", "'"}], "'"}], "[", "x", "]"}], "==", "0"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0.5"}], "}"}]}], "]"}]], "Input",
+ FontFamily->"Times New Roman"],
+
+Cell["\<\
+ Il valore x0 trovato \[EGrave] un flesso obliquo, di coordinate (x0,y0) con \
+y0 =f[x0], e pendenza (inclinazione della tangente ad f[x] in x0) pari a \
+m0=f'[x0]. Definiamo x0, y0, m0.\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"x0", " ", "=", " ", 
+   RowBox[{"-", "0.269530832783464457`"}]}], ";"}]], "Input",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[
+ RowBox[{"y0", " ", "=", " ", 
+  RowBox[{"f", "[", "x0", "]"}]}]], "Input",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[
+ RowBox[{"m0", " ", "=", " ", 
+  RowBox[{
+   RowBox[{"f", "'"}], "[", "x0", "]"}]}]], "Input",
+ FontFamily->"Times New Roman"],
+
+Cell[TextData[{
+ StyleBox["Disegno della tangente nel punto di flesso. ",
+  FontSlant->"Italic"],
+ "L'unica retta che passi per (x0,y0), e che abbia pendenza m0, \[EGrave] \
+y=m0(x-x0)+y0. Disegnamo simultaneamente f[x] e la sua tangente in x0.\n   \
+Verifichiamo che x0 \[EGrave]  un flesso (la tangente in x0 \[EGrave] prima \
+sotto il grafico di f[x], poi lo attraversa in x0, infine si trova al di \
+sopra di esso)."
+}], "Text",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"f", "[", "x", "]"}], ",", 
+     RowBox[{
+      RowBox[{"m0", "*", 
+       RowBox[{"(", 
+        RowBox[{"x", "-", "x0"}], ")"}]}], "+", "y0"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", 
+     RowBox[{"-", "2"}], ",", "1.2"}], "}"}], ",", 
+   RowBox[{"PlotStyle", "->", 
+    RowBox[{"{", 
+     RowBox[{"red", ",", "blue"}], "}"}]}], ",", " ", 
+   RowBox[{"ImageSize", "->", "700"}]}], "]"}]], "Input",
+ FontFamily->"Times New Roman"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Studio della funzione g(x) = x-3Log[x]-",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["1.1", "x"], TraditionalForm]]]
+}], "Section",
+ FontFamily->"Times New Roman",
+ FontSize->36],
+
+Cell["Ricordatevi di ripulire le variabili g, x.", "Text",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Clear", "[", 
+   RowBox[{"g", ",", "x"}], "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"g", "[", "x_", "]"}], ":=", 
+   RowBox[{"x", "-", 
+    RowBox[{"3", 
+     RowBox[{"Log", "[", "x", "]"}]}], "-", 
+    SuperscriptBox["1.1", "x"]}]}], ";"}]}], "Input",
+ FontFamily->"Times New Roman"],
+
+Cell[TextData[{
+ StyleBox["Determinare per y=g(x)",
+  FontWeight->"Bold",
+  FontSlant->"Italic"],
+ StyleBox[": dominio, grafico, limiti, asintoti, zeri, massimi, minimi, \
+crescenza, decrescenza, flessi. Disegnare la tangente negli eventuali punti \
+di flesso.",
+  FontSlant->"Italic"]
+}], "Text",
+ FontFamily->"Times New Roman"],
+
+Cell["\<\
+ Il dominio \[EGrave] ]0,\[Infinity][ (a causa della presenza di Log[x]). \
+Disegnamo il grafico di g(x).\
+\>", "Text",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"red", " ", "=", " ", 
+   RowBox[{"RGBColor", "[", 
+    RowBox[{"1", ",", "0", ",", "0"}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"yellow", "=", " ", 
+   RowBox[{"RGBColor", "[", 
+    RowBox[{"1", ",", "1", ",", "0"}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"blue", " ", "=", " ", 
+   RowBox[{"RGBColor", "[", 
+    RowBox[{"0", ",", "0", ",", "1"}], "]"}]}], ";"}]}], "Input",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"g", "[", "x", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "40"}], "}"}], ",", "\n", "\t", 
+   RowBox[{"PlotRange", "->", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "5"}], ",", "10"}], "}"}]}], ",", "\n", "\t", 
+   RowBox[{"PlotStyle", "->", "red"}], ",", "\n", 
+   RowBox[{"ImageSize", "->", "700"}]}], "]"}]], "Input",
+ FontFamily->"Times New Roman"],
+
+Cell["\<\
+ Il grafico evidenza:
+- un asintoto verticale in x=0;
+- una decrescenza con uno zero, circa in  1;
+- un minimo negativo, circa in 4;
+- una crescenza con un nuovo zero, circa in 9;
+- una concavit\[AGrave] verso l'alto fino a circa 14;
+- quindi un flesso (cambiamento di concavit\[AGrave], ora rivolta verso il \
+basso);
+- un massimo intorno a 24;
+- una decrescenza con uno zero intorno a 32;
+- infine una tendenza a -\[Infinity].
+Tutte queste informazioni andranno controllate e precisate con lo studio di \
+g'(x) ed g''(x).\
+\>", "Text",
+ FontFamily->"Times New Roman"],
+
+Cell[TextData[{
+ " ",
+ StyleBox["Zeri. ",
+  FontWeight->"Bold"],
+ "Cerchiamo gli zeri di g(x) con il metodo di Newton (comando Root). \
+Confermiamo i tre zeri sopra descritti."
+}], "Text",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[
+ RowBox[{"FindRoot", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"g", "[", "x", "]"}], "==", "0"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "1"}], "}"}]}], "]"}]], "Input",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[
+ RowBox[{"FindRoot", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"g", "[", "x", "]"}], "==", "0"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "10"}], "}"}]}], "]"}]], "Input",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[
+ RowBox[{"FindRoot", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"g", "[", "x", "]"}], "==", "0"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "30"}], "}"}]}], "]"}]], "Input",
+ FontFamily->"Times New Roman"],
+
+Cell[TextData[{
+ StyleBox[" Segni di g",
+  FontWeight->"Bold"],
+ ". g[x] \[EGrave] continua, dunque ",
+ StyleBox["il suo segno non cambia in un intervallo in cui sia sempre \
+definita e non abbia zeri",
+  FontVariations->{"Underline"->True}],
+ ". Ne segue che il segno di g[x] \[EGrave] costante:\n in ]0.00, 0.95[    \
+(dato che x=0.95 circa \[EGrave] uno zero di g[x]) \n in ]0.95, 8.88[    \
+(dato che x=8.88 circa \[EGrave] uno zero di g[x])\n in ]8.88, 32.4[    (dato \
+che x=32.4 circa \[EGrave] uno zero di g[x])\n in ]32.4, +\[Infinity] [    \n \
+ In questi intervalli, il segno si determina calcolando g[x] in un qualsiasi \
+punto dell'intervallo. Da 0.00 a  0.95 la g \[EGrave] positiva, da 0.95 a \
+8.88 \[EGrave] negativa, da 8.88, 32.4 \[EGrave] di nuovo positivia, da 32.4 \
+in poi positiva."
+}], "Text",
+ FontWeight->"Plain"],
+
+Cell["\<\
+ Studiamo il comportamento di di g(x) agli estremi del dominio: confermiamo \
+l'asintoto verticale in x=0.\
+\>", "Text",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[
+ RowBox[{"Limit", "[", 
+  RowBox[{
+   RowBox[{"g", "[", "x", "]"}], ",", 
+   RowBox[{"x", "\[Rule]", "0"}]}], "]"}]], "Input",
+ FontFamily->"Times New Roman"],
+
+Cell[" Studiamo il comportamento per x\[Rule]\[Infinity].", "Text"],
+
+Cell[BoxData[
+ RowBox[{"Limit", "[", 
+  RowBox[{
+   RowBox[{"g", "[", "x", "]"}], ",", 
+   RowBox[{"x", "\[Rule]", "\[Infinity]"}]}], "]"}]], "Input",
+ FontFamily->"Times New Roman"],
+
+Cell[TextData[{
+ "Non tutte le versioni di ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " sono grado di calcolare l'ultimo limite. In base a considerazioni sugli \
+ordini di infinito (",
+ Cell[BoxData[
+  RowBox[{"-", 
+   SuperscriptBox[
+    StyleBox["1.10000000000000008`",
+     StyleBoxAutoDelete->True,
+     PrintPrecision->2], "x"]}]]],
+ " \[EGrave] un esponenziale, quindi prevale sugli altri), noi possiamo \
+comunque stabilire che tale limite \[EGrave] -\[Infinity]."
+}], "Text",
+ FontFamily->"Times New Roman"],
+
+Cell[" Calcoliamo la derivata g'[x] di g[x].", "Text",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"g", "'"}], "[", "x", "]"}]], "Input",
+ FontFamily->"Times New Roman"],
+
+Cell["\<\
+ Disegnamo il grafico di g'[x], calcoliamone il valore agli estremi del \
+dominio. \
+\>", "Text",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"g", "'"}], "[", "x", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "40"}], "}"}], ",", "\n", "\t", 
+   RowBox[{"PlotStyle", "->", "blue"}], ",", "\n", 
+   RowBox[{"ImageSize", "->", "700"}]}], "]"}]], "Input",
+ FontFamily->"Times New Roman"],
+
+Cell[" Studiamo i limiti di g' agli estremi del dominio.", "Text"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"\[SkeletonIndicator]", "Graphics", "\[SkeletonIndicator]"}],
+  False,
+  Editable->False]], "Output"],
+
+Cell[BoxData[
+ RowBox[{"Limit", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"g", "'"}], "[", "x", "]"}], ",", 
+   RowBox[{"x", "->", "0"}]}], "]"}]], "Input",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[
+ RowBox[{"Limit", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"g", "'"}], "[", "x", "]"}], ",", 
+   RowBox[{"x", "->", "\[Infinity]"}]}], "]"}]], "Input",
+ FontFamily->"Times New Roman"],
+
+Cell["\<\
+ Il primo risultato conferma che x=0 \[EGrave] un asse verticale di g. Il \
+secondo stabilisce che non esistono asintoti obliqui di g (dovrebbero avere \
+pendenza Lim[g'[x],x->\[Infinity]] = -\[Infinity]).\
+\>", "Text",
+ FontFamily->"Times New Roman"],
+
+Cell["\<\
+ Infine, troviamo i due zeri di g'[x] (che sono, nell'ordine, un punto di \
+minimo e massimo locali di g[x]). \
+\>", "Text",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[
+ RowBox[{"FindRoot", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"g", "'"}], "[", "x", "]"}], "==", "0"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "5"}], "}"}]}], "]"}]], "Input",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[
+ RowBox[{"FindRoot", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"g", "'"}], "[", "x", "]"}], "==", "0"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "25"}], "}"}]}], "]"}]], "Input",
+ FontFamily->"Times New Roman"],
+
+Cell[TextData[{
+ " ",
+ StyleBox["Segni di g'",
+  FontWeight->"Bold"],
+ ". g'[x] \[EGrave] continua. Ripetendo il ragionamento gi\[AGrave] \
+utilizzato per g[x], possiamo osservare che g' non cambia segno in un \
+intervallo in cui sia definita e non abbia zeri. Ne segue che il segno di \
+g'[x] \[EGrave] costante:\n in ]0.00, 3.45[    (dato che x=3.45 circa \
+\[EGrave] uno zero di g'[x]) \n in ]3.45, 23.2[    (dato che x=23.2 circa \
+\[EGrave] uno zero di g'[x])\n in ]23.2, +\[Infinity] [    \n Di conseguenza \
+g' sar\[AGrave] negativa in ]0.00, 3.45[, positiva in ]3.45, 23.2[, negativa \
+in ]23.2, +\[Infinity] [. g sar\[AGrave] quindi decrescente in ]0.00, 3.45[, \
+decrescente in ]3.45, 23.2[, crescente in ]23.2, +\[Infinity] [. Dunque 3.45 \
+sar\[AGrave] un minimo, e 23.2 un massimo (locali)."
+}], "Text"],
+
+Cell[TextData[{
+ " ",
+ StyleBox["Concavit\[AGrave], Convessit\[AGrave], Flessi.",
+  FontWeight->"Bold"],
+ " Ripetiamo il calcolo dei limiti, il disegno del grafico ed il calcolo \
+degli zeri per g''[x]. Quando g''[x]<0 avremo una concavit\[AGrave] verso il \
+basso per g, quando g''[x]=0 avremo un flesso, quando g''[x]>0 avremo una \
+concavit\[AGrave] verso l'alto."
+}], "Text",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"g", "'"}], "'"}], "[", "x", "]"}]], "Input",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[
+ RowBox[{"Limit", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"g", "'"}], "'"}], "[", "x", "]"}], ",", 
+   RowBox[{"x", "->", "0"}]}], "]"}]], "Input",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[
+ RowBox[{"Limit", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"g", "'"}], "'"}], "[", "x", "]"}], ",", 
+   RowBox[{"x", "->", "\[Infinity]"}]}], "]"}]], "Input",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"g", "'"}], "'"}], "[", "x", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "40"}], "}"}], ",", "\n", "\t", 
+   RowBox[{"PlotRange", "->", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "1"}], ",", "1"}], "}"}]}], ",", "\n", "\t", 
+   RowBox[{"PlotStyle", "->", "yellow"}], ",", "\n", 
+   RowBox[{"ImageSize", "->", "700"}]}], "]"}]], "Input",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[
+ RowBox[{"FindRoot", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"g", "'"}], "'"}], "[", "x", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "10"}], "}"}]}], "]"}]], "Input",
+ FontFamily->"Times New Roman"],
+
+Cell["\<\
+ L'unica soluzione x0 di g''[x]=0 \[EGrave] un punto di flesso di g[x]. Il \
+punto ha coordinate (x0,y0), con y0=g[x0], e tangente a g[x] di pendenza \
+m0=g'[x0].\
+\>", "Text",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"x0", " ", "=", " ", "10.8407192737551527`"}], ";"}], "\n", 
+ RowBox[{"y0", " ", "=", " ", 
+  RowBox[{"g", "[", "x0", "]"}]}], "\n", 
+ RowBox[{"m0", " ", "=", " ", 
+  RowBox[{
+   RowBox[{"g", "'"}], "[", "x0", "]"}]}]}], "Input",
+ FontFamily->"Times New Roman"],
+
+Cell["\<\
+ Disegnamo ora sovrapposti il grafico di g[x] e il flesso (la tangente ad \
+g[x] in x=x0). Tale tangente \[EGrave] l'unica retta per (x0,y0) di pendenza \
+m, dunque ha equazione y=m0(x-x0)+y0.\
+\>", "Text",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"g", "[", "x", "]"}], ",", 
+     RowBox[{
+      RowBox[{"m0", 
+       RowBox[{"(", 
+        RowBox[{"x", "-", "x0"}], ")"}]}], "+", "y0"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "40"}], "}"}], ",", "\n", "\t", 
+   RowBox[{"PlotRange", "->", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "5"}], ",", "10"}], "}"}]}], ",", "\n", "\t", 
+   RowBox[{"PlotStyle", "->", 
+    RowBox[{"{", 
+     RowBox[{"red", ",", "blue"}], "}"}]}], ",", "\n", 
+   RowBox[{"ImageSize", "->", "700"}]}], "]"}]], "Input",
+ FontFamily->"Times New Roman"],
+
+Cell[BoxData[""], "Input",
+ FontFamily->"Times New Roman"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Studio delle funzioni:\nf(x) = (",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["x", "2"], TraditionalForm]]],
+ "+2x-3)/(5",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["x", "2"], TraditionalForm]]],
+ "+x) \ng(x) = ",
+ Cell[BoxData[
+  FormBox[
+   SqrtBox["x"], TraditionalForm]]],
+ "*|log(x)|"
+}], "Section",
+ FontFamily->"Times New Roman",
+ FontSize->36],
+
+Cell["\<\
+ Includiamo altri due esempi di funzioni da studiare, questa volta senza dare \
+nessun suggerimento (tranne questo: ricordatevi di ripulire i nomi di \
+funzioni f, g prima di usarli).\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "f(x) = (",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["x", "2"], TraditionalForm]]],
+ "+2x-3)/(5",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["x", "2"], TraditionalForm]]],
+ "+x) "
+}], "Subsection",
+ FontSize->36],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Clear", "[", "f", "]"}], ";"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", "x_", "]"}], ":=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"x", "^", "2"}], "+", 
+      RowBox[{"2", "x"}], "-", "3"}], ")"}], "/", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"5", 
+       RowBox[{"x", "^", "2"}]}], "+", "x"}], ")"}]}]}], ";"}]], "Input"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"red", " ", "=", " ", 
+   RowBox[{"RGBColor", "[", 
+    RowBox[{"1", ",", "0", ",", "0"}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"yellow", "=", " ", 
+   RowBox[{"RGBColor", "[", 
+    RowBox[{"1", ",", "1", ",", "0"}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"green", "=", " ", 
+   RowBox[{"RGBColor", "[", 
+    RowBox[{"0", ",", "1", ",", "0"}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"blue", " ", "=", " ", 
+   RowBox[{"RGBColor", "[", 
+    RowBox[{"0", ",", "0", ",", "1"}], "]"}]}], ";"}]}], "Input"],
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"f", "[", "x", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", 
+     RowBox[{"-", "10"}], ",", "10"}], "}"}], ",", 
+   RowBox[{"PlotStyle", "->", "red"}], ",", 
+   RowBox[{"ImageSize", "->", "700"}], ",", 
+   RowBox[{"PlotRange", "->", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "1"}], ",", "1"}], "}"}]}]}], "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"f", "[", "x", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", 
+     RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", 
+   RowBox[{"PlotStyle", "->", "red"}], ",", 
+   RowBox[{"ImageSize", "->", "700"}], ",", 
+   RowBox[{"PlotRange", "->", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "50"}], ",", "200"}], "}"}]}]}], "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"f", "[", "x", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "2", ",", "5"}], "}"}], ",", 
+   RowBox[{"PlotStyle", "->", "red"}], ",", 
+   RowBox[{"ImageSize", "->", "700"}]}], "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"Reduce", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"f", "[", "x", "]"}], "==", "0"}], ",", "x"}], "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"Reduce", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"5", 
+       RowBox[{"x", "^", "2"}]}], "+", "x"}], ")"}], "==", "0"}], ",", "x"}], 
+  "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"Limit", "[", 
+  RowBox[{
+   RowBox[{"f", "[", "x", "]"}], ",", 
+   RowBox[{"x", "->", 
+    RowBox[{"-", "Infinity"}]}]}], "]"}]], "Input"],
+
+Cell[BoxData[{
+ RowBox[{"Limit", "[", 
+  RowBox[{
+   RowBox[{"f", "[", "x", "]"}], ",", 
+   RowBox[{"x", "->", 
+    RowBox[{
+     RowBox[{"-", "1"}], "/", "5"}]}], ",", 
+   RowBox[{"Direction", "->", 
+    RowBox[{"+", "1"}]}]}], "]"}], "\n", 
+ RowBox[{"Limit", "[", 
+  RowBox[{
+   RowBox[{"f", "[", "x", "]"}], ",", 
+   RowBox[{"x", "->", 
+    RowBox[{
+     RowBox[{"-", "1"}], "/", "5"}]}], ",", 
+   RowBox[{"Direction", "->", 
+    RowBox[{"-", "1"}]}]}], "]"}]}], "Input"],
+
+Cell[BoxData[{
+ RowBox[{"Limit", "[", 
+  RowBox[{
+   RowBox[{"f", "[", "x", "]"}], ",", 
+   RowBox[{"x", "->", "0"}], ",", 
+   RowBox[{"Direction", "->", 
+    RowBox[{"+", "1"}]}]}], "]"}], "\n", 
+ RowBox[{"Limit", "[", 
+  RowBox[{
+   RowBox[{"f", "[", "x", "]"}], ",", 
+   RowBox[{"x", "->", "0"}], ",", 
+   RowBox[{"Direction", "->", 
+    RowBox[{"-", "1"}]}]}], "]"}]}], "Input"],
+
+Cell[BoxData[
+ RowBox[{"Limit", "[", 
+  RowBox[{
+   RowBox[{"f", "[", "x", "]"}], ",", 
+   RowBox[{"x", "->", 
+    RowBox[{"+", "Infinity"}]}]}], "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"f", "'"}], "[", "x", "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"Simplify", "[", 
+  RowBox[{
+   RowBox[{"f", "'"}], "[", "x", "]"}], "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"Reduce", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"f", "'"}], "[", "x", "]"}], "==", "0"}], "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"N", "[", 
+  RowBox[{"Reduce", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"f", "'"}], "[", "x", "]"}], "==", "0"}], "]"}], "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "'"}], "'"}], "[", "x", "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"Simplify", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"f", "'"}], "'"}], "[", "x", "]"}], "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"Reduce", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"f", "'"}], "'"}], "[", "x", "]"}], "==", "0"}], "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"N", "[", 
+  RowBox[{"Reduce", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"f", "'"}], "'"}], "[", "x", "]"}], "==", "0"}], "]"}], 
+  "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"f", "[", "x", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", 
+     RowBox[{"-", "20"}], ",", "20"}], "}"}], ",", 
+   RowBox[{"PlotStyle", "->", "red"}], ",", 
+   RowBox[{"ImageSize", "->", "700"}], ",", 
+   RowBox[{"PlotRange", "->", 
+    RowBox[{"{", 
+     RowBox[{"0.1", ",", "0.3"}], "}"}]}]}], "]"}]], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "g(x) = ",
+ Cell[BoxData[
+  FormBox[
+   SqrtBox["x"], TraditionalForm]]],
+ "*|log(x)|"
+}], "Subsection",
+ FontSize->36],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Clear", "[", "g", "]"}], ";"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"g", "[", "x_", "]"}], " ", ":=", " ", 
+  RowBox[{
+   RowBox[{"Sqrt", "[", "x", "]"}], "*", 
+   RowBox[{"If", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Log", "[", "x", "]"}], ">", "0"}], ",", 
+     RowBox[{"Log", "[", "x", "]"}], ",", 
+     RowBox[{"-", 
+      RowBox[{"Log", "[", "x", "]"}]}]}], "]"}]}]}]], "Input"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"red", " ", "=", " ", 
+   RowBox[{"RGBColor", "[", 
+    RowBox[{"1", ",", "0", ",", "0"}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"yellow", "=", " ", 
+   RowBox[{"RGBColor", "[", 
+    RowBox[{"1", ",", "1", ",", "0"}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"green", "=", " ", 
+   RowBox[{"RGBColor", "[", 
+    RowBox[{"0", ",", "1", ",", "0"}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"blue", " ", "=", " ", 
+   RowBox[{"RGBColor", "[", 
+    RowBox[{"0", ",", "0", ",", "1"}], "]"}]}], ";"}]}], "Input"],
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"g", "[", "x", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "2"}], "}"}], ",", 
+   RowBox[{"PlotStyle", "->", "red"}], ",", 
+   RowBox[{"ImageSize", "->", "700"}]}], "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"g", "[", "x", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "20"}], "}"}], ",", 
+   RowBox[{"PlotStyle", "->", "red"}], ",", 
+   RowBox[{"ImageSize", "->", "700"}]}], "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"g", "'"}], "[", "x", "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"Simplify", "[", 
+  RowBox[{
+   RowBox[{"g", "'"}], "[", "x", "]"}], "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"g", "'"}], "[", "x", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "2"}], "}"}], ",", 
+   RowBox[{"PlotStyle", "->", "yellow"}], ",", 
+   RowBox[{"ImageSize", "->", "700"}]}], "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"Limit", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"g", "'"}], "[", "x", "]"}], ",", 
+   RowBox[{"x", "->", "1"}]}], "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"g", "'"}], "'"}], "[", "x", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "2"}], "}"}], ",", 
+   RowBox[{"PlotRange", "->", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "1"}], ",", "1"}], "}"}]}], ",", 
+   RowBox[{"ImageSize", "->", "700"}], ",", 
+   RowBox[{"PlotStyle", "->", "blue"}]}], "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Abs", "'"}], "[", "x", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", 
+     RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", 
+   RowBox[{"PlotStyle", "->", "blue"}], ",", 
+   RowBox[{"ImageSize", "->", "700"}]}], "]"}]], "Input"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1221, 747},
+WindowMargins->{{-10, Automatic}, {Automatic, -10}},
+PrivateNotebookOptions->{"VersionedStylesheet"->{"Default.nb"[8.] -> False}},
+ShowSelection->True,
+Magnification->1.5,
+FrontEndVersion->"10.0 for Linux x86 (64-bit) (June 27, 2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 257, 8, 219, "Title"],
+Cell[827, 32, 187, 6, 121, "Subtitle"],
+Cell[CellGroupData[{
+Cell[1039, 42, 97, 1, 101, "Chapter"],
+Cell[1139, 45, 830, 14, 277, "Text"],
+Cell[CellGroupData[{
+Cell[1994, 63, 101, 1, 96, "Subchapter"],
+Cell[2098, 66, 167, 3, 49, "Text"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2314, 75, 102, 1, 101, "Chapter"],
+Cell[CellGroupData[{
+Cell[2441, 80, 203, 3, 96, "Subchapter"],
+Cell[2647, 85, 570, 12, 179, "Text"]
+}, Open  ]],
+Cell[3232, 100, 134, 1, 96, "Subchapter"],
+Cell[3369, 103, 115, 1, 70, "Subchapter"],
+Cell[3487, 106, 104, 1, 70, "Subchapter"],
+Cell[3594, 109, 119, 1, 70, "Subchapter"],
+Cell[3716, 112, 131, 1, 70, "Subchapter"],
+Cell[3850, 115, 142, 1, 70, "Subchapter"],
+Cell[3995, 118, 112, 1, 70, "Subchapter"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4144, 124, 96, 1, 101, "Chapter"],
+Cell[CellGroupData[{
+Cell[4265, 129, 246, 9, 109, "Section"],
+Cell[4514, 140, 212, 7, 46, "Text"],
+Cell[4729, 149, 132, 4, 47, "Input"],
+Cell[4864, 155, 428, 16, 49, "Input"],
+Cell[5295, 173, 271, 7, 77, "Text"],
+Cell[5569, 182, 140, 5, 47, "Text"],
+Cell[5712, 189, 228, 6, 77, "Text"],
+Cell[5943, 197, 521, 16, 112, "Input"],
+Cell[6467, 215, 581, 15, 47, "Input"],
+Cell[CellGroupData[{
+Cell[7073, 234, 49, 1, 45, "Input"],
+Cell[7125, 237, 13362, 229, 690, "Output"]
+}, Closed]],
+Cell[20502, 469, 204, 5, 40, "Text"],
+Cell[20709, 476, 212, 6, 47, "Input"],
+Cell[20924, 484, 225, 6, 47, "Input"],
+Cell[21152, 492, 245, 7, 47, "Input"],
+Cell[21400, 501, 212, 6, 47, "Input"],
+Cell[21615, 509, 263, 7, 77, "Text"],
+Cell[21881, 518, 192, 6, 47, "Input"],
+Cell[22076, 526, 689, 14, 244, "Text"],
+Cell[22768, 542, 391, 8, 106, "Text"],
+Cell[23162, 552, 234, 7, 47, "Input"],
+Cell[23399, 561, 234, 6, 77, "Text"],
+Cell[23636, 569, 347, 9, 112, "Input"],
+Cell[23986, 580, 481, 10, 454, "Text"],
+Cell[24470, 592, 295, 8, 157, "Input"],
+Cell[24768, 602, 173, 4, 256, "Text"],
+Cell[24944, 608, 795, 13, 852, "Text"],
+Cell[25742, 623, 104, 3, 157, "Input"],
+Cell[25849, 628, 56, 0, 163, "Text"],
+Cell[25908, 630, 140, 4, 157, "Input"],
+Cell[26051, 636, 183, 4, 256, "Text"],
+Cell[26237, 642, 351, 10, 270, "Input"],
+Cell[26591, 654, 386, 12, 157, "Input"],
+Cell[26980, 668, 441, 9, 495, "Text"],
+Cell[27424, 679, 241, 6, 256, "Text"],
+Cell[27668, 687, 258, 8, 157, "Input"],
+Cell[27929, 697, 178, 5, 154, "Text"],
+Cell[28110, 704, 258, 8, 157, "Input"],
+Cell[28371, 714, 690, 12, 165, "Text"],
+Cell[29064, 728, 35, 0, 49, "Text"],
+Cell[29102, 730, 160, 5, 47, "Input"],
+Cell[29265, 737, 34, 0, 49, "Text"],
+Cell[29302, 739, 308, 10, 47, "Input"],
+Cell[29613, 751, 382, 8, 106, "Text"],
+Cell[29998, 761, 265, 9, 47, "Input"],
+Cell[30266, 772, 210, 4, 82, "Text"],
+Cell[30479, 778, 149, 4, 47, "Input"],
+Cell[30631, 784, 121, 3, 47, "Input"],
+Cell[30755, 789, 140, 4, 47, "Input"],
+Cell[30898, 795, 464, 9, 136, "Text"],
+Cell[31365, 806, 536, 17, 47, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[31938, 828, 197, 7, 110, "Section"],
+Cell[32138, 837, 90, 1, 46, "Text"],
+Cell[32231, 840, 331, 11, 80, "Input"],
+Cell[32565, 853, 329, 9, 79, "Text"],
+Cell[32897, 864, 161, 4, 46, "Text"],
+Cell[33061, 870, 451, 13, 112, "Input"],
+Cell[33515, 885, 438, 12, 144, "Input"],
+Cell[33956, 899, 579, 15, 341, "Text"],
+Cell[34538, 916, 220, 7, 258, "Text"],
+Cell[34761, 925, 220, 7, 157, "Input"],
+Cell[34984, 934, 221, 7, 157, "Input"],
+Cell[35208, 943, 221, 7, 157, "Input"],
+Cell[35432, 952, 840, 16, 933, "Text"],
+Cell[36275, 970, 162, 4, 256, "Text"],
+Cell[36440, 976, 172, 5, 157, "Input"],
+Cell[36615, 983, 67, 0, 163, "Text"],
+Cell[36685, 985, 182, 5, 157, "Input"],
+Cell[36870, 992, 525, 15, 357, "Text"],
+Cell[37398, 1009, 86, 1, 154, "Text"],
+Cell[37487, 1012, 104, 3, 157, "Input"],
+Cell[37594, 1017, 139, 4, 154, "Text"],
+Cell[37736, 1023, 330, 9, 378, "Input"],
+Cell[38069, 1034, 66, 0, 163, "Text"],
+Cell[38138, 1036, 134, 4, 150, "Output"],
+Cell[38275, 1042, 187, 6, 157, "Input"],
+Cell[38465, 1050, 197, 6, 157, "Input"],
+Cell[38665, 1058, 261, 5, 256, "Text"],
+Cell[38929, 1065, 166, 4, 154, "Text"],
+Cell[39098, 1071, 241, 8, 157, "Input"],
+Cell[39342, 1081, 242, 8, 157, "Input"],
+Cell[39587, 1091, 816, 14, 1041, "Text"],
+Cell[40406, 1107, 411, 9, 357, "Text"],
+Cell[40820, 1118, 123, 4, 157, "Input"],
+Cell[40946, 1124, 208, 7, 157, "Input"],
+Cell[41157, 1133, 218, 7, 157, "Input"],
+Cell[41378, 1142, 481, 14, 486, "Input"],
+Cell[41862, 1158, 236, 8, 157, "Input"],
+Cell[42101, 1168, 218, 5, 256, "Text"],
+Cell[42322, 1175, 296, 8, 378, "Input"],
+Cell[42621, 1185, 248, 5, 256, "Text"],
+Cell[42872, 1192, 651, 20, 486, "Input"],
+Cell[43526, 1214, 58, 1, 157, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[43621, 1220, 372, 16, 856, "Section"],
+Cell[43996, 1238, 207, 4, 276, "Text"],
+Cell[CellGroupData[{
+Cell[44228, 1246, 233, 11, 330, "Subsection"],
+Cell[44464, 1259, 76, 2, 150, "Input"],
+Cell[44543, 1263, 333, 12, 150, "Input"],
+Cell[44879, 1277, 550, 16, 447, "Input"],
+Cell[45432, 1295, 397, 12, 150, "Input"],
+Cell[45832, 1309, 398, 12, 150, "Input"],
+Cell[46233, 1323, 258, 7, 150, "Input"],
+Cell[46494, 1332, 137, 4, 150, "Input"],
+Cell[46634, 1338, 211, 8, 150, "Input"],
+Cell[46848, 1348, 162, 5, 150, "Input"],
+Cell[47013, 1355, 474, 16, 252, "Input"],
+Cell[47490, 1373, 382, 12, 252, "Input"],
+Cell[47875, 1387, 162, 5, 150, "Input"],
+Cell[48040, 1394, 72, 2, 150, "Input"],
+Cell[48115, 1398, 108, 3, 150, "Input"],
+Cell[48226, 1403, 132, 4, 150, "Input"],
+Cell[48361, 1409, 163, 5, 150, "Input"],
+Cell[48527, 1416, 91, 3, 150, "Input"],
+Cell[48621, 1421, 128, 4, 150, "Input"],
+Cell[48752, 1427, 153, 5, 150, "Input"],
+Cell[48908, 1434, 188, 7, 150, "Input"],
+Cell[49099, 1443, 379, 11, 252, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[49515, 1459, 136, 7, 364, "Subsection"],
+Cell[49654, 1468, 76, 2, 150, "Input"],
+Cell[49733, 1472, 357, 11, 150, "Input"],
+Cell[50093, 1485, 550, 16, 447, "Input"],
+Cell[50646, 1503, 258, 7, 150, "Input"],
+Cell[50907, 1512, 259, 7, 150, "Input"],
+Cell[51169, 1521, 72, 2, 150, "Input"],
+Cell[51244, 1525, 108, 3, 150, "Input"],
+Cell[51355, 1530, 281, 8, 150, "Input"],
+Cell[51639, 1540, 155, 5, 150, "Input"],
+Cell[51797, 1547, 416, 13, 252, "Input"],
+Cell[52216, 1562, 302, 9, 150, "Input"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
