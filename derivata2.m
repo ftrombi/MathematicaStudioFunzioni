@@ -39,7 +39,7 @@ StampaConcavoConvesso::usage =
 	"StampaConcavoConvesso[intervalliConvessa_, intervalliConcava_] permette di
 	stampare la convessit\[AGrave] e la concavit\[AGrave] della funzione con una formattazione corretta."
 
-StampaIntervalli::usage =
+StampaIntervalliDerivataSeconda::usage =
 	"StampaIntervalli[intervalliConvessa_, intervalliConcava_] permette di stampare
 	gli intervalli di convessit\[AGrave] e concavit\[AGrave] della funzione con una formattazione corretta"
 
@@ -64,7 +64,7 @@ StampaConcavoConvesso[intervalliConvessa_, intervalliConcava_] :=
    Print["La funzione \[EGrave] convessa."], 
    Print["La funzione \[EGrave] concava"]];
 
-StampaIntervalli[intervalliConvessa_, intervalliConcava_]:=(
+StampaIntervalliDerivataSeconda[intervalliConvessa_, intervalliConcava_]:=(
 	Print["Gli intervalli in cui la derivata seconda \[EGrave] positiva e dunque la funzione \[EGrave] convessa sono:"];
 	Print[intervalliConvessa];
 	Print["Gli intervalli in cui la derivata seconda \[EGrave] negativa e dunque la funzione \[EGrave] concava sono:"];
@@ -81,7 +81,7 @@ SegnoDerivataSeconda[f_, x_] := (
 	intervalliConvessa = Reduce[d2 > 0, x];
 	intervalliConcava = Reduce[d2 < 0, x];
 	If[Length[intervalliConvessa] == 0 || Length[intervalliConcava] == 0,
-		StampaConcavoConvessoNoSoluzioni[d2], StampaIntervalli[intervalliConvessa, intervalliConcava]];
+		StampaConcavoConvessoNoSoluzioni[d2], StampaIntervalliDerivataSeconda[intervalliConvessa, intervalliConcava]];
 	(*If[StringCount[ToString[intervalliConvessa], "False"] > 0 || 
   	StringCount[ToString[intervalliConcava], "False"] > 0,
   	StampaConcavoConvesso[intervalliConvessa, intervalliConcava],
