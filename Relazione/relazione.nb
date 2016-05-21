@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       145,          7]
-NotebookDataLength[     69036,       1999]
-NotebookOptionsPosition[     61700,       1787]
-NotebookOutlinePosition[     62154,       1805]
-CellTagsIndexPosition[     62111,       1802]
+NotebookDataLength[     71775,       2038]
+NotebookOptionsPosition[     64403,       1826]
+NotebookOutlinePosition[     64858,       1844]
+CellTagsIndexPosition[     64815,       1841]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -94,8 +94,8 @@ zero;
 - se ci sono radici ad indice pari, i radicandi vanno posti maggiori o uguali \
 a zero.
 
-Una volta determinate tutte le condizioni, si mettono a sistema: in altre \
-parole, devono valere tutte contemporaneamente.
+Una volta determinate tutte le condizioni, si mettono a sistema, poich\
+\[EAcute] devono valere tutte contemporaneamente.
 
 Ricorda: il dominio deve essere scritto nella forma di unione di intervalli.\
 \>", "Text",
@@ -103,7 +103,8 @@ Ricorda: il dominio deve essere scritto nella forma di unione di intervalli.\
   3.67263814881288*^9, 3.6726382014043827`*^9}, {3.672638433776575*^9, 
   3.67263852750206*^9}, {3.672810644626398*^9, 3.672810678273912*^9}, {
   3.6728107386880302`*^9, 3.6728107482800207`*^9}, {3.6728107946989594`*^9, 
-  3.672810798269409*^9}, {3.6728109420232897`*^9, 3.672810992792179*^9}}]
+  3.672810798269409*^9}, {3.6728109420232897`*^9, 3.672810992792179*^9}, {
+  3.6728280260622597`*^9, 3.6728280293317137`*^9}}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -126,13 +127,14 @@ Una funzione f \[EGrave] pari se:
 una funzione f \[EGrave] dispari se:
 \t\tf ( - x ) = - f ( x ).
 \t\t
-Una funzione pu\[OGrave] dunque essere pari o dispari o nessuna delle due.\
+Ricorda: una funzione pu\[OGrave] dunque essere pari o dispari o nessuna \
+delle due.\
 \>", "Text",
  CellChangeTimes->{{3.6728056670328493`*^9, 3.67280568495711*^9}, {
   3.6728057333580427`*^9, 3.672805795739016*^9}, {3.6728059194155903`*^9, 
   3.6728059200171957`*^9}, {3.672806035158115*^9, 3.6728060354618597`*^9}, {
   3.6728061043278112`*^9, 3.6728061771726303`*^9}, {3.672806266982048*^9, 
-  3.672806463004055*^9}}]
+  3.672806463004055*^9}, {3.672828353441435*^9, 3.6728283568183107`*^9}}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -141,12 +143,13 @@ Cell["Intersezione con gli assi", "Subchapter",
  CellChangeTimes->{{3.6726376360566998`*^9, 3.672637639933694*^9}}],
 
 Cell["\<\
-Sapere dove la funzione f interseca gli assi serve a garantire interseca gli \
-assi serve a garantire dei buoni punti di riferimento per cominciare a \
-disegnare il grafico di funzione.\
+Un punto di riferimento utile al disegno finale del grafico pu\[OGrave] \
+essere ricavato individuando i punti in cui la funzione interseca gli assi x \
+e y.\
 \>", "Text",
  CellChangeTimes->{{3.672808282806633*^9, 3.6728083037242517`*^9}, {
-  3.672808338339426*^9, 3.672808384228117*^9}}],
+  3.672808338339426*^9, 3.672808384228117*^9}, {3.672828366483149*^9, 
+  3.6728284389485197`*^9}}],
 
 Cell[CellGroupData[{
 
@@ -154,10 +157,16 @@ Cell["Intersezione con l\[CloseCurlyQuote]asse delle x", "Subsection",
  CellChangeTimes->{{3.672808411911627*^9, 3.672808424945055*^9}}],
 
 Cell["\<\
-Poniamo f ( x ) = 0 e risolviamo questa equazione, in cui vediamo i valori di \
-x per cui f ( x ) si annulla, intersecando l\[CloseCurlyQuote]asse delle x.\
+Per verificare le intersezioni tra la funzione e l\[CloseCurlyQuote]asse \
+delle ascisse \[EGrave] innanzitutto necessario ricordare che l\
+\[CloseCurlyQuote]equazione che individua tale asse \[EGrave] y = 0. Essendo \
+che y = f ( x ), per ricavare i possibili valori di intersezione sar\[AGrave] \
+necessario risolvere l\[CloseCurlyQuote]equazione:
+\t\tf ( x ) = 0.\
 \>", "Text",
- CellChangeTimes->{{3.67280914881135*^9, 3.672809219766168*^9}}]
+ CellChangeTimes->{{3.67280914881135*^9, 3.672809219766168*^9}, {
+  3.672828525197983*^9, 3.672828619540213*^9}, {3.672828679607896*^9, 
+  3.6728286807357597`*^9}}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -166,12 +175,16 @@ Cell["Intersezione con l\[CloseCurlyQuote]asse delle y", "Subsection",
  CellChangeTimes->{{3.6728092717405043`*^9, 3.672809281692663*^9}}],
 
 Cell["\<\
-Si calcola f ( 0 ), dunque si calcola y = f ( 0 ).
-Facendo cos\[IGrave] possiamo vedere se e a quale valore di ordinata la \
-funzione passa per l\[CloseCurlyQuote]asse delle oridnate, che ha equazione x \
-= 0.\
+Per verificare la presenza di un\[CloseCurlyQuote]intersezione tra la \
+funzione e l\[CloseCurlyQuote]asse delle ordinate \[EGrave] necessario \
+ricordare che l\[CloseCurlyQuote]equazione che individua tale asse \[EGrave] \
+x = 0. Ponendo dunque x = 0, si calcola f ( 0 ); poi si risolve l\
+\[CloseCurlyQuote]equazione:
+\t\t y = f ( 0 ).
+\
 \>", "Text",
- CellChangeTimes->{{3.6728092907955008`*^9, 3.672809360156075*^9}}],
+ CellChangeTimes->{{3.6728092907955008`*^9, 3.672809360156075*^9}, {
+  3.672828627156555*^9, 3.6728287651314983`*^9}}],
 
 Cell["\<\
 Ricorda: ci possono essere una, pi\[UGrave] o nessuna intersezione con l\
@@ -189,21 +202,29 @@ Cell["Studio del segno", "Subchapter",
  CellChangeTimes->{{3.672637654863017*^9, 3.672637660020514*^9}}],
 
 Cell["\<\
-Studiare il segno della funzione serve a capire dove la funzione \[EGrave] \
-positiva o negativa, dunque in quali intervalli del dominio il grafico si \
-trova al di sopra dell\[CloseCurlyQuote]asse delle ascisse e dove al di sotto.
+Studiare il segno della funzione \[EGrave] utile nel disegno del grafico di \
+una funzione, poich\[EAcute] permette di individuare gli intervalli del \
+dominio in cui la funzione \[EGrave] positiva o negativa, dunque dove il \
+grafico si trova al di sopra dell\[CloseCurlyQuote]asse delle ascisse e dove \
+al di sotto.
 Nelle intersezioni con l\[CloseCurlyQuote]asse delle x la funzione cambia \
 ovviamente di segno.
 
 Per conoscere il segno di una funzione f, basta risolvere la disequazione:
 \t\tf ( x ) > 0.
-\t\t
+In questo modo tutti gli intervalli del dominio restituiti da questa \
+disequazione sono quelli in cui la funzione \[EGrave] positiva (il cui \
+grafico \[EGrave] dunque al di sopra dell\[CloseCurlyQuote]asse con le \
+ascisse); i restanti intervalli del dominio rappresentano invece dove la \
+funzione \[EGrave] negativa (il cui grafico \[EGrave] dunque al di sotto dell\
+\[CloseCurlyQuote]asse delle ascisse).
+
 Ricorda: le soluzioni da prendere in considerazione devono rientrare nel \
 dominio della funzione.\
 \>", "Text",
  CellChangeTimes->{{3.672807339981*^9, 3.6728074083524323`*^9}, {
   3.672807490171875*^9, 3.67280756718079*^9}, {3.672807842370282*^9, 
-  3.6728078687185297`*^9}}]
+  3.6728078687185297`*^9}, {3.6728287970776367`*^9, 3.672828975614946*^9}}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -212,25 +233,34 @@ Cell["Limiti agli estremi del dominio", "Subchapter",
  CellChangeTimes->{{3.672637671621614*^9, 3.672637676938795*^9}}],
 
 Cell["\<\
-Gli estremi del dominio sono i \[OpenCurlyDoubleQuote]confini\
-\[CloseCurlyDoubleQuote] del dominio della funzione.
-I problemi sorgono quando c\[CloseCurlyQuote]\[EGrave] da studiare il \
-comportamento della funzione in corrispondenza dei punti in cui non \[EGrave] \
-definita.
-Non potendo valutare la funzione in tali punti, l\[CloseCurlyQuote]unica cosa \
-che si pu\[OGrave] fare \[EGrave] valutarne il comportamento in un loro \
-intorno (sinistro, destro o completo).
+Gli estremi del dominio sono tutti quei punti che delimitano un intervallo \
+appartenente al dominio: in altre parole sono i \
+\[OpenCurlyDoubleQuote]confini\[CloseCurlyDoubleQuote] del dominio della \
+funzione.
 
-Con i limiti per x tendente all\[CloseCurlyQuote]infinito possiamo vedere se \
-la funzione ha asintoti orizzontali, oppure obliqui, oppure nessun asintoto. \
-Con i limiti per x tendente ai suddetti valori finiti possiamo vedere se vi \
-sono asintoti verticali (vale a dire una discontinuit\[AGrave] di seconda \
-specie) oppure altri punti di discontinuit\[AGrave] (prima o terza specie) \
-senza asintoti verticali.\
+I punti pi\[UGrave] interessanti da questo punto di vista sono quelli per cui \
+la funzione non \[EGrave] definita: il comportamento della stessa andr\
+\[AGrave] dunque studiato in un intorno di questi punti.
+Un intorno \[EGrave] un insieme di punti vicini ad un punto (in questo caso \
+un punto dove la funzione non \[EGrave] definita), leggermente distanti da \
+esso. Esistono intorni sinistri, intorni destri oppure intorni completi.
+
+Si prenda per esempio il punto x1: un intorno sinistro del punto x1 \
+\[EGrave], in pratica, un punto con ascissa x1 - \[CurlyEpsilon], dunque un \
+punto spostato a sinistra rispetto ad x1, dove \[CurlyEpsilon] \[EGrave] una \
+quantit\[AGrave] molto piccola; un intorno destro \[EGrave] definito dalla \
+coordinata x1 + \[CurlyEpsilon], dunque leggermente spostato a destra (nel \
+grafico) rispetto ad x1.
+
+Se lo studio dei limiti agli estremi del dominio individua dei limiti \
+tendenti ad infinito, \[EGrave] possibile cercare la presenza o l\
+\[CloseCurlyQuote]assenza di asintoti verticali, orizzontali o obliqui.\
 \>", "Text",
  CellChangeTimes->{{3.6728116450829477`*^9, 3.672811714962936*^9}, {
   3.672812699318075*^9, 3.672812750237294*^9}, {3.672812866569613*^9, 
-  3.672812867607861*^9}}]
+  3.672812867607861*^9}, {3.672829021007909*^9, 3.672829031592407*^9}, {
+  3.6728290718582478`*^9, 3.6728292813873997`*^9}, {3.672829322241681*^9, 
+  3.672829536070498*^9}}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -239,35 +269,42 @@ Cell["Derivata prima, massimi e minimi, monotonia", "Subchapter",
  CellChangeTimes->{{3.672637687675252*^9, 3.672637698719269*^9}}],
 
 Cell["\<\
-Ora dobbiamo capire:
-- dove la funzione cresce e decresce (ovvero, dove la funzione \[EGrave] \
-monotona crescente e dove \[EGrave] monotona decrescente);
-- quali sono i punti di massimo e minimo relativi o assoluti della funzione \
-(i punti in cui cambia la monotonia!)
+Lo studio della derivata prima di una funzione permette di:
+- comprendere in quali intervalli la funzione cresce (monotona crescente) ed \
+in quali intervalli decresce (monotona decrescente);
+- individuare i punti di massimo e di minimo, locali ed assoluti, della \
+funzione, cio\[EGrave] i punti in cui la funzione primitiva cambia la \
+monotonia.
 
-Per scoprirlo, in accordo con i teoremi sulle derivate, calcoliamo la \
-derivata prima della funzione, f\[CloseCurlyQuote] ( x ) e ne determiniamo il \
-dominio Dom(f\[CloseCurlyQuote]). Fatto ci\[OGrave], dobbiamo risolvere la \
-disequazione f\[CloseCurlyQuote] ( x ) >= 0.
+Il primo passaggio consiste nel calcolo della funzione f\[CloseCurlyQuote] ( \
+x ), cio\[EGrave] la deriva prima della funzione f; successivamente \[EGrave] \
+necessario individuarne il dominio.
 
-I punti in cui la derivata prima si annulla (vale a dire le soluzioni dell\
-\[CloseCurlyQuote]equazione f\[CloseCurlyQuote] ( x ) = 0) sono i candidati \
-massimi o minimi della funzione y = f ( x ), detti altrimenti punti \
-estremanti della funzione.
-Per sapere se tali punti x che annullano la derivata prima sono massimi, \
-minimi oppure no, dobbiamo risolvere la disequazione f\[CloseCurlyQuote](x) \
->= 0 e studiare il segno della derivata prima. Per vedere come, supponiamo \
-per fissare le idee che x1 sia tale da annullare la derivata prima: f\
-\[CloseCurlyQuote] ( x1 ) = 0.
+Il passo successivo consiste nello studio del segno, esattamente come visto \
+in precedenza: applicato per\[OGrave] alla derivata prima. \[CapitalEGrave] \
+dunque necessario risolvere la disequazione:
+\tf\[CloseCurlyQuote] ( x ) >= 0.
 
-- se la derivata y = f\[CloseCurlyQuote] ( x ) \[EGrave] positiva prima di x1 \
-e negativa poi, allora x1 \[EGrave] punto di massimo della funzione y = f ( x \
-);
-- se la derivata y = f\[CloseCurlyQuote] ( x ) \[EGrave] negativa prima di x1 \
-e positiva poi, allora x1 \[EGrave] punto di minimo della funzione y = f ( x \
-);\
+Gli intervalli in cui la derivata prima \[EGrave] positiva (cio\[EGrave] con \
+il grafico al di sopra dell\[CloseCurlyQuote]asse della ascisse) indicano che \
+la funzione primitiva cresce in corrispondenza di essi; gli intervalli in cui \
+la derivata \[EGrave] negativa (cio\[EGrave] con il grafico al di sotto dell\
+\[CloseCurlyQuote]asse delle ascisse) indicano che la funzione primitiva \
+decresce in corrispondenza di essi. 
+I punti in cui la derivata prima si annulla saranno i candidati massimi o \
+minimi della funzione f (detti anche punti estremanti della funzione).
+Poniamo per esempio che x1 sia uno di questi punti. x1 \[EGrave]:
+- punto di massimo, se la derivata \[EGrave] positiva prima di x1 e negativa \
+poi;
+- punto di minimo, se la derivata \[EGrave] negativa prima di x1 e positiva \
+poi.\
 \>", "Text",
- CellChangeTimes->{{3.672813254624899*^9, 3.6728132614052773`*^9}}]
+ CellChangeTimes->{{3.672813254624899*^9, 3.6728132614052773`*^9}, {
+   3.67282955924827*^9, 3.672829931320135*^9}, {3.672829995067232*^9, 
+   3.672830056877816*^9}, {3.6728301254718533`*^9, 3.672830187075556*^9}, {
+   3.672830242406678*^9, 3.672830318040977*^9}, {3.672830624640052*^9, 
+   3.672830626151466*^9}, 3.6728307169568853`*^9, {3.672831114918537*^9, 
+   3.672831116229248*^9}, {3.67283144647613*^9, 3.672831448236183*^9}}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -276,54 +313,56 @@ Cell["Derivata seconda, convessit\[AGrave] e punti di flesso", "Subchapter",
  CellChangeTimes->{{3.672637723989729*^9, 3.672637737145874*^9}}],
 
 Cell["\<\
-La prima cosa da fare \[EGrave] calcolare la derivata seconda della funzione \
-y=f(x), ossia calcoliamo la derivata prima della derivata prima:
+Lo studio della derivata seconda di una funzione permette di:
+- comprendere in quali intervalli la funzione \[EGrave] convessa ed in quali \
+\[EGrave] concava;
+- individuare i punti di flesso, cio\[EGrave] i punti in cui la funzione \
+primitiva cambia la concavit\[AGrave]. 
 
-y = f\[CloseCurlyQuote]\[CloseCurlyQuote] ( x ).
-
-Dopo averla calcolata, diamo un rapido sguardo al suo dominio Dom(f\
-\[CloseCurlyQuote]\[CloseCurlyQuote]), e controlliamo quali sono i punti o \
-gli intervalli di Dom(f\[CloseCurlyQuote]\[CloseCurlyQuote]) che non \
-appartengono all\[CloseCurlyQuote]intersezione tra il dominio della funzione \
-y=f(x) e al dominio della derivata prima y=f\[CloseCurlyQuote](x). All\
-\[CloseCurlyQuote]atto pratico infatti ci\[OGrave] che ci interessa \[EGrave] \
-l\[CloseCurlyQuote]intersezione
-
-Dom(f) \\cap Dom(f\[CloseCurlyQuote]) \\cap Dom(f\[CloseCurlyQuote]\
+Il primo passaggio consiste nel calcolo della funzione f\[CloseCurlyQuote]\
+\[CloseCurlyQuote] ( x ), cio\[EGrave] la derivata seconda della funzione f \
+(equivalente alla derivata prima della derivata prima di f); successivamente \
+\[EGrave] necessario individuarne il dominio, considerando che alla fine \
+quello che ci interesser\[AGrave] sar\[AGrave] l\[CloseCurlyQuote]unione dei \
+domini della funzione primitiva, della derivata prima e della derivata seconda:
+\tDom(f)\:2229Dom(f\[CloseCurlyQuote])\:2229Dom(f\[CloseCurlyQuote]\
 \[CloseCurlyQuote]).
 
-Ora calcoliamo gli zeri della derivata seconda, quindi risolviamo l\
-\[CloseCurlyQuote]equazione
+Il passo successivo consiste nello studio del segno, esattamente come visto \
+in precedenza: applicato per\[OGrave] alla derivata seconda. \[CapitalEGrave] \
+dunque necessario risolvere la disequazione:
+\t\tf\[CloseCurlyQuote]\[CloseCurlyQuote] ( x ) >= 0.
+\t\t
+Gli intervalli in cui la derivata seconda \[EGrave] positiva (cio\[EGrave] \
+con il grafico al di sopra dell\[CloseCurlyQuote]asse delle ascisse) indicano \
+che la funzione primitiva \[EGrave] convessa in corrispondenza di essi; gli \
+intervalli in cui la derivata seconda \[EGrave] negativa (cio\[EGrave] con il \
+grafico al di sotto dell\[CloseCurlyQuote]asse delle ascisse) indicano che la \
+funzione primitiva \[EGrave] concava in corrispondenza di essi.
+I punti in cui la derivata si annulla saranno i candidati punti di flesso \
+della funzione f.
+Poniamo per esempio che x1 sia uno di questi punti. x1 \[EGrave] punto di \
+flesso se:
+- la derivata seconda \[EGrave] positiva prima di x1 e negativa poi (dunque \
+la funzione primitiva \[EGrave] convessa e poi concava);
+- la derivata seconda \[EGrave] negativa prima di x1 e positiva poi (dunque \
+la funzione primitiva \[EGrave] concava e poi convessa).
 
-f\[CloseCurlyQuote]\[CloseCurlyQuote] ( x )=0.
-
-Le soluzioni x di tale equazione saranno i candidati punti di flesso della \
-funzione y = f ( x ), ossia i punti in cui si ha una variazione della \
-convessit\[AGrave] della funzione che stiamo studiando. Per capire quali tra \
-questi valori sono effettivamente punti di flesso e quali no, e soprattutto \
-come varia la convessit\[AGrave], dobbiamo risolvere la disequazione
-
-f\[CloseCurlyQuote]\[CloseCurlyQuote](x) >= 0
-
-
-Dove la derivata seconda \[EGrave] positiva, la funzione y=f(x) \[EGrave] \
-convessa, mentre dove la derivata seconda \[EGrave] negativa la funzione \
-y=f(x) \[EGrave] concava. Per non confonderti, nel disegnare le soluzioni \
-della disequazione disegna un sorriso sotto agli intervalli in cui la \
-derivata y=f\[CloseCurlyQuote]\[CloseCurlyQuote](x) \[EGrave] positiva e una \
-smorfia sotto agli intervalli in cui la derivata seconda \[EGrave] negativa. \
-Questa simbologia richiama infatti quella che sar\[AGrave] la configurazione \
-del grafico della funzione.
-
-Tutti i punti x che risolvono l\[CloseCurlyQuote]equazione \
-f\[CloseCurlyQuote]\[CloseCurlyQuote](x)=0 ma che non stanno nell\
-\[CloseCurlyQuote]intersezione dei tre domini Dom(f)\:2229Dom(f\
-\[CloseCurlyQuote])\:2229Dom(f\[CloseCurlyQuote]\[CloseCurlyQuote]) non sono \
+Ricorda: tutti i punti x che risolvono l\[CloseCurlyQuote]equazione f\
+\[CloseCurlyQuote]\[CloseCurlyQuote](x)=0 ma che non stanno nell\
+\[CloseCurlyQuote]intersezione dei tre domini (Dom(f)\:2229Dom(f\
+\[CloseCurlyQuote])\:2229Dom(f\[CloseCurlyQuote]\[CloseCurlyQuote])) non sono \
 punti di flesso: \[EGrave] fondamentale capire che, anche se in certi punti \
 si ha una variazione di convessit\[AGrave], ma in tali punti la funzione \
 y=f(x) non \[EGrave] definita, essi non sono punti di flesso.\
 \>", "Text",
- CellChangeTimes->{{3.672813628099827*^9, 3.6728136332267733`*^9}}]
+ CellChangeTimes->{{3.672813628099827*^9, 3.6728136332267733`*^9}, {
+  3.672830337267002*^9, 3.672830343347188*^9}, {3.672830381405477*^9, 
+  3.672830387141836*^9}, {3.672830507804288*^9, 3.67283061756774*^9}, {
+  3.672830873435863*^9, 3.6728310540983677`*^9}, {3.6728310910299807`*^9, 
+  3.672831120749898*^9}, {3.672831324951342*^9, 3.672831463493409*^9}, {
+  3.6728315826532497`*^9, 3.672831596811907*^9}, {3.672831630125875*^9, 
+  3.672831881319182*^9}}]
 }, Open  ]],
 
 Cell["Grafico della funzione", "Subchapter",
@@ -1785,8 +1824,8 @@ Cell[BoxData[
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{1221, 747},
-WindowMargins->{{Automatic, 0}, {Automatic, -10}},
+WindowSize->{1463, 829},
+WindowMargins->{{191, Automatic}, {Automatic, 43}},
 PrivateNotebookOptions->{"VersionedStylesheet"->{"Default.nb"[8.] -> False}},
 ShowSelection->True,
 Magnification->1.5,
@@ -1819,184 +1858,184 @@ Cell[CellGroupData[{
 Cell[2314, 75, 102, 1, 101, "Chapter"],
 Cell[CellGroupData[{
 Cell[2441, 80, 203, 3, 96, "Subchapter"],
-Cell[2647, 85, 1056, 20, 342, "Text"]
+Cell[2647, 85, 1107, 21, 342, "Text"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3740, 110, 134, 1, 96, "Subchapter"],
-Cell[3877, 113, 1028, 21, 407, "Text"]
+Cell[3791, 111, 134, 1, 96, "Subchapter"],
+Cell[3928, 114, 1087, 22, 407, "Text"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[4942, 139, 115, 1, 96, "Subchapter"],
-Cell[5060, 142, 326, 6, 82, "Text"],
+Cell[5052, 141, 115, 1, 96, "Subchapter"],
+Cell[5170, 144, 349, 7, 82, "Text"],
 Cell[CellGroupData[{
-Cell[5411, 152, 136, 1, 68, "Subsection"],
-Cell[5550, 155, 244, 4, 82, "Text"]
+Cell[5544, 155, 136, 1, 68, "Subsection"],
+Cell[5683, 158, 555, 10, 147, "Text"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[5831, 164, 138, 1, 68, "Subsection"],
-Cell[5972, 167, 301, 6, 114, "Text"],
-Cell[6276, 175, 350, 6, 82, "Text"]
+Cell[6275, 173, 138, 1, 68, "Subsection"],
+Cell[6416, 176, 481, 10, 179, "Text"],
+Cell[6900, 188, 350, 6, 82, "Text"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[6675, 187, 104, 1, 96, "Subchapter"],
-Cell[6782, 190, 713, 15, 277, "Text"]
+Cell[7299, 200, 104, 1, 96, "Subchapter"],
+Cell[7406, 203, 1254, 23, 374, "Text"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[7532, 210, 119, 1, 96, "Subchapter"],
-Cell[7654, 213, 1076, 19, 342, "Text"]
+Cell[8697, 231, 119, 1, 96, "Subchapter"],
+Cell[8819, 234, 1606, 28, 472, "Text"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[8767, 237, 131, 1, 96, "Subchapter"],
-Cell[8901, 240, 1547, 29, 602, "Text"]
+Cell[10462, 267, 131, 1, 96, "Subchapter"],
+Cell[10596, 270, 2048, 36, 667, "Text"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[10485, 274, 142, 1, 96, "Subchapter"],
-Cell[10630, 277, 2480, 48, 1057, "Text"]
+Cell[12681, 311, 142, 1, 96, "Subchapter"],
+Cell[12826, 314, 2987, 50, 797, "Text"]
 }, Open  ]],
-Cell[13125, 328, 112, 1, 96, "Subchapter"]
+Cell[15828, 367, 112, 1, 96, "Subchapter"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[13274, 334, 96, 1, 101, "Chapter"],
+Cell[15977, 373, 96, 1, 101, "Chapter"],
 Cell[CellGroupData[{
-Cell[13395, 339, 246, 9, 109, "Section"],
-Cell[13644, 350, 212, 7, 46, "Text"],
-Cell[13859, 359, 132, 4, 47, "Input"],
-Cell[13994, 365, 428, 16, 49, "Input"],
-Cell[14425, 383, 271, 7, 77, "Text"],
-Cell[14699, 392, 140, 5, 47, "Text"],
-Cell[14842, 399, 228, 6, 77, "Text"],
-Cell[15073, 407, 521, 16, 112, "Input"],
-Cell[15597, 425, 581, 15, 70, "Input"],
+Cell[16098, 378, 246, 9, 109, "Section"],
+Cell[16347, 389, 212, 7, 46, "Text"],
+Cell[16562, 398, 132, 4, 47, "Input"],
+Cell[16697, 404, 428, 16, 49, "Input"],
+Cell[17128, 422, 271, 7, 77, "Text"],
+Cell[17402, 431, 140, 5, 47, "Text"],
+Cell[17545, 438, 228, 6, 47, "Text"],
+Cell[17776, 446, 521, 16, 112, "Input"],
+Cell[18300, 464, 581, 15, 47, "Input"],
 Cell[CellGroupData[{
-Cell[16203, 444, 49, 1, 67, "Input"],
-Cell[16255, 447, 13362, 229, 1035, "Output"]
+Cell[18906, 483, 49, 1, 100, "Input"],
+Cell[18958, 486, 13362, 229, 1552, "Output"]
 }, Closed]],
-Cell[29632, 679, 204, 5, 60, "Text"],
-Cell[29839, 686, 212, 6, 70, "Input"],
-Cell[30054, 694, 225, 6, 70, "Input"],
-Cell[30282, 702, 245, 7, 70, "Input"],
-Cell[30530, 711, 212, 6, 70, "Input"],
-Cell[30745, 719, 263, 7, 115, "Text"],
-Cell[31011, 728, 192, 6, 70, "Input"],
-Cell[31206, 736, 689, 14, 366, "Text"],
-Cell[31898, 752, 391, 8, 159, "Text"],
-Cell[32292, 762, 234, 7, 70, "Input"],
-Cell[32529, 771, 234, 6, 115, "Text"],
-Cell[32766, 779, 347, 9, 168, "Input"],
-Cell[33116, 790, 481, 10, 681, "Text"],
-Cell[33600, 802, 295, 8, 235, "Input"],
-Cell[33898, 812, 173, 4, 384, "Text"],
-Cell[34074, 818, 795, 13, 1278, "Text"],
-Cell[34872, 833, 104, 3, 235, "Input"],
-Cell[34979, 838, 56, 0, 244, "Text"],
-Cell[35038, 840, 140, 4, 235, "Input"],
-Cell[35181, 846, 183, 4, 384, "Text"],
-Cell[35367, 852, 351, 10, 405, "Input"],
-Cell[35721, 864, 386, 12, 235, "Input"],
-Cell[36110, 878, 441, 9, 742, "Text"],
-Cell[36554, 889, 241, 6, 384, "Text"],
-Cell[36798, 897, 258, 8, 235, "Input"],
-Cell[37059, 907, 178, 5, 231, "Text"],
-Cell[37240, 914, 258, 8, 235, "Input"],
-Cell[37501, 924, 690, 12, 247, "Text"],
-Cell[38194, 938, 35, 0, 73, "Text"],
-Cell[38232, 940, 160, 5, 70, "Input"],
-Cell[38395, 947, 34, 0, 73, "Text"],
-Cell[38432, 949, 308, 10, 70, "Input"],
-Cell[38743, 961, 382, 8, 159, "Text"],
-Cell[39128, 971, 265, 9, 70, "Input"],
-Cell[39396, 982, 210, 4, 123, "Text"],
-Cell[39609, 988, 149, 4, 70, "Input"],
-Cell[39761, 994, 121, 3, 70, "Input"],
-Cell[39885, 999, 140, 4, 70, "Input"],
-Cell[40028, 1005, 464, 9, 204, "Text"],
-Cell[40495, 1016, 536, 17, 70, "Input"]
+Cell[32335, 718, 204, 5, 90, "Text"],
+Cell[32542, 725, 212, 6, 105, "Input"],
+Cell[32757, 733, 225, 6, 105, "Input"],
+Cell[32985, 741, 245, 7, 105, "Input"],
+Cell[33233, 750, 212, 6, 105, "Input"],
+Cell[33448, 758, 263, 7, 172, "Text"],
+Cell[33714, 767, 192, 6, 105, "Input"],
+Cell[33909, 775, 689, 14, 549, "Text"],
+Cell[34601, 791, 391, 8, 238, "Text"],
+Cell[34995, 801, 234, 7, 105, "Input"],
+Cell[35232, 810, 234, 6, 172, "Text"],
+Cell[35469, 818, 347, 9, 252, "Input"],
+Cell[35819, 829, 481, 10, 1021, "Text"],
+Cell[36303, 841, 295, 8, 352, "Input"],
+Cell[36601, 851, 173, 4, 576, "Text"],
+Cell[36777, 857, 795, 13, 1917, "Text"],
+Cell[37575, 872, 104, 3, 352, "Input"],
+Cell[37682, 877, 56, 0, 366, "Text"],
+Cell[37741, 879, 140, 4, 352, "Input"],
+Cell[37884, 885, 183, 4, 576, "Text"],
+Cell[38070, 891, 351, 10, 607, "Input"],
+Cell[38424, 903, 386, 12, 352, "Input"],
+Cell[38813, 917, 441, 9, 1113, "Text"],
+Cell[39257, 928, 241, 6, 576, "Text"],
+Cell[39501, 936, 258, 8, 352, "Input"],
+Cell[39762, 946, 178, 5, 346, "Text"],
+Cell[39943, 953, 258, 8, 352, "Input"],
+Cell[40204, 963, 690, 12, 370, "Text"],
+Cell[40897, 977, 35, 0, 109, "Text"],
+Cell[40935, 979, 160, 5, 105, "Input"],
+Cell[41098, 986, 34, 0, 109, "Text"],
+Cell[41135, 988, 308, 10, 105, "Input"],
+Cell[41446, 1000, 382, 8, 238, "Text"],
+Cell[41831, 1010, 265, 9, 105, "Input"],
+Cell[42099, 1021, 210, 4, 184, "Text"],
+Cell[42312, 1027, 149, 4, 105, "Input"],
+Cell[42464, 1033, 121, 3, 105, "Input"],
+Cell[42588, 1038, 140, 4, 105, "Input"],
+Cell[42731, 1044, 464, 9, 306, "Text"],
+Cell[43198, 1055, 536, 17, 105, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[41068, 1038, 197, 7, 165, "Section"],
-Cell[41268, 1047, 90, 1, 69, "Text"],
-Cell[41361, 1050, 331, 11, 120, "Input"],
-Cell[41695, 1063, 329, 9, 118, "Text"],
-Cell[42027, 1074, 161, 4, 69, "Text"],
-Cell[42191, 1080, 451, 13, 168, "Input"],
-Cell[42645, 1095, 438, 12, 216, "Input"],
-Cell[43086, 1109, 579, 15, 511, "Text"],
-Cell[43668, 1126, 220, 7, 387, "Text"],
-Cell[43891, 1135, 220, 7, 235, "Input"],
-Cell[44114, 1144, 221, 7, 235, "Input"],
-Cell[44338, 1153, 221, 7, 235, "Input"],
-Cell[44562, 1162, 840, 16, 1399, "Text"],
-Cell[45405, 1180, 162, 4, 384, "Text"],
-Cell[45570, 1186, 172, 5, 235, "Input"],
-Cell[45745, 1193, 67, 0, 244, "Text"],
-Cell[45815, 1195, 182, 5, 235, "Input"],
-Cell[46000, 1202, 525, 15, 535, "Text"],
-Cell[46528, 1219, 86, 1, 231, "Text"],
-Cell[46617, 1222, 104, 3, 235, "Input"],
-Cell[46724, 1227, 139, 4, 231, "Text"],
-Cell[46866, 1233, 330, 9, 567, "Input"],
-Cell[47199, 1244, 66, 0, 244, "Text"],
-Cell[47268, 1246, 134, 4, 225, "Output"],
-Cell[47405, 1252, 187, 6, 235, "Input"],
-Cell[47595, 1260, 197, 6, 235, "Input"],
-Cell[47795, 1268, 261, 5, 384, "Text"],
-Cell[48059, 1275, 166, 4, 231, "Text"],
-Cell[48228, 1281, 241, 8, 235, "Input"],
-Cell[48472, 1291, 242, 8, 235, "Input"],
-Cell[48717, 1301, 816, 14, 1561, "Text"],
-Cell[49536, 1317, 411, 9, 535, "Text"],
-Cell[49950, 1328, 123, 4, 235, "Input"],
-Cell[50076, 1334, 208, 7, 235, "Input"],
-Cell[50287, 1343, 218, 7, 235, "Input"],
-Cell[50508, 1352, 481, 14, 729, "Input"],
-Cell[50992, 1368, 236, 8, 235, "Input"],
-Cell[51231, 1378, 218, 5, 384, "Text"],
-Cell[51452, 1385, 296, 8, 567, "Input"],
-Cell[51751, 1395, 248, 5, 384, "Text"],
-Cell[52002, 1402, 651, 20, 729, "Input"],
-Cell[52656, 1424, 58, 1, 235, "Input"]
+Cell[43771, 1077, 197, 7, 247, "Section"],
+Cell[43971, 1086, 90, 1, 103, "Text"],
+Cell[44064, 1089, 331, 11, 180, "Input"],
+Cell[44398, 1102, 329, 9, 177, "Text"],
+Cell[44730, 1113, 161, 4, 103, "Text"],
+Cell[44894, 1119, 451, 13, 252, "Input"],
+Cell[45348, 1134, 438, 12, 324, "Input"],
+Cell[45789, 1148, 579, 15, 766, "Text"],
+Cell[46371, 1165, 220, 7, 580, "Text"],
+Cell[46594, 1174, 220, 7, 352, "Input"],
+Cell[46817, 1183, 221, 7, 352, "Input"],
+Cell[47041, 1192, 221, 7, 352, "Input"],
+Cell[47265, 1201, 840, 16, 2098, "Text"],
+Cell[48108, 1219, 162, 4, 576, "Text"],
+Cell[48273, 1225, 172, 5, 352, "Input"],
+Cell[48448, 1232, 67, 0, 366, "Text"],
+Cell[48518, 1234, 182, 5, 352, "Input"],
+Cell[48703, 1241, 525, 15, 802, "Text"],
+Cell[49231, 1258, 86, 1, 346, "Text"],
+Cell[49320, 1261, 104, 3, 352, "Input"],
+Cell[49427, 1266, 139, 4, 346, "Text"],
+Cell[49569, 1272, 330, 9, 850, "Input"],
+Cell[49902, 1283, 66, 0, 366, "Text"],
+Cell[49971, 1285, 134, 4, 337, "Output"],
+Cell[50108, 1291, 187, 6, 352, "Input"],
+Cell[50298, 1299, 197, 6, 352, "Input"],
+Cell[50498, 1307, 261, 5, 576, "Text"],
+Cell[50762, 1314, 166, 4, 346, "Text"],
+Cell[50931, 1320, 241, 8, 352, "Input"],
+Cell[51175, 1330, 242, 8, 352, "Input"],
+Cell[51420, 1340, 816, 14, 2341, "Text"],
+Cell[52239, 1356, 411, 9, 802, "Text"],
+Cell[52653, 1367, 123, 4, 352, "Input"],
+Cell[52779, 1373, 208, 7, 352, "Input"],
+Cell[52990, 1382, 218, 7, 352, "Input"],
+Cell[53211, 1391, 481, 14, 1093, "Input"],
+Cell[53695, 1407, 236, 8, 352, "Input"],
+Cell[53934, 1417, 218, 5, 576, "Text"],
+Cell[54155, 1424, 296, 8, 850, "Input"],
+Cell[54454, 1434, 248, 5, 576, "Text"],
+Cell[54705, 1441, 651, 20, 1093, "Input"],
+Cell[55359, 1463, 58, 1, 352, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[52751, 1430, 372, 16, 1284, "Section"],
-Cell[53126, 1448, 207, 4, 414, "Text"],
+Cell[55454, 1469, 372, 16, 1926, "Section"],
+Cell[55829, 1487, 207, 4, 621, "Text"],
 Cell[CellGroupData[{
-Cell[53358, 1456, 233, 11, 495, "Subsection"],
-Cell[53594, 1469, 76, 2, 225, "Input"],
-Cell[53673, 1473, 333, 12, 225, "Input"],
-Cell[54009, 1487, 550, 16, 670, "Input"],
-Cell[54562, 1505, 397, 12, 225, "Input"],
-Cell[54962, 1519, 398, 12, 225, "Input"],
-Cell[55363, 1533, 258, 7, 225, "Input"],
-Cell[55624, 1542, 137, 4, 225, "Input"],
-Cell[55764, 1548, 211, 8, 225, "Input"],
-Cell[55978, 1558, 162, 5, 225, "Input"],
-Cell[56143, 1565, 474, 16, 378, "Input"],
-Cell[56620, 1583, 382, 12, 378, "Input"],
-Cell[57005, 1597, 162, 5, 225, "Input"],
-Cell[57170, 1604, 72, 2, 225, "Input"],
-Cell[57245, 1608, 108, 3, 225, "Input"],
-Cell[57356, 1613, 132, 4, 225, "Input"],
-Cell[57491, 1619, 163, 5, 225, "Input"],
-Cell[57657, 1626, 91, 3, 225, "Input"],
-Cell[57751, 1631, 128, 4, 225, "Input"],
-Cell[57882, 1637, 153, 5, 225, "Input"],
-Cell[58038, 1644, 188, 7, 225, "Input"],
-Cell[58229, 1653, 379, 11, 378, "Input"]
+Cell[56061, 1495, 233, 11, 742, "Subsection"],
+Cell[56297, 1508, 76, 2, 337, "Input"],
+Cell[56376, 1512, 333, 12, 337, "Input"],
+Cell[56712, 1526, 550, 16, 1005, "Input"],
+Cell[57265, 1544, 397, 12, 337, "Input"],
+Cell[57665, 1558, 398, 12, 337, "Input"],
+Cell[58066, 1572, 258, 7, 337, "Input"],
+Cell[58327, 1581, 137, 4, 337, "Input"],
+Cell[58467, 1587, 211, 8, 337, "Input"],
+Cell[58681, 1597, 162, 5, 337, "Input"],
+Cell[58846, 1604, 474, 16, 567, "Input"],
+Cell[59323, 1622, 382, 12, 567, "Input"],
+Cell[59708, 1636, 162, 5, 337, "Input"],
+Cell[59873, 1643, 72, 2, 337, "Input"],
+Cell[59948, 1647, 108, 3, 337, "Input"],
+Cell[60059, 1652, 132, 4, 337, "Input"],
+Cell[60194, 1658, 163, 5, 337, "Input"],
+Cell[60360, 1665, 91, 3, 337, "Input"],
+Cell[60454, 1670, 128, 4, 337, "Input"],
+Cell[60585, 1676, 153, 5, 337, "Input"],
+Cell[60741, 1683, 188, 7, 337, "Input"],
+Cell[60932, 1692, 379, 11, 567, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[58645, 1669, 136, 7, 546, "Subsection"],
-Cell[58784, 1678, 76, 2, 225, "Input"],
-Cell[58863, 1682, 357, 11, 225, "Input"],
-Cell[59223, 1695, 550, 16, 670, "Input"],
-Cell[59776, 1713, 258, 7, 225, "Input"],
-Cell[60037, 1722, 259, 7, 225, "Input"],
-Cell[60299, 1731, 72, 2, 225, "Input"],
-Cell[60374, 1735, 108, 3, 225, "Input"],
-Cell[60485, 1740, 281, 8, 225, "Input"],
-Cell[60769, 1750, 155, 5, 225, "Input"],
-Cell[60927, 1757, 416, 13, 378, "Input"],
-Cell[61346, 1772, 302, 9, 225, "Input"]
+Cell[61348, 1708, 136, 7, 819, "Subsection"],
+Cell[61487, 1717, 76, 2, 337, "Input"],
+Cell[61566, 1721, 357, 11, 337, "Input"],
+Cell[61926, 1734, 550, 16, 1005, "Input"],
+Cell[62479, 1752, 258, 7, 337, "Input"],
+Cell[62740, 1761, 259, 7, 337, "Input"],
+Cell[63002, 1770, 72, 2, 337, "Input"],
+Cell[63077, 1774, 108, 3, 337, "Input"],
+Cell[63188, 1779, 281, 8, 337, "Input"],
+Cell[63472, 1789, 155, 5, 337, "Input"],
+Cell[63630, 1796, 416, 13, 567, "Input"],
+Cell[64049, 1811, 302, 9, 337, "Input"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
