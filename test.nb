@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     36513,        797]
-NotebookOptionsPosition[     34950,        748]
-NotebookOutlinePosition[     35287,        763]
-CellTagsIndexPosition[     35244,        760]
+NotebookDataLength[     33121,        676]
+NotebookOptionsPosition[     31566,        627]
+NotebookOutlinePosition[     31903,        642]
+CellTagsIndexPosition[     31860,        639]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -126,133 +126,11 @@ Cell[BoxData[{
      RowBox[{
       RowBox[{"x", "^", "2"}], "/", "2"}]}], "-", "x", "+", 
     RowBox[{"Log", "[", 
-     RowBox[{"x", "+", "1"}], "]"}]}], "\[IndentingNewLine]", 
-   "*)"}]}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{"fDivisa", "=", " ", 
-    RowBox[{
-     StyleBox[
-      RowBox[{"DividiFunzioneI", 
-       AdjustmentBox["nListaDiOperandi",
-        BoxMargins->{{-0.0617283950617284, 0.0617283950617284}, {0., 0.}}]}]], 
-     AdjustmentBox["[",
-      BoxMargins->{{-0.0617283950617284, 0.0617283950617284}, {0., 0.}}], 
-     RowBox[{
-      AdjustmentBox["f",
-       BoxMargins->{{-0.1851851851851852, 0.1851851851851852}, {0., 0.}}], 
-      AdjustmentBox["[",
-       BoxMargins->{{-0.0617283950617284, 0.0617283950617284}, {0., 0.}}], 
-      AdjustmentBox["x",
-       BoxMargins->{{-0.0617283950617284, 0.0617283950617284}, {0., 0.}}], 
-      AdjustmentBox["]",
-       BoxMargins->{{-0.0617283950617284, 0.0617283950617284}, {0., 0.}}]}], 
-     AdjustmentBox["]",
-      BoxMargins->{{-0.0617283950617284, 0.0617283950617284}, {0., 0.}}]}]}], 
-   ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
- RowBox[{"Print", "[", "\"\<I contenuti sotto radice pari \>\"", 
-  "]"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"listaContenutiRadiciDaControllare", "=", 
-   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{
-    RowBox[{"CalcolaContenutiRadiciDaControllare", "[", 
-     RowBox[{"listaContenutiRadiciDaControllare", ",", "#"}], "]"}], "&"}], "/@",
-    "fDivisa"}], 
-  ";"}], "\[IndentingNewLine]", "listaContenutiRadiciDaControllare", "\
-\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"Print", "[", "\"\< devono essere maggiori di zero: \>\"", "]"}], 
-  ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"risultatoControlloRadici", "=", 
-   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"risultatoControlloRadici", "=", 
-   RowBox[{
-    RowBox[{
-     RowBox[{"Reduce", "[", 
-      RowBox[{
-       RowBox[{"#", ">", "0"}], ",", "x"}], "]"}], "&"}], "/@", 
-    "listaContenutiRadiciDaControllare"}]}], ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"DeleteCases", "[", 
-   RowBox[{"risultatoControlloRadici", ",", "True"}], "]"}], 
-  ";"}], "\[IndentingNewLine]", 
- RowBox[{"risultatoControlloRadici", 
-  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
- RowBox[{"Print", "[", "\"\<I contenuti sotto logaritmi \>\"", 
-  "]"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"listaContenutiLogaritmoDaControllare", " ", "=", 
-   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{
-    RowBox[{"CalcolaContenutiLogaritmoDaControllare", "[", 
-     RowBox[{"listaContenutiLogaritmoDaControllare", ",", "#"}], "]"}], "&"}],
-    "/@", "fDivisa"}], 
-  ";"}], "\[IndentingNewLine]", "listaContenutiLogaritmoDaControllare", "\
-\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"Print", "[", "\"\< devono essere maggiori di zero: \>\"", "]"}], 
-  ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"risultatoControlloLogaritmo", "=", 
-   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"risultatoControlloLogaritmo", "=", 
-   RowBox[{
-    RowBox[{
-     RowBox[{"Reduce", "[", 
-      RowBox[{
-       RowBox[{"#", ">", "0"}], ",", "x"}], "]"}], "&"}], "/@", 
-    "listaContenutiLogaritmoDaControllare"}]}], 
-  ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"DeleteCases", "[", 
-   RowBox[{"risultatoControlloLogaritmo", ",", "True"}], "]"}], 
-  ";"}], "\[IndentingNewLine]", 
- RowBox[{"risultatoControlloLogaritmo", 
+     RowBox[{"x", "+", "1"}], "]"}]}], "\[IndentingNewLine]", "*)"}], 
   "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"listaContenutiDenominatoreDaControllare", " ", "=", " ", 
-   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"risultatoControlloDenominatore", "=", 
-   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
- RowBox[{"Print", "[", "\"\<Il denominatore: \>\"", 
-  "]"}], "\[IndentingNewLine]", 
- RowBox[{"listaContenutiDenominatoreDaControllare", " ", "=", " ", 
-  RowBox[{"Append", "[", 
-   RowBox[{"listaContenutiDenominatoreDaControllare", ",", 
-    RowBox[{"Denominator", "[", 
-     RowBox[{"f", "[", "x", "]"}], "]"}]}], "]"}]}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"Print", "[", "\"\< deve essere diverso di zero: \>\"", "]"}], 
-  ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"CalcolaContenutiDenominatoreDaControllare", "[", 
-   RowBox[{
-   "risultatoControlloDenominatore", ",", 
-    "listaContenutiDenominatoreDaControllare"}], "]"}], 
-  ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"DeleteCases", "[", 
-   RowBox[{"risultatoControlloDenominatore", ",", "True"}], "]"}], 
-  ";"}], "\n", 
- RowBox[{"risultatoControlloDenominatore", 
-  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
- RowBox[{"Print", "[", 
-  "\"\<quindi facendo l'intersezione tra questi domini, il dominio \[EGrave]: \
-\>\"", "]"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"dominio", " ", "=", " ", 
-   RowBox[{"FunctionDomain", "[", 
-    RowBox[{
-     RowBox[{"f", "[", "x", "]"}], ",", "x"}], "]"}]}], 
+  RowBox[{"CalcolaDominio", "[", 
+   RowBox[{"f", ",", "x"}], "]"}], 
   "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"ControlloPariDispari", "[", 
@@ -439,11 +317,12 @@ Cell[BoxData[{
    3.6727247657353573`*^9, {3.6727248709584227`*^9, 3.6727248740209217`*^9}, {
    3.672725847194875*^9, 3.672725953996108*^9}, {3.672813918002809*^9, 
    3.672813964031584*^9}, {3.672814050474638*^9, 3.67281406052623*^9}, {
-   3.672814213534046*^9, 3.672814234101368*^9}}],
+   3.672814213534046*^9, 3.672814234101368*^9}, {3.672814566185439*^9, 
+   3.6728145676010723`*^9}}],
 
 Cell[BoxData["\<\"La funzione da calcolare \[EGrave]: \"\>"], "Print",
  CellChangeTimes->{{3.6728140194890337`*^9, 3.6728140613532343`*^9}, 
-   3.672814236294524*^9}],
+   3.672814236294524*^9, 3.672814568818953*^9, 3.672814671007347*^9}],
 
 Cell[BoxData[
  FractionBox[
@@ -453,92 +332,92 @@ Cell[BoxData[
    RowBox[{"Log", "[", "35", "]"}]}], 
   RowBox[{"2", " ", "x"}]]], "Output",
  CellChangeTimes->{{3.672814019495159*^9, 3.672814061384976*^9}, 
-   3.6728142363206587`*^9}],
+   3.6728142363206587`*^9, 3.672814568850778*^9, 3.672814671047679*^9}],
+
+Cell[CellGroupData[{
 
 Cell[BoxData["\<\"I contenuti sotto radice pari \"\>"], "Print",
  CellChangeTimes->{{3.6728140194890337`*^9, 3.6728140613532343`*^9}, 
-   3.672814236322569*^9}],
+   3.672814236294524*^9, 3.672814568818953*^9, 3.672814671049988*^9}],
 
 Cell[BoxData[
- RowBox[{"{", "3", "}"}]], "Output",
- CellChangeTimes->{{3.672814019495159*^9, 3.672814061384976*^9}, 
-   3.672814236324647*^9}],
+ RowBox[{"{", "3", "}"}]], "Print",
+ CellChangeTimes->{{3.6728140194890337`*^9, 3.6728140613532343`*^9}, 
+   3.672814236294524*^9, 3.672814568818953*^9, 3.672814671050942*^9}],
 
 Cell[BoxData["\<\" devono essere maggiori di zero: \"\>"], "Print",
  CellChangeTimes->{{3.6728140194890337`*^9, 3.6728140613532343`*^9}, 
-   3.672814236326556*^9}],
+   3.672814236294524*^9, 3.672814568818953*^9, 3.672814671054406*^9}],
 
 Cell[BoxData[
- RowBox[{"{", "True", "}"}]], "Output",
- CellChangeTimes->{{3.672814019495159*^9, 3.672814061384976*^9}, 
-   3.6728142363273983`*^9}],
+ RowBox[{"{", "True", "}"}]], "Print",
+ CellChangeTimes->{{3.6728140194890337`*^9, 3.6728140613532343`*^9}, 
+   3.672814236294524*^9, 3.672814568818953*^9, 3.672814671056288*^9}],
 
 Cell[BoxData["\<\"I contenuti sotto logaritmi \"\>"], "Print",
  CellChangeTimes->{{3.6728140194890337`*^9, 3.6728140613532343`*^9}, 
-   3.672814236328541*^9}],
+   3.672814236294524*^9, 3.672814568818953*^9, 3.6728146710572042`*^9}],
 
 Cell[BoxData[
- RowBox[{"{", "35", "}"}]], "Output",
- CellChangeTimes->{{3.672814019495159*^9, 3.672814061384976*^9}, 
-   3.6728142363291893`*^9}],
+ RowBox[{"{", "35", "}"}]], "Print",
+ CellChangeTimes->{{3.6728140194890337`*^9, 3.6728140613532343`*^9}, 
+   3.672814236294524*^9, 3.672814568818953*^9, 3.672814671058379*^9}],
 
 Cell[BoxData["\<\" devono essere maggiori di zero: \"\>"], "Print",
  CellChangeTimes->{{3.6728140194890337`*^9, 3.6728140613532343`*^9}, 
-   3.6728142363302526`*^9}],
+   3.672814236294524*^9, 3.672814568818953*^9, 3.6728146710593224`*^9}],
 
 Cell[BoxData[
- RowBox[{"{", "True", "}"}]], "Output",
- CellChangeTimes->{{3.672814019495159*^9, 3.672814061384976*^9}, 
-   3.672814236330925*^9}],
+ RowBox[{"{", "True", "}"}]], "Print",
+ CellChangeTimes->{{3.6728140194890337`*^9, 3.6728140613532343`*^9}, 
+   3.672814236294524*^9, 3.672814568818953*^9, 3.672814671060091*^9}],
 
 Cell[BoxData["\<\"Il denominatore: \"\>"], "Print",
  CellChangeTimes->{{3.6728140194890337`*^9, 3.6728140613532343`*^9}, 
-   3.672814236332038*^9}],
+   3.672814236294524*^9, 3.672814568818953*^9, 3.6728146710608597`*^9}],
 
 Cell[BoxData[
  RowBox[{"{", 
-  RowBox[{"2", " ", "x"}], "}"}]], "Output",
- CellChangeTimes->{{3.672814019495159*^9, 3.672814061384976*^9}, 
-   3.672814236332736*^9}],
+  RowBox[{"2", " ", "x"}], "}"}]], "Print",
+ CellChangeTimes->{{3.6728140194890337`*^9, 3.6728140613532343`*^9}, 
+   3.672814236294524*^9, 3.672814568818953*^9, 3.672814671062108*^9}],
 
 Cell[BoxData["\<\" deve essere diverso di zero: \"\>"], "Print",
  CellChangeTimes->{{3.6728140194890337`*^9, 3.6728140613532343`*^9}, 
-   3.672814236334091*^9}],
+   3.672814236294524*^9, 3.672814568818953*^9, 3.672814671063101*^9}],
 
 Cell[BoxData[
  RowBox[{"{", 
   RowBox[{
    RowBox[{"x", ">", "0"}], ",", 
-   RowBox[{"x", "<", "0"}]}], "}"}]], "Output",
- CellChangeTimes->{{3.672814019495159*^9, 3.672814061384976*^9}, 
-   3.672814236334978*^9}],
+   RowBox[{"x", "<", "0"}]}], "}"}]], "Print",
+ CellChangeTimes->{{3.6728140194890337`*^9, 3.6728140613532343`*^9}, 
+   3.672814236294524*^9, 3.672814568818953*^9, 3.672814671063978*^9}],
 
 Cell[BoxData["\<\"quindi facendo l'intersezione tra questi domini, il dominio \
 \[EGrave]: \"\>"], "Print",
  CellChangeTimes->{{3.6728140194890337`*^9, 3.6728140613532343`*^9}, 
-   3.672814236338211*^9}],
+   3.672814236294524*^9, 3.672814568818953*^9, 3.6728146710649967`*^9}],
 
 Cell[BoxData[
  RowBox[{
   RowBox[{"x", "<", "0"}], "||", 
-  RowBox[{"x", ">", "0"}]}]], "Output",
- CellChangeTimes->{{3.672814019495159*^9, 3.672814061384976*^9}, 
-   3.6728142363400917`*^9}],
-
-Cell[CellGroupData[{
+  RowBox[{"x", ">", "0"}]}]], "Print",
+ CellChangeTimes->{{3.6728140194890337`*^9, 3.6728140613532343`*^9}, 
+   3.672814236294524*^9, 3.672814568818953*^9, 3.672814671065835*^9}],
 
 Cell[BoxData["\<\"La funzione non \[EGrave] pari.\"\>"], "Print",
  CellChangeTimes->{{3.6728140194890337`*^9, 3.6728140613532343`*^9}, 
-   3.672814236341935*^9}],
+   3.672814236294524*^9, 3.672814568818953*^9, 3.672814671066657*^9}],
 
 Cell[BoxData["\<\"La funzione non \[EGrave] dispari.\"\>"], "Print",
  CellChangeTimes->{{3.6728140194890337`*^9, 3.6728140613532343`*^9}, 
-   3.672814236342695*^9}],
+   3.672814236294524*^9, 3.672814568818953*^9, 3.672814671067863*^9}],
 
 Cell[BoxData["\<\"Per scoprire dove interseca l'asse x poniamo il numeratore \
 = 0: \"\>"], "Print",
  CellChangeTimes->{{3.6728140194890337`*^9, 3.6728140613532343`*^9}, 
-   3.672814236343918*^9}],
+   3.672814236294524*^9, 3.672814568818953*^9, 3.672814671069396*^9}],
 
 Cell[BoxData[
  RowBox[{
@@ -547,11 +426,11 @@ Cell[BoxData[
    RowBox[{"2", " ", "x"}], "-", 
    RowBox[{"Log", "[", "35", "]"}]}], "\[Equal]", "0"}]], "Print",
  CellChangeTimes->{{3.6728140194890337`*^9, 3.6728140613532343`*^9}, 
-   3.672814236345215*^9}],
+   3.672814236294524*^9, 3.672814568818953*^9, 3.672814671070962*^9}],
 
 Cell[BoxData["\<\"che risulta: \"\>"], "Print",
  CellChangeTimes->{{3.6728140194890337`*^9, 3.6728140613532343`*^9}, 
-   3.672814236346262*^9}],
+   3.672814236294524*^9, 3.672814568818953*^9, 3.6728146710722923`*^9}],
 
 Cell[BoxData[
  RowBox[{"x", "\[Equal]", 
@@ -563,13 +442,13 @@ Cell[BoxData[
      RowBox[{"Log", "[", "5", "]"}], "-", 
      RowBox[{"Log", "[", "7", "]"}]}], ")"}]}]}]], "Print",
  CellChangeTimes->{{3.6728140194890337`*^9, 3.6728140613532343`*^9}, 
-   3.672814236347501*^9}],
+   3.672814236294524*^9, 3.672814568818953*^9, 3.672814671073344*^9}],
 
 Cell[BoxData["\<\"Per scoprire dove interseca l'asse y, calcoliamo f(x) con \
 x=0 se il dominio lo ammette e otteniamo che interseca l'asse y in\"\>"], \
 "Print",
  CellChangeTimes->{{3.6728140194890337`*^9, 3.6728140613532343`*^9}, 
-   3.6728142363492527`*^9}],
+   3.672814236294524*^9, 3.672814568818953*^9, 3.6728146710745687`*^9}],
 
 Cell[BoxData[
  InterpretationBox[
@@ -580,27 +459,27 @@ Cell[BoxData[
   SequenceForm["y==", 3^Rational[1, 2] - Log[35]],
   Editable->False]], "Print",
  CellChangeTimes->{{3.6728140194890337`*^9, 3.6728140613532343`*^9}, 
-   3.672814236351482*^9}],
+   3.672814236294524*^9, 3.672814568818953*^9, 3.672814671075695*^9}],
 
 Cell[BoxData["\<\"Gli intervalli in cui la derivata seconda \[EGrave] \
 positiva e dunque la funzione \[EGrave] convessa sono:\"\>"], "Print",
  CellChangeTimes->{{3.6728140194890337`*^9, 3.6728140613532343`*^9}, 
-   3.672814236386232*^9}],
+   3.672814236294524*^9, 3.672814568818953*^9, 3.672814671076673*^9}],
 
 Cell[BoxData[
  RowBox[{"x", "<", "0"}]], "Print",
  CellChangeTimes->{{3.6728140194890337`*^9, 3.6728140613532343`*^9}, 
-   3.672814236389676*^9}],
+   3.672814236294524*^9, 3.672814568818953*^9, 3.6728146710775013`*^9}],
 
 Cell[BoxData["\<\"Gli intervalli in cui la derivata seconda \[EGrave] \
 negativa e dunque la funzione \[EGrave] concava sono:\"\>"], "Print",
  CellChangeTimes->{{3.6728140194890337`*^9, 3.6728140613532343`*^9}, 
-   3.672814236392804*^9}],
+   3.672814236294524*^9, 3.672814568818953*^9, 3.672814671078259*^9}],
 
 Cell[BoxData[
  RowBox[{"x", ">", "0"}]], "Print",
  CellChangeTimes->{{3.6728140194890337`*^9, 3.6728140613532343`*^9}, 
-   3.672814236395362*^9}]
+   3.672814236294524*^9, 3.672814568818953*^9, 3.672814671079241*^9}]
 }, Open  ]],
 
 Cell[BoxData[
@@ -734,7 +613,7 @@ M+o377O8bUKVCsP7X8uyOgRC+B/OWKvD
      Scaled[0.05]}},
   Ticks->{Automatic, Automatic}]], "Output",
  CellChangeTimes->{{3.672814019495159*^9, 3.672814061384976*^9}, 
-   3.672814236439084*^9}]
+   3.6728142363206587`*^9, 3.672814568850778*^9, 3.6728146711579113`*^9}]
 }, Open  ]],
 
 Cell[BoxData[""], "Input",
@@ -763,42 +642,42 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 21343, 419, 1595, "Input"],
-Cell[21926, 443, 166, 2, 23, "Print"],
-Cell[22095, 447, 267, 8, 55, "Output"],
-Cell[22365, 457, 160, 2, 23, "Print"],
-Cell[22528, 461, 142, 3, 32, "Output"],
-Cell[22673, 466, 163, 2, 23, "Print"],
-Cell[22839, 470, 147, 3, 32, "Output"],
-Cell[22989, 475, 158, 2, 23, "Print"],
-Cell[23150, 479, 145, 3, 32, "Output"],
-Cell[23298, 484, 165, 2, 23, "Print"],
-Cell[23466, 488, 145, 3, 32, "Output"],
-Cell[23614, 493, 147, 2, 23, "Print"],
-Cell[23764, 497, 165, 4, 32, "Output"],
-Cell[23932, 503, 160, 2, 23, "Print"],
-Cell[24095, 507, 213, 6, 32, "Output"],
-Cell[24311, 515, 203, 3, 23, "Print"],
-Cell[24517, 520, 191, 5, 32, "Output"],
+Cell[580, 22, 16654, 298, 891, "Input"],
+Cell[17237, 322, 210, 2, 23, "Print"],
+Cell[17450, 326, 311, 8, 55, "Output"],
 Cell[CellGroupData[{
-Cell[24733, 529, 161, 2, 23, "Print"],
-Cell[24897, 533, 164, 2, 23, "Print"],
-Cell[25064, 537, 196, 3, 23, "Print"],
-Cell[25263, 542, 254, 7, 27, "Print"],
-Cell[25520, 551, 143, 2, 23, "Print"],
-Cell[25666, 555, 337, 10, 41, "Print"],
-Cell[26006, 567, 260, 4, 23, "Print"],
-Cell[26269, 573, 334, 9, 27, "Print"],
-Cell[26606, 584, 238, 3, 23, "Print"],
-Cell[26847, 589, 145, 3, 23, "Print"],
-Cell[26995, 594, 237, 3, 23, "Print"],
-Cell[27235, 599, 145, 3, 23, "Print"]
+Cell[17786, 338, 204, 2, 23, "Print"],
+Cell[17993, 342, 189, 3, 23, "Print"],
+Cell[18185, 347, 207, 2, 23, "Print"],
+Cell[18395, 351, 192, 3, 23, "Print"],
+Cell[18590, 356, 204, 2, 23, "Print"],
+Cell[18797, 360, 190, 3, 23, "Print"],
+Cell[18990, 365, 209, 2, 23, "Print"],
+Cell[19202, 369, 192, 3, 23, "Print"],
+Cell[19397, 374, 193, 2, 23, "Print"],
+Cell[19593, 378, 212, 4, 23, "Print"],
+Cell[19808, 384, 204, 2, 23, "Print"],
+Cell[20015, 388, 260, 6, 23, "Print"],
+Cell[20278, 396, 249, 3, 23, "Print"],
+Cell[20530, 401, 236, 5, 23, "Print"],
+Cell[20769, 408, 205, 2, 23, "Print"],
+Cell[20977, 412, 208, 2, 23, "Print"],
+Cell[21188, 416, 240, 3, 23, "Print"],
+Cell[21431, 421, 298, 7, 27, "Print"],
+Cell[21732, 430, 189, 2, 23, "Print"],
+Cell[21924, 434, 381, 10, 41, "Print"],
+Cell[22308, 446, 304, 4, 23, "Print"],
+Cell[22615, 452, 378, 9, 27, "Print"],
+Cell[22996, 463, 282, 3, 23, "Print"],
+Cell[23281, 468, 191, 3, 23, "Print"],
+Cell[23475, 473, 281, 3, 23, "Print"],
+Cell[23759, 478, 189, 3, 23, "Print"]
 }, Open  ]],
-Cell[27395, 605, 7251, 131, 238, "Output"]
+Cell[23963, 484, 7299, 131, 238, "Output"]
 }, Open  ]],
-Cell[34661, 739, 92, 1, 32, "Input"],
-Cell[34756, 742, 96, 1, 32, "Input"],
-Cell[34855, 745, 91, 1, 32, "Input"]
+Cell[31277, 618, 92, 1, 32, "Input"],
+Cell[31372, 621, 96, 1, 32, "Input"],
+Cell[31471, 624, 91, 1, 32, "Input"]
 }
 ]
 *)
