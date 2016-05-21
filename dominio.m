@@ -50,6 +50,9 @@ CalcolaContenutiLogaritmoDaControllare::usage =
 CalcolaContenutiDenominatoreDaControllare::usage =
 	"CalcolaContenutiDenominatoreDaControllare[risultatoControlloDenominatore,listaContenutiDenominatoreDaControllare] restituisce una lista con i polinomi contenuti dentro il denominatore."
 
+CalcolaDominio::usage =
+	"CalcolaDominio[risultatoControlloDenominatore,listaContenutiDenominatoreDaControllare] restituisce una lista con i polinomi contenuti dentro il denominatore."
+
 Begin["`Private`"]
 
 VerificaRazionale[x_]:=If[Simplify[x\[Element]Rationals],True,False,Null];
@@ -84,6 +87,43 @@ SetAttributes[CalcolaContenutiDenominatoreDaControllare,HoldFirst];
 CalcolaContenutiDenominatoreDaControllare[risultatoControlloDenominatore_,listaContenutiDenominatoreDaControllare_]:=(
 	risultatoControlloDenominatore=Union[risultatoControlloDenominatore,Reduce[#<0,x]&/@listaContenutiDenominatoreDaControllare];
 	risultatoControlloDenominatore=Union[risultatoControlloDenominatore,Reduce[#>0,x]&/@listaContenutiDenominatoreDaControllare];
+);
+
+CalcolaDominio[f_,x_]:=(
+	fDivisa= DividiFunzioneInListaDiOperandi[f[x]];
+	Print["I contenuti sotto radice pari "];
+	listaContenutiRadiciDaControllare={};
+	CalcolaContenutiRadiciDaControllare[listaContenutiRadiciDaControllare,#]&/@fDivisa;
+	Print[listaContenutiRadiciDaControllare];
+	Print[" devono essere maggiori di zero: "];
+	risultatoControlloRadici={};
+	risultatoControlloRadici=Reduce[#>0,x]&/@listaContenutiRadiciDaControllare;
+	DeleteCases[risultatoControlloRadici,True];
+	Print[risultatoControlloRadici];
+
+	Print["I contenuti sotto logaritmi "];
+	listaContenutiLogaritmoDaControllare ={};
+	CalcolaContenutiLogaritmoDaControllare[listaContenutiLogaritmoDaControllare,#]&/@fDivisa;
+	Print[listaContenutiLogaritmoDaControllare];
+	Print[" devono essere maggiori di zero: "];
+	risultatoControlloLogaritmo={};
+	risultatoControlloLogaritmo=Reduce[#>0,x]&/@listaContenutiLogaritmoDaControllare;
+	DeleteCases[risultatoControlloLogaritmo,True];
+	Print[risultatoControlloLogaritmo];
+
+	listaContenutiDenominatoreDaControllare = {};
+	risultatoControlloDenominatore={};
+	Print["Il denominatore: "];
+	listaContenutiDenominatoreDaControllare = Append[listaContenutiDenominatoreDaControllare,Denominator[f[x]]];
+	Print[listaContenutiDenominatoreDaControllare];
+	Print[" deve essere diverso di zero: "];
+	CalcolaContenutiDenominatoreDaControllare[risultatoControlloDenominatore,listaContenutiDenominatoreDaControllare];
+	DeleteCases[risultatoControlloDenominatore,True];
+	Print[risultatoControlloDenominatore];
+
+	Print["quindi facendo l'intersezione tra questi domini, il dominio \[EGrave]: "];
+	dominio = FunctionDomain[f[x],x];
+	Print[dominio];
 );
 
 End[]
