@@ -25,7 +25,7 @@
 
 (* :Discussion:   *)
 
-BeginPackage["DerivatSeconda`"]
+BeginPackage["DerivataSeconda`"]
 
 StampaConcavoConvessoNoSoluzioni::usage =
 	"StampaConcavoConvessoNoSoluzioni[d2_] permette di stampare correttamente la concavit\[AGrave]
@@ -86,6 +86,8 @@ SegnoDerivataSeconda[f_, x_] := (
   	StringCount[ToString[intervalliConcava], "False"] > 0,
   	StampaConcavoConvesso[intervalliConvessa, intervalliConcava],
 	  StampaIntervalli[intervalliConvessa, intervalliConcava]];*)
+	Print["Il grafico della derivata seconda \[EGrave] il seguente:"];
+	Plot[d2, {x, -5, 5}]
 )
 
 End[]

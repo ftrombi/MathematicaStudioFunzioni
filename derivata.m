@@ -27,6 +27,10 @@
 
 BeginPackage["DerivataPrima`"]
 
+StampaSoluzioni::usage =
+	"StampaSoluzioni[soluzioni] permette di stampare in una fomattazione corretta
+	le soluzioni della derivata prima."
+
 StampaMonotonia::usage =
 	"StampaMonotonia[intervalliPositivi, intervalliNegativi] permette di stampare la monotonia
 	della funzione con una formattazione corretta"
@@ -42,6 +46,11 @@ SegnoDerivataPrima::usage =
 	"SegnoDerivataPrima[f, x] restituisce il segno della derivata prima della funzione f."
 
 Begin["`Private`"]
+
+StampaSoluzioni[soluzioni_] := (
+	Print["Le soluzioni della derivata prima sono:"];
+	Print[Column[soluzioni]];
+)
 
 StampaMonotonia[intervalliPositivi_, intervalliNegativi_] :=
   If[Length[intervalliPositivi] > 0, 
@@ -64,14 +73,16 @@ SegnoDerivataPrima[f_, x_] := (
 	Print[d];
 	num = Numerator[d];
 	soluzioni = Solve[num == 0, x];
-	Print["Le soluzioni della derivata prima sono:"];
-	Print[Column[soluzioni]];
+	If[Length[soluzioni] == 0, Print["Non ci sono soluzioni per la derivata prima."],
+		StampaSoluzioni[soluzioni]];
 	intervalliPositivi = Reduce[d > 0, x];
 	intervalliNegativi = Reduce[d < 0, x];
 	If[StringCount[ToString[intervalliPositivi], "False"] > 0 || 
       StringCount[ToString[intervalliNegativi], "False"] > 0, 
       StampaMonotonia[intervalliPositivi, intervalliNegativi], 
       StampaIntervalli[intervalliPositivi, intervalliNegativi]];
+	Print["Il grafico della derivata prima \[EGrave] il seguente:"];
+	Plot[d, {x, -5, 5}]
 )
 
 End[]
