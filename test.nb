@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     36866,        802]
-NotebookOptionsPosition[     35268,        751]
-NotebookOutlinePosition[     35605,        766]
-CellTagsIndexPosition[     35562,        763]
+NotebookDataLength[     36513,        797]
+NotebookOptionsPosition[     34950,        748]
+NotebookOutlinePosition[     35287,        763]
+CellTagsIndexPosition[     35244,        760]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -41,9 +41,13 @@ Cell[BoxData[{
  RowBox[{"Get", "[", 
   "\"\<Desktop/Progetto Matematica Computazionale/derivata2.m\>\"", 
   "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Get", "[", 
+  "\"\<Desktop/Progetto Matematica Computazionale/grafico.m\>\"", 
+  "]"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
-  "Get", "[", "\"\<Desktop/Progetto Matematica Computazionale/grafico.m\>\"", 
+  "Get", "[", 
+   "\"\<Desktop/Progetto Matematica Computazionale/intersezioneassi.m\>\"", 
    "]"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{"Print", "[", "\"\<La funzione da calcolare \[EGrave]: \>\"", 
   "]"}], "\[IndentingNewLine]", 
@@ -254,46 +258,9 @@ Cell[BoxData[{
   RowBox[{"ControlloPariDispari", "[", 
    RowBox[{"f", ",", "x"}], "]"}], 
   "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
- RowBox[{"Print", "[", 
-  "\"\<Per scoprire dove interseca l'asse x poniamo il numeratore = 0: \>\"", 
-  "]"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"Numerator", "[", 
-   RowBox[{"f", "[", "x", "]"}], "]"}], "\[Equal]", 
-  "0"}], "\[IndentingNewLine]", 
- RowBox[{"Print", "[", "\"\<che risulta: \>\"", 
-  "]"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"risultatoIntersezioneX", "=", 
-   RowBox[{"Reduce", "[", 
-    RowBox[{
-     RowBox[{
-      RowBox[{"f", "[", "x", "]"}], "==", "0"}], ",", "x", ",", "Reals"}], 
-    "]"}]}], ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"If", "[", 
-   RowBox[{
-    RowBox[{"risultatoIntersezioneX", "===", "False"}], ",", 
-    RowBox[{
-    "Print", "[", "\"\<falso, non esistono intersezioni con l'asse x.\>\"", 
-     "]"}], ",", "risultatoIntersezioneX"}], "]"}], "\[IndentingNewLine]", 
-  "\[IndentingNewLine]", 
-  RowBox[{"(*", 
-   RowBox[{
-    RowBox[{
-    "Aggiungere", " ", "if", " ", "che", " ", "controlla", " ", "che", " ", 
-     "il", " ", "dominio", " ", "non", " ", "sia", " ", "x"}], ">", "0"}], 
-   " ", "*)"}]}], "\[IndentingNewLine]", 
- RowBox[{"Print", "[", 
-  "\"\<Per scoprire dove interseca l'asse y, calcoliamo f(x) con x=0 se il \
-dominio lo ammette e otteniamo che interseca l'asse y in\>\"", 
-  "]"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{"y", "==", 
-    RowBox[{"Numerator", "[", 
-     RowBox[{"f", "[", "x", "]"}], "]"}]}], "/.", 
-   RowBox[{"x", "\[Rule]", "0"}]}], 
+  RowBox[{"ControlloIntersezioneAssi", "[", 
+   RowBox[{"f", ",", "x"}], "]"}], 
   "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"SegnoFunzione", "[", 
@@ -471,10 +438,12 @@ dominio lo ammette e otteniamo che interseca l'asse y in\>\"",
    3.672724453754457*^9}, {3.672724575390953*^9, 3.672724576298296*^9}, 
    3.6727247657353573`*^9, {3.6727248709584227`*^9, 3.6727248740209217`*^9}, {
    3.672725847194875*^9, 3.672725953996108*^9}, {3.672813918002809*^9, 
-   3.672813964031584*^9}, {3.672814050474638*^9, 3.67281406052623*^9}}],
+   3.672813964031584*^9}, {3.672814050474638*^9, 3.67281406052623*^9}, {
+   3.672814213534046*^9, 3.672814234101368*^9}}],
 
 Cell[BoxData["\<\"La funzione da calcolare \[EGrave]: \"\>"], "Print",
- CellChangeTimes->{{3.6728140194890337`*^9, 3.6728140613532343`*^9}}],
+ CellChangeTimes->{{3.6728140194890337`*^9, 3.6728140613532343`*^9}, 
+   3.672814236294524*^9}],
 
 Cell[BoxData[
  FractionBox[
@@ -483,87 +452,106 @@ Cell[BoxData[
    RowBox[{"2", " ", "x"}], "-", 
    RowBox[{"Log", "[", "35", "]"}]}], 
   RowBox[{"2", " ", "x"}]]], "Output",
- CellChangeTimes->{{3.672814019495159*^9, 3.672814061384976*^9}}],
+ CellChangeTimes->{{3.672814019495159*^9, 3.672814061384976*^9}, 
+   3.6728142363206587`*^9}],
 
 Cell[BoxData["\<\"I contenuti sotto radice pari \"\>"], "Print",
- CellChangeTimes->{{3.6728140194890337`*^9, 3.672814061391808*^9}}],
+ CellChangeTimes->{{3.6728140194890337`*^9, 3.6728140613532343`*^9}, 
+   3.672814236322569*^9}],
 
 Cell[BoxData[
  RowBox[{"{", "3", "}"}]], "Output",
- CellChangeTimes->{{3.672814019495159*^9, 3.6728140613926287`*^9}}],
+ CellChangeTimes->{{3.672814019495159*^9, 3.672814061384976*^9}, 
+   3.672814236324647*^9}],
 
 Cell[BoxData["\<\" devono essere maggiori di zero: \"\>"], "Print",
- CellChangeTimes->{{3.6728140194890337`*^9, 3.6728140613937397`*^9}}],
+ CellChangeTimes->{{3.6728140194890337`*^9, 3.6728140613532343`*^9}, 
+   3.672814236326556*^9}],
 
 Cell[BoxData[
  RowBox[{"{", "True", "}"}]], "Output",
- CellChangeTimes->{{3.672814019495159*^9, 3.672814061394408*^9}}],
+ CellChangeTimes->{{3.672814019495159*^9, 3.672814061384976*^9}, 
+   3.6728142363273983`*^9}],
 
 Cell[BoxData["\<\"I contenuti sotto logaritmi \"\>"], "Print",
- CellChangeTimes->{{3.6728140194890337`*^9, 3.6728140613954563`*^9}}],
+ CellChangeTimes->{{3.6728140194890337`*^9, 3.6728140613532343`*^9}, 
+   3.672814236328541*^9}],
 
 Cell[BoxData[
  RowBox[{"{", "35", "}"}]], "Output",
- CellChangeTimes->{{3.672814019495159*^9, 3.672814061396371*^9}}],
+ CellChangeTimes->{{3.672814019495159*^9, 3.672814061384976*^9}, 
+   3.6728142363291893`*^9}],
 
 Cell[BoxData["\<\" devono essere maggiori di zero: \"\>"], "Print",
- CellChangeTimes->{{3.6728140194890337`*^9, 3.672814061397511*^9}}],
+ CellChangeTimes->{{3.6728140194890337`*^9, 3.6728140613532343`*^9}, 
+   3.6728142363302526`*^9}],
 
 Cell[BoxData[
  RowBox[{"{", "True", "}"}]], "Output",
- CellChangeTimes->{{3.672814019495159*^9, 3.672814061398294*^9}}],
+ CellChangeTimes->{{3.672814019495159*^9, 3.672814061384976*^9}, 
+   3.672814236330925*^9}],
 
 Cell[BoxData["\<\"Il denominatore: \"\>"], "Print",
- CellChangeTimes->{{3.6728140194890337`*^9, 3.672814061399338*^9}}],
+ CellChangeTimes->{{3.6728140194890337`*^9, 3.6728140613532343`*^9}, 
+   3.672814236332038*^9}],
 
 Cell[BoxData[
  RowBox[{"{", 
   RowBox[{"2", " ", "x"}], "}"}]], "Output",
- CellChangeTimes->{{3.672814019495159*^9, 3.672814061399976*^9}}],
+ CellChangeTimes->{{3.672814019495159*^9, 3.672814061384976*^9}, 
+   3.672814236332736*^9}],
 
 Cell[BoxData["\<\" deve essere diverso di zero: \"\>"], "Print",
- CellChangeTimes->{{3.6728140194890337`*^9, 3.672814061412158*^9}}],
+ CellChangeTimes->{{3.6728140194890337`*^9, 3.6728140613532343`*^9}, 
+   3.672814236334091*^9}],
 
 Cell[BoxData[
  RowBox[{"{", 
   RowBox[{
    RowBox[{"x", ">", "0"}], ",", 
    RowBox[{"x", "<", "0"}]}], "}"}]], "Output",
- CellChangeTimes->{{3.672814019495159*^9, 3.672814061413673*^9}}],
+ CellChangeTimes->{{3.672814019495159*^9, 3.672814061384976*^9}, 
+   3.672814236334978*^9}],
 
 Cell[BoxData["\<\"quindi facendo l'intersezione tra questi domini, il dominio \
 \[EGrave]: \"\>"], "Print",
- CellChangeTimes->{{3.6728140194890337`*^9, 3.6728140614158163`*^9}}],
+ CellChangeTimes->{{3.6728140194890337`*^9, 3.6728140613532343`*^9}, 
+   3.672814236338211*^9}],
 
 Cell[BoxData[
  RowBox[{
   RowBox[{"x", "<", "0"}], "||", 
   RowBox[{"x", ">", "0"}]}]], "Output",
- CellChangeTimes->{{3.672814019495159*^9, 3.672814061416567*^9}}],
+ CellChangeTimes->{{3.672814019495159*^9, 3.672814061384976*^9}, 
+   3.6728142363400917`*^9}],
 
 Cell[CellGroupData[{
 
 Cell[BoxData["\<\"La funzione non \[EGrave] pari.\"\>"], "Print",
- CellChangeTimes->{{3.6728140194890337`*^9, 3.672814061417686*^9}}],
+ CellChangeTimes->{{3.6728140194890337`*^9, 3.6728140613532343`*^9}, 
+   3.672814236341935*^9}],
 
 Cell[BoxData["\<\"La funzione non \[EGrave] dispari.\"\>"], "Print",
- CellChangeTimes->{{3.6728140194890337`*^9, 3.672814061418502*^9}}],
+ CellChangeTimes->{{3.6728140194890337`*^9, 3.6728140613532343`*^9}, 
+   3.672814236342695*^9}],
 
 Cell[BoxData["\<\"Per scoprire dove interseca l'asse x poniamo il numeratore \
 = 0: \"\>"], "Print",
- CellChangeTimes->{{3.6728140194890337`*^9, 3.672814061419771*^9}}]
-}, Open  ]],
+ CellChangeTimes->{{3.6728140194890337`*^9, 3.6728140613532343`*^9}, 
+   3.672814236343918*^9}],
 
 Cell[BoxData[
  RowBox[{
   RowBox[{
    SqrtBox["3"], "-", 
    RowBox[{"2", " ", "x"}], "-", 
-   RowBox[{"Log", "[", "35", "]"}]}], "\[Equal]", "0"}]], "Output",
- CellChangeTimes->{{3.672814019495159*^9, 3.672814061421074*^9}}],
+   RowBox[{"Log", "[", "35", "]"}]}], "\[Equal]", "0"}]], "Print",
+ CellChangeTimes->{{3.6728140194890337`*^9, 3.6728140613532343`*^9}, 
+   3.672814236345215*^9}],
 
 Cell[BoxData["\<\"che risulta: \"\>"], "Print",
- CellChangeTimes->{{3.6728140194890337`*^9, 3.672814061422216*^9}}],
+ CellChangeTimes->{{3.6728140194890337`*^9, 3.6728140613532343`*^9}, 
+   3.672814236346262*^9}],
 
 Cell[BoxData[
  RowBox[{"x", "\[Equal]", 
@@ -573,38 +561,46 @@ Cell[BoxData[
     RowBox[{
      SqrtBox["3"], "-", 
      RowBox[{"Log", "[", "5", "]"}], "-", 
-     RowBox[{"Log", "[", "7", "]"}]}], ")"}]}]}]], "Output",
- CellChangeTimes->{{3.672814019495159*^9, 3.6728140614229603`*^9}}],
+     RowBox[{"Log", "[", "7", "]"}]}], ")"}]}]}]], "Print",
+ CellChangeTimes->{{3.6728140194890337`*^9, 3.6728140613532343`*^9}, 
+   3.672814236347501*^9}],
 
 Cell[BoxData["\<\"Per scoprire dove interseca l'asse y, calcoliamo f(x) con \
 x=0 se il dominio lo ammette e otteniamo che interseca l'asse y in\"\>"], \
 "Print",
- CellChangeTimes->{{3.6728140194890337`*^9, 3.6728140614241467`*^9}}],
+ CellChangeTimes->{{3.6728140194890337`*^9, 3.6728140613532343`*^9}, 
+   3.6728142363492527`*^9}],
 
 Cell[BoxData[
- RowBox[{"y", "\[Equal]", 
-  RowBox[{
-   SqrtBox["3"], "-", 
-   RowBox[{"Log", "[", "35", "]"}]}]}]], "Output",
- CellChangeTimes->{{3.672814019495159*^9, 3.672814061425097*^9}}],
-
-Cell[CellGroupData[{
+ InterpretationBox[
+  RowBox[{"\<\"y==\"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    SqrtBox["3"], "-", 
+    RowBox[{"Log", "[", "35", "]"}]}]}],
+  SequenceForm["y==", 3^Rational[1, 2] - Log[35]],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.6728140194890337`*^9, 3.6728140613532343`*^9}, 
+   3.672814236351482*^9}],
 
 Cell[BoxData["\<\"Gli intervalli in cui la derivata seconda \[EGrave] \
 positiva e dunque la funzione \[EGrave] convessa sono:\"\>"], "Print",
- CellChangeTimes->{{3.6728140194890337`*^9, 3.6728140614817533`*^9}}],
+ CellChangeTimes->{{3.6728140194890337`*^9, 3.6728140613532343`*^9}, 
+   3.672814236386232*^9}],
 
 Cell[BoxData[
  RowBox[{"x", "<", "0"}]], "Print",
- CellChangeTimes->{{3.6728140194890337`*^9, 3.672814061484034*^9}}],
+ CellChangeTimes->{{3.6728140194890337`*^9, 3.6728140613532343`*^9}, 
+   3.672814236389676*^9}],
 
 Cell[BoxData["\<\"Gli intervalli in cui la derivata seconda \[EGrave] \
 negativa e dunque la funzione \[EGrave] concava sono:\"\>"], "Print",
- CellChangeTimes->{{3.6728140194890337`*^9, 3.6728140614862137`*^9}}],
+ CellChangeTimes->{{3.6728140194890337`*^9, 3.6728140613532343`*^9}, 
+   3.672814236392804*^9}],
 
 Cell[BoxData[
  RowBox[{"x", ">", "0"}]], "Print",
- CellChangeTimes->{{3.6728140194890337`*^9, 3.672814061488675*^9}}]
+ CellChangeTimes->{{3.6728140194890337`*^9, 3.6728140613532343`*^9}, 
+   3.672814236395362*^9}]
 }, Open  ]],
 
 Cell[BoxData[
@@ -737,7 +733,8 @@ M+o377O8bUKVCsP7X8uyOgRC+B/OWKvD
      Scaled[0.05], 
      Scaled[0.05]}},
   Ticks->{Automatic, Automatic}]], "Output",
- CellChangeTimes->{{3.672814019495159*^9, 3.672814061567964*^9}}]
+ CellChangeTimes->{{3.672814019495159*^9, 3.672814061384976*^9}, 
+   3.672814236439084*^9}]
 }, Open  ]],
 
 Cell[BoxData[""], "Input",
@@ -766,44 +763,42 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 22532, 451, 1815, "Input"],
-Cell[23115, 475, 140, 1, 23, "Print"],
-Cell[23258, 478, 239, 7, 55, "Output"],
-Cell[23500, 487, 132, 1, 23, "Print"],
-Cell[23635, 490, 118, 2, 32, "Output"],
-Cell[23756, 494, 137, 1, 23, "Print"],
-Cell[23896, 497, 119, 2, 32, "Output"],
-Cell[24018, 501, 132, 1, 23, "Print"],
-Cell[24153, 504, 117, 2, 32, "Output"],
-Cell[24273, 508, 135, 1, 23, "Print"],
-Cell[24411, 511, 119, 2, 32, "Output"],
-Cell[24533, 515, 119, 1, 23, "Print"],
-Cell[24655, 518, 139, 3, 32, "Output"],
-Cell[24797, 523, 132, 1, 23, "Print"],
-Cell[24932, 526, 187, 5, 32, "Output"],
-Cell[25122, 533, 177, 2, 23, "Print"],
-Cell[25302, 537, 163, 4, 32, "Output"],
+Cell[580, 22, 21343, 419, 1595, "Input"],
+Cell[21926, 443, 166, 2, 23, "Print"],
+Cell[22095, 447, 267, 8, 55, "Output"],
+Cell[22365, 457, 160, 2, 23, "Print"],
+Cell[22528, 461, 142, 3, 32, "Output"],
+Cell[22673, 466, 163, 2, 23, "Print"],
+Cell[22839, 470, 147, 3, 32, "Output"],
+Cell[22989, 475, 158, 2, 23, "Print"],
+Cell[23150, 479, 145, 3, 32, "Output"],
+Cell[23298, 484, 165, 2, 23, "Print"],
+Cell[23466, 488, 145, 3, 32, "Output"],
+Cell[23614, 493, 147, 2, 23, "Print"],
+Cell[23764, 497, 165, 4, 32, "Output"],
+Cell[23932, 503, 160, 2, 23, "Print"],
+Cell[24095, 507, 213, 6, 32, "Output"],
+Cell[24311, 515, 203, 3, 23, "Print"],
+Cell[24517, 520, 191, 5, 32, "Output"],
 Cell[CellGroupData[{
-Cell[25490, 545, 133, 1, 23, "Print"],
-Cell[25626, 548, 136, 1, 23, "Print"],
-Cell[25765, 551, 168, 2, 23, "Print"]
+Cell[24733, 529, 161, 2, 23, "Print"],
+Cell[24897, 533, 164, 2, 23, "Print"],
+Cell[25064, 537, 196, 3, 23, "Print"],
+Cell[25263, 542, 254, 7, 27, "Print"],
+Cell[25520, 551, 143, 2, 23, "Print"],
+Cell[25666, 555, 337, 10, 41, "Print"],
+Cell[26006, 567, 260, 4, 23, "Print"],
+Cell[26269, 573, 334, 9, 27, "Print"],
+Cell[26606, 584, 238, 3, 23, "Print"],
+Cell[26847, 589, 145, 3, 23, "Print"],
+Cell[26995, 594, 237, 3, 23, "Print"],
+Cell[27235, 599, 145, 3, 23, "Print"]
 }, Open  ]],
-Cell[25948, 556, 225, 6, 36, "Output"],
-Cell[26176, 564, 115, 1, 23, "Print"],
-Cell[26294, 567, 310, 9, 49, "Output"],
-Cell[26607, 578, 232, 3, 23, "Print"],
-Cell[26842, 583, 191, 5, 36, "Output"],
-Cell[CellGroupData[{
-Cell[27058, 592, 212, 2, 23, "Print"],
-Cell[27273, 596, 117, 2, 23, "Print"],
-Cell[27393, 600, 211, 2, 23, "Print"],
-Cell[27607, 604, 117, 2, 23, "Print"]
+Cell[27395, 605, 7251, 131, 238, "Output"]
 }, Open  ]],
-Cell[27739, 609, 7225, 130, 238, "Output"]
-}, Open  ]],
-Cell[34979, 742, 92, 1, 32, "Input"],
-Cell[35074, 745, 96, 1, 32, "Input"],
-Cell[35173, 748, 91, 1, 32, "Input"]
+Cell[34661, 739, 92, 1, 32, "Input"],
+Cell[34756, 742, 96, 1, 32, "Input"],
+Cell[34855, 745, 91, 1, 32, "Input"]
 }
 ]
 *)
