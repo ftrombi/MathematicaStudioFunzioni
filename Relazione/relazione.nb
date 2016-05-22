@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       145,          7]
-NotebookDataLength[     19801,        481]
-NotebookOptionsPosition[     17833,        409]
-NotebookOutlinePosition[     18288,        427]
-CellTagsIndexPosition[     18245,        424]
+NotebookDataLength[     19963,        483]
+NotebookOptionsPosition[     17983,        411]
+NotebookOutlinePosition[     18438,        429]
+CellTagsIndexPosition[     18395,        426]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -43,22 +43,24 @@ Cell[CellGroupData[{
 Cell["Introduzione", "Chapter",
  CellChangeTimes->{{3.671943100793674*^9, 3.671943103023505*^9}}],
 
-Cell["\<\
-Il seguente notebook \[EGrave] stato creato con l\[CloseCurlyQuote]intento di \
-fornire un supporto concreto all\[CloseCurlyQuote]insegnamento dell\
+Cell[TextData[{
+ "Il seguente notebook \[EGrave] stato creato con l\[CloseCurlyQuote]intento \
+di fornire un supporto concreto all\[CloseCurlyQuote]insegnamento dell\
 \[CloseCurlyQuote]analisi matematica, in particolare per quanto riguarda lo \
-studio di funzioni, per docenti delle Scuole Secondarie Superiori.
-
-Tale strumento fornir\[AGrave] dunque aiuti visuali, che mostrino agli \
+studio di funzioni, per docenti delle Scuole Secondarie Superiori.\n\nTale \
+strumento, basato sul software ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ ", fornir\[AGrave] dunque aiuti testuali e grafici, che mostrino agli \
 studenti sia le motivazioni che determinano ogni passaggio dello studio di \
-funzione, sia i risultati che tali passaggi comportano.
-Questo strumento non vuole dunque porsi come una semplice \
-\[OpenCurlyDoubleQuote]calcolatrice\[CloseCurlyDoubleQuote], ma come \
-complemento alle lezioni ed alle esercitazioni in classe.\
-\>", "Text",
+funzione, sia i risultati che tali passaggi comportano.\nQuesto strumento non \
+vuole dunque porsi come una semplice \[OpenCurlyDoubleQuote]calcolatrice\
+\[CloseCurlyDoubleQuote], ma come complemento alle lezioni ed alle \
+esercitazioni in classe."
+}], "Text",
  CellChangeTimes->{{3.671943163507862*^9, 3.671943178904311*^9}, {
   3.6719434572830477`*^9, 3.671943484163527*^9}, {3.6729126956559477`*^9, 
-  3.672912696413501*^9}}],
+  3.672912696413501*^9}, {3.672914350778358*^9, 3.6729143704920387`*^9}}],
 
 Cell[CellGroupData[{
 
@@ -408,7 +410,7 @@ Cell["Conclusioni", "Chapter",
 }, Open  ]]
 },
 WindowSize->{1461, 800},
-WindowMargins->{{192, Automatic}, {82, Automatic}},
+WindowMargins->{{182, Automatic}, {43, Automatic}},
 PrivateNotebookOptions->{"VersionedStylesheet"->{"Default.nb"[8.] -> False}},
 ShowSelection->True,
 Magnification->1.5,
@@ -431,57 +433,57 @@ Cell[567, 22, 257, 8, 219, "Title"],
 Cell[827, 32, 187, 6, 121, "Subtitle"],
 Cell[CellGroupData[{
 Cell[1039, 42, 97, 1, 101, "Chapter"],
-Cell[1139, 45, 881, 15, 244, "Text"],
+Cell[1139, 45, 1031, 17, 244, "Text"],
 Cell[CellGroupData[{
-Cell[2045, 64, 101, 1, 96, "Subchapter"],
-Cell[2149, 67, 167, 3, 49, "Text"]
+Cell[2195, 66, 101, 1, 96, "Subchapter"],
+Cell[2299, 69, 167, 3, 49, "Text"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2365, 76, 102, 1, 101, "Chapter"],
+Cell[2515, 78, 102, 1, 101, "Chapter"],
 Cell[CellGroupData[{
-Cell[2492, 81, 203, 3, 96, "Subchapter"],
-Cell[2698, 86, 1107, 21, 309, "Text"]
+Cell[2642, 83, 203, 3, 96, "Subchapter"],
+Cell[2848, 88, 1107, 21, 309, "Text"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3842, 112, 134, 1, 96, "Subchapter"],
-Cell[3979, 115, 1087, 22, 374, "Text"]
+Cell[3992, 114, 134, 1, 96, "Subchapter"],
+Cell[4129, 117, 1087, 22, 374, "Text"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[5103, 142, 115, 1, 96, "Subchapter"],
-Cell[5221, 145, 349, 7, 82, "Text"],
+Cell[5253, 144, 115, 1, 144, "Subchapter"],
+Cell[5371, 147, 349, 7, 123, "Text"],
 Cell[CellGroupData[{
-Cell[5595, 156, 136, 1, 68, "Subsection"],
-Cell[5734, 159, 555, 10, 114, "Text"]
+Cell[5745, 158, 136, 1, 102, "Subsection"],
+Cell[5884, 161, 555, 10, 171, "Text"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[6326, 174, 138, 1, 68, "Subsection"],
-Cell[6467, 177, 481, 10, 147, "Text"],
-Cell[6951, 189, 350, 6, 82, "Text"]
+Cell[6476, 176, 138, 1, 102, "Subsection"],
+Cell[6617, 179, 481, 10, 220, "Text"],
+Cell[7101, 191, 350, 6, 123, "Text"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[7350, 201, 104, 1, 96, "Subchapter"],
-Cell[7457, 204, 1254, 23, 374, "Text"]
+Cell[7500, 203, 104, 1, 144, "Subchapter"],
+Cell[7607, 206, 1254, 23, 561, "Text"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[8748, 232, 119, 1, 96, "Subchapter"],
-Cell[8870, 235, 1606, 28, 472, "Text"]
+Cell[8898, 234, 119, 1, 144, "Subchapter"],
+Cell[9020, 237, 1606, 28, 708, "Text"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[10513, 268, 131, 1, 96, "Subchapter"],
-Cell[10647, 271, 2048, 36, 504, "Text"]
+Cell[10663, 270, 131, 1, 144, "Subchapter"],
+Cell[10797, 273, 2048, 36, 756, "Text"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[12732, 312, 142, 1, 96, "Subchapter"],
-Cell[12877, 315, 2987, 50, 797, "Text"]
+Cell[12882, 314, 142, 1, 144, "Subchapter"],
+Cell[13027, 317, 2987, 50, 1195, "Text"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[15901, 370, 112, 1, 96, "Subchapter"],
-Cell[16016, 373, 1678, 28, 472, "Text"]
+Cell[16051, 372, 112, 1, 144, "Subchapter"],
+Cell[16166, 375, 1678, 28, 708, "Text"]
 }, Open  ]]
 }, Open  ]],
-Cell[17721, 405, 96, 1, 101, "Chapter"]
+Cell[17871, 407, 96, 1, 151, "Chapter"]
 }, Open  ]]
 }
 ]
