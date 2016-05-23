@@ -36,7 +36,7 @@ CalcolaEstremiSuperiori::usage =
 	"CalcolaEstremiSuperiori[estremiSuperiori,dominio] calcola gli estremi superiori del dominio."
 
 CalcolaLimiti::usage =
-	"CalcolaLimiti[f,x] calcola il dominio."
+	"CalcolaLimiti[f,x] calcola i limiti e gli asintoti."
 
 Begin["`Private`"]
 
