@@ -1,0 +1,492 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     19963,        483]
+NotebookOptionsPosition[     17983,        411]
+NotebookOutlinePosition[     18438,        429]
+CellTagsIndexPosition[     18395,        426]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["\<\
+Studio di funzioni:
+supporto all\[CloseCurlyQuote]insegnamento\
+\>", "Title",
+ CellChangeTimes->{
+  3.670734289014593*^9, {3.671943038915279*^9, 3.671943080194821*^9}},
+ TextAlignment->Center,
+ TextJustification->1,
+ FontFamily->"Times New Roman"],
+
+Cell["\<\
+Sebastian Davrieux
+Francesco Trombi\
+\>", "Subtitle",
+ CellChangeTimes->{{3.671943050334639*^9, 3.6719430678840647`*^9}},
+ TextAlignment->Center,
+ FontFamily->"Times New Roman"],
+
+Cell[CellGroupData[{
+
+Cell["Introduzione", "Chapter",
+ CellChangeTimes->{{3.671943100793674*^9, 3.671943103023505*^9}}],
+
+Cell[TextData[{
+ "Il seguente notebook \[EGrave] stato creato con l\[CloseCurlyQuote]intento \
+di fornire un supporto concreto all\[CloseCurlyQuote]insegnamento dell\
+\[CloseCurlyQuote]analisi matematica, in particolare per quanto riguarda lo \
+studio di funzioni, per docenti delle Scuole Secondarie Superiori.\n\nTale \
+strumento, basato sul software ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ ", fornir\[AGrave] dunque aiuti testuali e grafici, che mostrino agli \
+studenti sia le motivazioni che determinano ogni passaggio dello studio di \
+funzione, sia i risultati che tali passaggi comportano.\nQuesto strumento non \
+vuole dunque porsi come una semplice \[OpenCurlyDoubleQuote]calcolatrice\
+\[CloseCurlyDoubleQuote], ma come complemento alle lezioni ed alle \
+esercitazioni in classe."
+}], "Text",
+ CellChangeTimes->{{3.671943163507862*^9, 3.671943178904311*^9}, {
+  3.6719434572830477`*^9, 3.671943484163527*^9}, {3.6729126956559477`*^9, 
+  3.672912696413501*^9}, {3.672914350778358*^9, 3.6729143704920387`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Funzionamento", "Subchapter",
+ CellChangeTimes->{{3.671943498940406*^9, 3.671943503477313*^9}}],
+
+Cell["\<\
+Innanzitutto \[EGrave] opportuno indicare il funzionamento di tale strumento.\
+\>", "Text",
+ CellChangeTimes->{{3.671943528365959*^9, 3.671943539429825*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Studio di funzione", "Chapter",
+ CellChangeTimes->{{3.672637401652878*^9, 3.67263740905088*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Studio del dominio", "Subchapter",
+ CellChangeTimes->{{3.67263743744361*^9, 3.672637439503529*^9}, {
+  3.672637484064172*^9, 3.672637490312668*^9}, {3.672637988877265*^9, 
+  3.672637991858048*^9}}],
+
+Cell["\<\
+Il dominio \[EGrave] l\[CloseCurlyQuote]insieme di definizione di una \
+funzione. In altre parole, definisce un sottoinsieme dello spazio in cui ha \
+senso valutare la funzione. Nel suo calcolo \[EGrave] necessario tenere a \
+mente che:
+- se ci sono denominatori vanno posti diversi da zero;
+- se ci sono logaritmi, i loro argomenti vanno posti strettamente maggiori di \
+zero;
+- se ci sono radici ad indice pari, i radicandi vanno posti maggiori o uguali \
+a zero.
+
+Una volta determinate tutte le condizioni, si mettono a sistema, poich\
+\[EAcute] devono valere tutte contemporaneamente.
+
+Ricorda: il dominio deve essere scritto nella forma di unione di intervalli.\
+\>", "Text",
+ CellChangeTimes->{{3.672637958451289*^9, 3.6726380065781183`*^9}, {
+  3.67263814881288*^9, 3.6726382014043827`*^9}, {3.672638433776575*^9, 
+  3.67263852750206*^9}, {3.672810644626398*^9, 3.672810678273912*^9}, {
+  3.6728107386880302`*^9, 3.6728107482800207`*^9}, {3.6728107946989594`*^9, 
+  3.672810798269409*^9}, {3.6728109420232897`*^9, 3.672810992792179*^9}, {
+  3.6728280260622597`*^9, 3.6728280293317137`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Studio di parit\[AGrave] e disparit\[AGrave]", "Subchapter",
+ CellChangeTimes->{{3.6726375029923477`*^9, 3.672637524000052*^9}}],
+
+Cell["\<\
+Studiare la parit\[AGrave] o la disparit\[AGrave] di una funzione pu\[OGrave] \
+rivelarsi estremamente utile, soprattutto in vista del disegno del grafico.
+Se una funzione \[EGrave] pari, allora \[EGrave] simmetrica rispetto all\
+\[CloseCurlyQuote]asse delle y.
+Se una funzione \[EGrave] dispari, allora \[EGrave] simmetrica rispetto all\
+\[CloseCurlyQuote]origine degli assi (0, 0).
+In una di queste due eventualit\[AGrave] il lavoro di disegno del grafico \
+verrebbe dimezzato.
+
+Una funzione f \[EGrave] pari se:
+\t\tf ( - x ) = f ( x );
+una funzione f \[EGrave] dispari se:
+\t\tf ( - x ) = - f ( x ).
+\t\t
+Ricorda: una funzione pu\[OGrave] dunque essere pari o dispari o nessuna \
+delle due.\
+\>", "Text",
+ CellChangeTimes->{{3.6728056670328493`*^9, 3.67280568495711*^9}, {
+  3.6728057333580427`*^9, 3.672805795739016*^9}, {3.6728059194155903`*^9, 
+  3.6728059200171957`*^9}, {3.672806035158115*^9, 3.6728060354618597`*^9}, {
+  3.6728061043278112`*^9, 3.6728061771726303`*^9}, {3.672806266982048*^9, 
+  3.672806463004055*^9}, {3.672828353441435*^9, 3.6728283568183107`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Intersezione con gli assi", "Subchapter",
+ CellChangeTimes->{{3.6726376360566998`*^9, 3.672637639933694*^9}}],
+
+Cell["\<\
+Un punto di riferimento utile al disegno finale del grafico pu\[OGrave] \
+essere ricavato individuando i punti in cui la funzione interseca gli assi x \
+e y.\
+\>", "Text",
+ CellChangeTimes->{{3.672808282806633*^9, 3.6728083037242517`*^9}, {
+  3.672808338339426*^9, 3.672808384228117*^9}, {3.672828366483149*^9, 
+  3.6728284389485197`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Intersezione con l\[CloseCurlyQuote]asse delle x", "Subsection",
+ CellChangeTimes->{{3.672808411911627*^9, 3.672808424945055*^9}}],
+
+Cell["\<\
+Per verificare le intersezioni tra la funzione e l\[CloseCurlyQuote]asse \
+delle ascisse \[EGrave] innanzitutto necessario ricordare che l\
+\[CloseCurlyQuote]equazione che individua tale asse \[EGrave] y = 0. Essendo \
+che y = f ( x ), per ricavare i possibili valori di intersezione sar\[AGrave] \
+necessario risolvere l\[CloseCurlyQuote]equazione:
+\t\tf ( x ) = 0.\
+\>", "Text",
+ CellChangeTimes->{{3.67280914881135*^9, 3.672809219766168*^9}, {
+  3.672828525197983*^9, 3.672828619540213*^9}, {3.672828679607896*^9, 
+  3.6728286807357597`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Intersezione con l\[CloseCurlyQuote]asse delle y", "Subsection",
+ CellChangeTimes->{{3.6728092717405043`*^9, 3.672809281692663*^9}}],
+
+Cell["\<\
+Per verificare la presenza di un\[CloseCurlyQuote]intersezione tra la \
+funzione e l\[CloseCurlyQuote]asse delle ordinate \[EGrave] necessario \
+ricordare che l\[CloseCurlyQuote]equazione che individua tale asse \[EGrave] \
+x = 0. Ponendo dunque x = 0, si calcola f ( 0 ); poi si risolve l\
+\[CloseCurlyQuote]equazione:
+\t\t y = f ( 0 ).
+\
+\>", "Text",
+ CellChangeTimes->{{3.6728092907955008`*^9, 3.672809360156075*^9}, {
+  3.672828627156555*^9, 3.6728287651314983`*^9}}],
+
+Cell["\<\
+Ricorda: ci possono essere una, pi\[UGrave] o nessuna intersezione con l\
+\[CloseCurlyQuote]asse delle ascisse, mentre ci possono essere o una o \
+nessuna intersezione con l\[CloseCurlyQuote]asse delle ordinate.\
+\>", "Text",
+ CellChangeTimes->{{3.672809409900648*^9, 3.672809414135456*^9}, {
+  3.672809592234559*^9, 3.672809641568659*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Studio del segno", "Subchapter",
+ CellChangeTimes->{{3.672637654863017*^9, 3.672637660020514*^9}}],
+
+Cell["\<\
+Studiare il segno della funzione \[EGrave] utile nel disegno del grafico di \
+una funzione, poich\[EAcute] permette di individuare gli intervalli del \
+dominio in cui la funzione \[EGrave] positiva o negativa, dunque dove il \
+grafico si trova al di sopra dell\[CloseCurlyQuote]asse delle ascisse e dove \
+al di sotto.
+Nelle intersezioni con l\[CloseCurlyQuote]asse delle x la funzione cambia \
+ovviamente di segno.
+
+Per conoscere il segno di una funzione f, basta risolvere la disequazione:
+\t\tf ( x ) > 0.
+In questo modo tutti gli intervalli del dominio restituiti da questa \
+disequazione sono quelli in cui la funzione \[EGrave] positiva (il cui \
+grafico \[EGrave] dunque al di sopra dell\[CloseCurlyQuote]asse con le \
+ascisse); i restanti intervalli del dominio rappresentano invece dove la \
+funzione \[EGrave] negativa (il cui grafico \[EGrave] dunque al di sotto dell\
+\[CloseCurlyQuote]asse delle ascisse).
+
+Ricorda: le soluzioni da prendere in considerazione devono rientrare nel \
+dominio della funzione.\
+\>", "Text",
+ CellChangeTimes->{{3.672807339981*^9, 3.6728074083524323`*^9}, {
+  3.672807490171875*^9, 3.67280756718079*^9}, {3.672807842370282*^9, 
+  3.6728078687185297`*^9}, {3.6728287970776367`*^9, 3.672828975614946*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Limiti agli estremi del dominio", "Subchapter",
+ CellChangeTimes->{{3.672637671621614*^9, 3.672637676938795*^9}}],
+
+Cell["\<\
+Gli estremi del dominio sono tutti quei punti che delimitano un intervallo \
+appartenente al dominio: in altre parole sono i \
+\[OpenCurlyDoubleQuote]confini\[CloseCurlyDoubleQuote] del dominio della \
+funzione.
+
+I punti pi\[UGrave] interessanti da questo punto di vista sono quelli per cui \
+la funzione non \[EGrave] definita: il comportamento della stessa andr\
+\[AGrave] dunque studiato in un intorno di questi punti.
+Un intorno \[EGrave] un insieme di punti vicini ad un punto (in questo caso \
+un punto dove la funzione non \[EGrave] definita), leggermente distanti da \
+esso. Esistono intorni sinistri, intorni destri oppure intorni completi.
+
+Si prenda per esempio il punto x1: un intorno sinistro del punto x1 \
+\[EGrave], in pratica, un punto con ascissa x1 - \[CurlyEpsilon], dunque un \
+punto spostato a sinistra rispetto ad x1, dove \[CurlyEpsilon] \[EGrave] una \
+quantit\[AGrave] molto piccola; un intorno destro \[EGrave] definito dalla \
+coordinata x1 + \[CurlyEpsilon], dunque leggermente spostato a destra (nel \
+grafico) rispetto ad x1.
+
+Se lo studio dei limiti agli estremi del dominio individua dei limiti \
+tendenti ad infinito, \[EGrave] possibile cercare la presenza o l\
+\[CloseCurlyQuote]assenza di asintoti verticali, orizzontali o obliqui.\
+\>", "Text",
+ CellChangeTimes->{{3.6728116450829477`*^9, 3.672811714962936*^9}, {
+  3.672812699318075*^9, 3.672812750237294*^9}, {3.672812866569613*^9, 
+  3.672812867607861*^9}, {3.672829021007909*^9, 3.672829031592407*^9}, {
+  3.6728290718582478`*^9, 3.6728292813873997`*^9}, {3.672829322241681*^9, 
+  3.672829536070498*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Derivata prima, massimi e minimi, monotonia", "Subchapter",
+ CellChangeTimes->{{3.672637687675252*^9, 3.672637698719269*^9}}],
+
+Cell["\<\
+Lo studio della derivata prima di una funzione permette di:
+- comprendere in quali intervalli la funzione cresce (monotona crescente) ed \
+in quali intervalli decresce (monotona decrescente);
+- individuare i punti di massimo e di minimo, locali ed assoluti, della \
+funzione, cio\[EGrave] i punti in cui la funzione primitiva cambia la \
+monotonia.
+
+Il primo passaggio consiste nel calcolo della funzione f\[CloseCurlyQuote] ( \
+x ), cio\[EGrave] la deriva prima della funzione f; successivamente \[EGrave] \
+necessario individuarne il dominio.
+
+Il passo successivo consiste nello studio del segno, esattamente come visto \
+in precedenza: applicato per\[OGrave] alla derivata prima. \[CapitalEGrave] \
+dunque necessario risolvere la disequazione:
+\tf\[CloseCurlyQuote] ( x ) >= 0.
+
+Gli intervalli in cui la derivata prima \[EGrave] positiva (cio\[EGrave] con \
+il grafico al di sopra dell\[CloseCurlyQuote]asse della ascisse) indicano che \
+la funzione primitiva cresce in corrispondenza di essi; gli intervalli in cui \
+la derivata \[EGrave] negativa (cio\[EGrave] con il grafico al di sotto dell\
+\[CloseCurlyQuote]asse delle ascisse) indicano che la funzione primitiva \
+decresce in corrispondenza di essi. 
+I punti in cui la derivata prima si annulla saranno i candidati massimi o \
+minimi della funzione f (detti anche punti estremanti della funzione).
+Poniamo per esempio che x1 sia uno di questi punti. x1 \[EGrave]:
+- punto di massimo, se la derivata \[EGrave] positiva prima di x1 e negativa \
+poi;
+- punto di minimo, se la derivata \[EGrave] negativa prima di x1 e positiva \
+poi.\
+\>", "Text",
+ CellChangeTimes->{{3.672813254624899*^9, 3.6728132614052773`*^9}, {
+   3.67282955924827*^9, 3.672829931320135*^9}, {3.672829995067232*^9, 
+   3.672830056877816*^9}, {3.6728301254718533`*^9, 3.672830187075556*^9}, {
+   3.672830242406678*^9, 3.672830318040977*^9}, {3.672830624640052*^9, 
+   3.672830626151466*^9}, 3.6728307169568853`*^9, {3.672831114918537*^9, 
+   3.672831116229248*^9}, {3.67283144647613*^9, 3.672831448236183*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Derivata seconda, convessit\[AGrave] e punti di flesso", "Subchapter",
+ CellChangeTimes->{{3.672637723989729*^9, 3.672637737145874*^9}}],
+
+Cell["\<\
+Lo studio della derivata seconda di una funzione permette di:
+- comprendere in quali intervalli la funzione \[EGrave] convessa ed in quali \
+\[EGrave] concava;
+- individuare i punti di flesso, cio\[EGrave] i punti in cui la funzione \
+primitiva cambia la concavit\[AGrave]. 
+
+Il primo passaggio consiste nel calcolo della funzione f\[CloseCurlyQuote]\
+\[CloseCurlyQuote] ( x ), cio\[EGrave] la derivata seconda della funzione f \
+(equivalente alla derivata prima della derivata prima di f); successivamente \
+\[EGrave] necessario individuarne il dominio, considerando che alla fine \
+quello che ci interesser\[AGrave] sar\[AGrave] l\[CloseCurlyQuote]unione dei \
+domini della funzione primitiva, della derivata prima e della derivata seconda:
+\tDom(f)\:2229Dom(f\[CloseCurlyQuote])\:2229Dom(f\[CloseCurlyQuote]\
+\[CloseCurlyQuote]).
+
+Il passo successivo consiste nello studio del segno, esattamente come visto \
+in precedenza: applicato per\[OGrave] alla derivata seconda. \[CapitalEGrave] \
+dunque necessario risolvere la disequazione:
+\t\tf\[CloseCurlyQuote]\[CloseCurlyQuote] ( x ) >= 0.
+\t\t
+Gli intervalli in cui la derivata seconda \[EGrave] positiva (cio\[EGrave] \
+con il grafico al di sopra dell\[CloseCurlyQuote]asse delle ascisse) indicano \
+che la funzione primitiva \[EGrave] convessa in corrispondenza di essi; gli \
+intervalli in cui la derivata seconda \[EGrave] negativa (cio\[EGrave] con il \
+grafico al di sotto dell\[CloseCurlyQuote]asse delle ascisse) indicano che la \
+funzione primitiva \[EGrave] concava in corrispondenza di essi.
+I punti in cui la derivata si annulla saranno i candidati punti di flesso \
+della funzione f.
+Poniamo per esempio che x1 sia uno di questi punti. x1 \[EGrave] punto di \
+flesso se:
+- la derivata seconda \[EGrave] positiva prima di x1 e negativa poi (dunque \
+la funzione primitiva \[EGrave] convessa e poi concava);
+- la derivata seconda \[EGrave] negativa prima di x1 e positiva poi (dunque \
+la funzione primitiva \[EGrave] concava e poi convessa).
+
+Ricorda: tutti i punti x che risolvono l\[CloseCurlyQuote]equazione f\
+\[CloseCurlyQuote]\[CloseCurlyQuote](x)=0 ma che non stanno nell\
+\[CloseCurlyQuote]intersezione dei tre domini (Dom(f)\:2229Dom(f\
+\[CloseCurlyQuote])\:2229Dom(f\[CloseCurlyQuote]\[CloseCurlyQuote])) non sono \
+punti di flesso: \[EGrave] fondamentale capire che, anche se in certi punti \
+si ha una variazione di convessit\[AGrave], ma in tali punti la funzione \
+y=f(x) non \[EGrave] definita, essi non sono punti di flesso.\
+\>", "Text",
+ CellChangeTimes->{{3.672813628099827*^9, 3.6728136332267733`*^9}, {
+  3.672830337267002*^9, 3.672830343347188*^9}, {3.672830381405477*^9, 
+  3.672830387141836*^9}, {3.672830507804288*^9, 3.67283061756774*^9}, {
+  3.672830873435863*^9, 3.6728310540983677`*^9}, {3.6728310910299807`*^9, 
+  3.672831120749898*^9}, {3.672831324951342*^9, 3.672831463493409*^9}, {
+  3.6728315826532497`*^9, 3.672831596811907*^9}, {3.672831630125875*^9, 
+  3.672831881319182*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Grafico della funzione", "Subchapter",
+ CellChangeTimes->{{3.6726377707650414`*^9, 3.672637775702868*^9}}],
+
+Cell["\<\
+Per disegnare correttamente il grafico della funzione in esame, \[EGrave] \
+necessario riprendere tutte le informazioni ricavate nei vari passaggi \
+precedenti a questo. Un buon modo per disegnarlo \[EGrave] procedere nel \
+seguente modo:
+1) disegnare gli assi cartesiani e le intersezioni che la funzione ha con essi;
+2) prendendo gli intervalli risultati dal calcolo del segno della funzione, \
+cancellare la zona di piano sotto l\[CloseCurlyQuote]asse x in corrispondenza \
+degli intervalli in cui la funzione \[EGrave] positiva; cancellare poi la \
+zona di piano sopra l\[CloseCurlyQuote]asse x in corrispondenza degli \
+intervalli in cui la funzione \[EGrave] negativa;
+3) tracciare gli eventuali asintoti (orizzontali, verticali ed obliqui), e \
+disegnare una bozza del comportamento della funzione in loro prossimit\
+\[AGrave];
+4) segnare i punti di massimo e minimo individuati durante la fase di studio \
+della derivata prima;
+5) segnare i punti di flesso individuati durante la fase dello studio della \
+derivata seconda;
+6) disegnare il grafico, rispettando gli intervalli di monotonia crescente e \
+decrescente (ricavati dallo studio della derivata prima) e rispettando gli \
+intervalli di convessit\[AGrave] e di concavit\[AGrave] (ricavati dallo \
+studio della derivata seconda);
+7) Ricorda: il grafico di funzione indicato in seguito sar\[AGrave] preciso, \
+poich\[EAcute] calcolato dal computer. Il tuo grafico potr\[AGrave] essere \
+anche meno preciso, purch\[EAcute] rispetti i vincoli definiti durante i vari \
+passaggi.\
+\>", "Text",
+ CellChangeTimes->{{3.672913028389123*^9, 3.6729132963930273`*^9}, {
+  3.67291333655612*^9, 3.67291372261368*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell["Conclusioni", "Chapter",
+ CellChangeTimes->{{3.672637423190981*^9, 3.672637425471691*^9}}]
+}, Open  ]]
+},
+WindowSize->{1461, 800},
+WindowMargins->{{182, Automatic}, {43, Automatic}},
+PrivateNotebookOptions->{"VersionedStylesheet"->{"Default.nb"[8.] -> False}},
+ShowSelection->True,
+Magnification->1.5,
+FrontEndVersion->"10.0 for Linux x86 (64-bit) (June 27, 2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 257, 8, 219, "Title"],
+Cell[827, 32, 187, 6, 121, "Subtitle"],
+Cell[CellGroupData[{
+Cell[1039, 42, 97, 1, 101, "Chapter"],
+Cell[1139, 45, 1031, 17, 244, "Text"],
+Cell[CellGroupData[{
+Cell[2195, 66, 101, 1, 96, "Subchapter"],
+Cell[2299, 69, 167, 3, 49, "Text"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2515, 78, 102, 1, 101, "Chapter"],
+Cell[CellGroupData[{
+Cell[2642, 83, 203, 3, 96, "Subchapter"],
+Cell[2848, 88, 1107, 21, 309, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3992, 114, 134, 1, 96, "Subchapter"],
+Cell[4129, 117, 1087, 22, 374, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5253, 144, 115, 1, 144, "Subchapter"],
+Cell[5371, 147, 349, 7, 123, "Text"],
+Cell[CellGroupData[{
+Cell[5745, 158, 136, 1, 102, "Subsection"],
+Cell[5884, 161, 555, 10, 171, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6476, 176, 138, 1, 102, "Subsection"],
+Cell[6617, 179, 481, 10, 220, "Text"],
+Cell[7101, 191, 350, 6, 123, "Text"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7500, 203, 104, 1, 144, "Subchapter"],
+Cell[7607, 206, 1254, 23, 561, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8898, 234, 119, 1, 144, "Subchapter"],
+Cell[9020, 237, 1606, 28, 708, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10663, 270, 131, 1, 144, "Subchapter"],
+Cell[10797, 273, 2048, 36, 756, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12882, 314, 142, 1, 144, "Subchapter"],
+Cell[13027, 317, 2987, 50, 1195, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16051, 372, 112, 1, 144, "Subchapter"],
+Cell[16166, 375, 1678, 28, 708, "Text"]
+}, Open  ]]
+}, Open  ]],
+Cell[17871, 407, 96, 1, 151, "Chapter"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
