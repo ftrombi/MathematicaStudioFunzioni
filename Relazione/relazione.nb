@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       145,          7]
-NotebookDataLength[     19963,        483]
-NotebookOptionsPosition[     17983,        411]
-NotebookOutlinePosition[     18438,        429]
-CellTagsIndexPosition[     18395,        426]
+NotebookDataLength[     22434,        550]
+NotebookOptionsPosition[     20228,        471]
+NotebookOutlinePosition[     20685,        489]
+CellTagsIndexPosition[     20642,        486]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -78,6 +78,65 @@ Cell[CellGroupData[{
 
 Cell["Studio di funzione", "Chapter",
  CellChangeTimes->{{3.672637401652878*^9, 3.67263740905088*^9}}],
+
+Cell["\<\
+Innanzitutto \[EGrave] necessario definire la funzione che si desidera \
+studiare.
+Note:
+- la variabile deve essere x;
+- il numero di Nepero (\[ExponentialE]) deve essere scritto in maiuscolo (E);
+- \[EGrave] necessario modificare solo la parte a destra della funzione (dopo \
+l\[CloseCurlyQuote]uguale);
+- logaritmo naturale di x si scrive Log[x];
+- radice quadrata di x si scrive Sqrt[x];
+- ricorda il ; alla fine della funzione.\
+\>", "Text",
+ CellChangeTimes->{{3.672984020719286*^9, 3.6729840256461763`*^9}, {
+  3.672984082910933*^9, 3.672984095859376*^9}, {3.672984153501552*^9, 
+  3.672984295871008*^9}, {3.6729843754049597`*^9, 3.672984428289686*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"InputField", "[", 
+  RowBox[{"Dynamic", "[", "funzione", "]"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Dynamic", "[", "funzione", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Button", "[", 
+  RowBox[{"\"\<Calcola lo studio di funzione\>\"", ",", " ", 
+   RowBox[{"FrontEndExecute", "[", 
+    RowBox[{"FrontEndToken", "[", 
+     RowBox[{
+      RowBox[{"InputNotebook", "[", "]"}], ",", "\"\<EvaluateNotebook\>\""}], 
+     "]"}], "]"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.6729841243950577`*^9, 3.672984145897312*^9}, {
+   3.6729844457990294`*^9, 3.672984455436105*^9}, 3.672987678163258*^9, 
+   3.672987789927277*^9, 3.6729878325621433`*^9}],
+
+Cell[BoxData[
+ InputFieldBox[Dynamic[$CellContext`funzione]]], "Output",
+ CellChangeTimes->{
+  3.672987684524733*^9, 3.672987795159459*^9, {3.672987837360574*^9, 
+   3.6729878641289043`*^9}}],
+
+Cell[BoxData[
+ DynamicBox[ToBoxes[$CellContext`funzione, StandardForm],
+  ImageSizeCache->{79., {4., 13.}}]], "Output",
+ CellChangeTimes->{
+  3.672987684524733*^9, 3.672987795159459*^9, {3.672987837360574*^9, 
+   3.672987864133768*^9}}],
+
+Cell[BoxData[
+ ButtonBox["\<\"Calcola lo studio di funzione\"\>",
+  Appearance->Automatic,
+  ButtonFunction:>FrontEndExecute[
+    FrontEndToken[
+     InputNotebook[], "EvaluateNotebook"]],
+  Evaluator->Automatic,
+  Method->"Preemptive"]], "Output",
+ CellChangeTimes->{
+  3.672987684524733*^9, 3.672987795159459*^9, {3.672987837360574*^9, 
+   3.672987864135035*^9}}]
+}, {2, 3, 4}]],
 
 Cell[CellGroupData[{
 
@@ -286,7 +345,7 @@ necessario individuarne il dominio.
 Il passo successivo consiste nello studio del segno, esattamente come visto \
 in precedenza: applicato per\[OGrave] alla derivata prima. \[CapitalEGrave] \
 dunque necessario risolvere la disequazione:
-\tf\[CloseCurlyQuote] ( x ) >= 0.
+\tf\[CloseCurlyQuote] ( x ) \[GreaterEqual] 0.
 
 Gli intervalli in cui la derivata prima \[EGrave] positiva (cio\[EGrave] con \
 il grafico al di sopra dell\[CloseCurlyQuote]asse della ascisse) indicano che \
@@ -307,7 +366,8 @@ poi.\
    3.672830056877816*^9}, {3.6728301254718533`*^9, 3.672830187075556*^9}, {
    3.672830242406678*^9, 3.672830318040977*^9}, {3.672830624640052*^9, 
    3.672830626151466*^9}, 3.6728307169568853`*^9, {3.672831114918537*^9, 
-   3.672831116229248*^9}, {3.67283144647613*^9, 3.672831448236183*^9}}]
+   3.672831116229248*^9}, {3.67283144647613*^9, 3.672831448236183*^9}, {
+   3.672984318284897*^9, 3.672984364826838*^9}}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -409,8 +469,8 @@ Cell["Conclusioni", "Chapter",
  CellChangeTimes->{{3.672637423190981*^9, 3.672637425471691*^9}}]
 }, Open  ]]
 },
-WindowSize->{1461, 800},
-WindowMargins->{{182, Automatic}, {43, Automatic}},
+WindowSize->{1229, 1309},
+WindowMargins->{{Automatic, -10}, {Automatic, -10}},
 PrivateNotebookOptions->{"VersionedStylesheet"->{"Default.nb"[8.] -> False}},
 ShowSelection->True,
 Magnification->1.5,
@@ -433,7 +493,7 @@ Cell[567, 22, 257, 8, 219, "Title"],
 Cell[827, 32, 187, 6, 121, "Subtitle"],
 Cell[CellGroupData[{
 Cell[1039, 42, 97, 1, 101, "Chapter"],
-Cell[1139, 45, 1031, 17, 244, "Text"],
+Cell[1139, 45, 1031, 17, 309, "Text"],
 Cell[CellGroupData[{
 Cell[2195, 66, 101, 1, 96, "Subchapter"],
 Cell[2299, 69, 167, 3, 49, "Text"]
@@ -441,49 +501,56 @@ Cell[2299, 69, 167, 3, 49, "Text"]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[2515, 78, 102, 1, 101, "Chapter"],
+Cell[2620, 81, 669, 14, 277, "Text"],
 Cell[CellGroupData[{
-Cell[2642, 83, 203, 3, 96, "Subchapter"],
-Cell[2848, 88, 1107, 21, 309, "Text"]
+Cell[3314, 99, 669, 13, 137, "Input"],
+Cell[3986, 114, 191, 4, 78, "Output"],
+Cell[4180, 120, 236, 5, 68, "Output"],
+Cell[4419, 127, 365, 10, 76, "Output"]
+}, {2, 3, 4}]],
+Cell[CellGroupData[{
+Cell[4824, 142, 203, 3, 96, "Subchapter"],
+Cell[5030, 147, 1107, 21, 342, "Text"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3992, 114, 134, 1, 96, "Subchapter"],
-Cell[4129, 117, 1087, 22, 374, "Text"]
+Cell[6174, 173, 134, 1, 96, "Subchapter"],
+Cell[6311, 176, 1087, 22, 407, "Text"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[5253, 144, 115, 1, 144, "Subchapter"],
-Cell[5371, 147, 349, 7, 123, "Text"],
+Cell[7435, 203, 115, 1, 96, "Subchapter"],
+Cell[7553, 206, 349, 7, 82, "Text"],
 Cell[CellGroupData[{
-Cell[5745, 158, 136, 1, 102, "Subsection"],
-Cell[5884, 161, 555, 10, 171, "Text"]
+Cell[7927, 217, 136, 1, 68, "Subsection"],
+Cell[8066, 220, 555, 10, 147, "Text"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[6476, 176, 138, 1, 102, "Subsection"],
-Cell[6617, 179, 481, 10, 220, "Text"],
-Cell[7101, 191, 350, 6, 123, "Text"]
+Cell[8658, 235, 138, 1, 68, "Subsection"],
+Cell[8799, 238, 481, 10, 179, "Text"],
+Cell[9283, 250, 350, 6, 82, "Text"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[7500, 203, 104, 1, 144, "Subchapter"],
-Cell[7607, 206, 1254, 23, 561, "Text"]
+Cell[9682, 262, 104, 1, 96, "Subchapter"],
+Cell[9789, 265, 1254, 23, 407, "Text"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[8898, 234, 119, 1, 144, "Subchapter"],
-Cell[9020, 237, 1606, 28, 708, "Text"]
+Cell[11080, 293, 119, 1, 96, "Subchapter"],
+Cell[11202, 296, 1606, 28, 472, "Text"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[10663, 270, 131, 1, 144, "Subchapter"],
-Cell[10797, 273, 2048, 36, 756, "Text"]
+Cell[12845, 329, 131, 1, 96, "Subchapter"],
+Cell[12979, 332, 2111, 37, 732, "Text"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[12882, 314, 142, 1, 144, "Subchapter"],
-Cell[13027, 317, 2987, 50, 1195, "Text"]
+Cell[15127, 374, 142, 1, 96, "Subchapter"],
+Cell[15272, 377, 2987, 50, 927, "Text"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[16051, 372, 112, 1, 144, "Subchapter"],
-Cell[16166, 375, 1678, 28, 708, "Text"]
+Cell[18296, 432, 112, 1, 96, "Subchapter"],
+Cell[18411, 435, 1678, 28, 537, "Text"]
 }, Open  ]]
 }, Open  ]],
-Cell[17871, 407, 96, 1, 151, "Chapter"]
+Cell[20116, 467, 96, 1, 226, "Chapter"]
 }, Open  ]]
 }
 ]
