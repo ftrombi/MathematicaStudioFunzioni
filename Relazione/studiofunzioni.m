@@ -104,38 +104,42 @@ CalcolaContenutiDenominatoreDaControllare[risultatoControlloDenominatore_,listaC
 
 CalcolaDominio[f_,x_]:=(
 	fDivisa= DividiFunzioneInListaDiOperandi[f[x]];
-	Print["I contenuti sotto radice pari "];
 	listaContenutiRadiciDaControllare={};
 	CalcolaContenutiRadiciDaControllare[listaContenutiRadiciDaControllare,#]&/@fDivisa;
-	Print[listaContenutiRadiciDaControllare];
-	Print[" devono essere maggiori di zero: "];
-	risultatoControlloRadici={};
-	risultatoControlloRadici=Reduce[#>0,x,Reals]&/@listaContenutiRadiciDaControllare;
-	DeleteCases[risultatoControlloRadici,True];
-	Print[risultatoControlloRadici];
-
-	Print["I contenuti sotto logaritmi "];
+	If[Length[listaContenutiRadiciDaControllare]==0, Print["Non ci sono radici ad indice pari."], 
+		(Print["I radicandi sono: "];
+		Print[listaContenutiRadiciDaControllare];
+		Print["Sono maggiori di zero?"];
+		risultatoControlloRadici={};
+		risultatoControlloRadici=Reduce[#>0,x,Reals]&/@listaContenutiRadiciDaControllare;
+		risultatoControlloRadici /. {True -> "vero"};
+		risultatoControlloRadici /. {False -> "falso"};
+		Print[risultatoControlloRadici])];
+	
 	listaContenutiLogaritmoDaControllare ={};
 	CalcolaContenutiLogaritmoDaControllare[listaContenutiLogaritmoDaControllare,#]&/@fDivisa;
-	Print[listaContenutiLogaritmoDaControllare];
-	Print[" devono essere maggiori di zero: "];
-	risultatoControlloLogaritmo={};
-	risultatoControlloLogaritmo=Reduce[#>0,x,Reals]&/@listaContenutiLogaritmoDaControllare;
-	DeleteCases[risultatoControlloLogaritmo,True];
-	Print[risultatoControlloLogaritmo];
+	If[Length[listaContenutiLogaritmoDaControllare]==0, Print["Non ci sono logaritmi da controllare"],	
+		(Print["I conenuti dei logaritmi sono:"];
+		Print[listaContenutiLogaritmoDaControllare];
+		Print["Sono maggiori di zero?"];
+		risultatoControlloLogaritmo={};
+		risultatoControlloLogaritmo=Reduce[#>0,x,Reals]&/@listaContenutiLogaritmoDaControllare;
+		risultatoControlloLogaritmo /. {True -> "vero"};
+		risultatoControlloLogaritmo /. {False -> "falso"};
+		Print[risultatoControlloLogaritmo])];
 
 	listaContenutiDenominatoreDaControllare = {};
 	risultatoControlloDenominatore={};
 	Print["Il denominatore: "];
 	listaContenutiDenominatoreDaControllare = Append[listaContenutiDenominatoreDaControllare,Denominator[f[x]]];
 	Print[listaContenutiDenominatoreDaControllare];
-	Print[" deve essere diverso di zero, quindi calcolo i valori per cui il denominatore \[EGrave] minore di zero e maggiore di zero e risulta: "];
+	Print["Deve essere diverso di zero, quindi calcolo i valori per cui il denominatore \[EGrave] minore di zero e maggiore di zero e risulta: "];
 	CalcolaContenutiDenominatoreDaControllare[risultatoControlloDenominatore,listaContenutiDenominatoreDaControllare];
 	DeleteCases[risultatoControlloDenominatore,True];
 	Print[risultatoControlloDenominatore];
 
-	Print["quindi facendo l'intersezione tra questi domini, il dominio \[EGrave]: "];
-	dominio = FunctionDomain[f[x],x];
+	Print["Quindi facendo l'intersezione tra questi domini, il dominio \[EGrave]: "];
+	dominio=FunctionDomain[f[x],x];
 	Print[dominio];
 );
 
@@ -216,17 +220,21 @@ CalcolaLimiti[f_,x_]:=(
 	Print["Gli estremi inferiori per il calcolo del limite sono: "];
 	estremiInferiori={};
 	CalcolaEstremiInferiori[estremiInferiori,listaDominio];
-	Print[estremiInferiori];
+	If[Length[estremiInferiori]==0,(calcolaMenoInfinito=True; Print[-\[Infinity]]),Print[estremiInferiori]];
 
 	Print["e gli estremi superiori sono: "];
 	estremiSuperiori = {};
 	CalcolaEstremiSuperiori[estremiSuperiori,listaDominio];
-	Print[estremiSuperiori];
+	If[Length[estremiSuperiori]==0,(calcolaInfinito=True; Print[+\[Infinity]]),Print[estremiSuperiori]];
 
 	calcolaInfinito=If[Max[estremiInferiori]>= Max[estremiSuperiori],True,False];
 	calcolaMenoInfinito=If[Min[estremiInferiori]>= Min[estremiSuperiori],True,False];
-	If[calcolaMenoInfinito,(Print["Il limite per x->",-\[Infinity]," nell'intorno destro = ",Limit[f[x],x->-Infinity],If[NumberQ[Limit[f[x],x->-Infinity]]," quindi \[EGrave] un asintoto orizzontale.", " quindi \[EGrave] un asintoto verticale."]])]
-	If[calcolaInfinito,(Print["Il limite per x->",+\[Infinity]," nell'intorno sinistro = ",Limit[f[x],x->Infinity],If[NumberQ[Limit[f[x],x->Infinity]]," quindi \[EGrave] un asintoto orizzontale.", " quindi \[EGrave] un asintoto verticale."]])]
+	If[calcolaMenoInfinito===True,
+		(Print["Il limite per x->",-\[Infinity]," nell'intorno destro = ",Limit[f[x],x->-Infinity],
+			If[NumberQ[Limit[f[x],x->-Infinity]]," quindi \[EGrave] un asintoto orizzontale.", " quindi \[EGrave] un asintoto verticale."]])];
+	If[calcolaInfinito===True,
+		(Print["Il limite per x->",+\[Infinity]," nell'intorno sinistro = ",Limit[f[x],x->Infinity],
+			If[NumberQ[Limit[f[x],x->Infinity]]," quindi \[EGrave] un asintoto orizzontale.", " quindi \[EGrave] un asintoto verticale."]])];
 	Print["Il limite per x->",# ," nell'intorno destro = ",Limit[f[x],x->#,Direction->1],If[NumberQ[Limit[f[x],x->#,Direction->1]]," quindi \[EGrave] un asintoto orizzontale.", " quindi \[EGrave] un asintoto verticale."]]&/@estremiInferiori;
 	Print["Il limite per x->",# ," nell'intorno sinistro = ",Limit[f[x],x->#,Direction->-1],If[NumberQ[Limit[f[x],x->#,Direction->-1]]," quindi \[EGrave] un asintoto orizzontale.", " quindi \[EGrave] un asintoto verticale."]]&/@estremiSuperiori;
 );
@@ -305,16 +313,12 @@ SegnoDerivataSeconda[f_, x_] := (
 	Print[d2];
 	num = Numerator[d2];
 	soluzioni = NSolve[num == 0, x, Reals];
-	If[Length[soluzioni] == 0, Print["Non ci sono soluzioni per la derivata prima."],
+	If[Length[soluzioni] == 0, Print["Non ci sono soluzioni per la derivata seconda."],
 		StampaSoluzioniDerivataSeconda[soluzioni]];
 	intervalliConvessa = N@Reduce[d2 > 0, x, Reals];
 	intervalliConcava = N@Reduce[d2 < 0, x, Reals];
 	If[Length[intervalliConvessa] == 0 || Length[intervalliConcava] == 0,
 		StampaConcavoConvessoNoSoluzioni[d2], StampaIntervalliDerivataSeconda[intervalliConvessa, intervalliConcava]];
-	(*If[StringCount[ToString[intervalliConvessa], "False"] > 0 || 
-  	StringCount[ToString[intervalliConcava], "False"] > 0,
-  	StampaConcavoConvesso[intervalliConvessa, intervalliConcava],
-	  StampaIntervalli[intervalliConvessa, intervalliConcava]];*)
 	Print["Il grafico della derivata seconda \[EGrave] il seguente:"];
 	Plot[d2, {x, -5, 5}]
 )
