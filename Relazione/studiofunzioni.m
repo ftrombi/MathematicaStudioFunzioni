@@ -144,15 +144,16 @@ CalcolaDominio[f_,x_]:=(
 );
 
 (* Pari e dispari *)
-ControlloPariDispari[f_, x_]:= (
-  risultatoPari = FullSimplify[ForAll[x, f[x] == f[-x]]];
-  risultatoDispari = FullSimplify[ForAll[x, -f[x] == f[-x]]];
-  If[risultatoPari, Print["La funzione \[EGrave] pari."], 
-   Print["La funzione non \[EGrave] pari."],
-	Print["La funzione non \[EGrave] pari."]];
-  If[risultatoDispari, Print["La funzione \[EGrave] dispari."], 
-   Print["La funzione non \[EGrave] dispari."],
-	Print["La funzione non \[EGrave] dispari."]];
+ControlloPariDispari[f_, x_]:=(
+	fMenoX = f[x] /. {x->-x};
+    risultatoPari = FullSimplify[ForAll[x,f[x] == fMenoX]];
+    risultatoDispari = FullSimplify[ForAll[x,-f[x] == fMenoX]];
+    If[risultatoPari, Print["La funzione \[EGrave] pari."], 
+      Print["La funzione non \[EGrave] pari."],
+	  Print["La funzione non \[EGrave] pari."]];
+    If[risultatoDispari, Print["La funzione \[EGrave] dispari."], 
+      Print["La funzione non \[EGrave] dispari."],
+	  Print["La funzione non \[EGrave] dispari."]];
 ); 
 
 (* Intersezione con gli assi *)
@@ -235,8 +236,8 @@ CalcolaLimiti[f_,x_]:=(
 	If[calcolaInfinito===True,
 		(Print["Il limite per x->",+\[Infinity]," nell'intorno sinistro = ",Limit[f[x],x->Infinity],
 			If[NumberQ[Limit[f[x],x->Infinity]]," quindi \[EGrave] un asintoto orizzontale.", " quindi \[EGrave] un asintoto verticale."]])];
-	Print["Il limite per x->",# ," nell'intorno destro = ",Limit[f[x],x->#,Direction->1],If[NumberQ[Limit[f[x],x->#,Direction->1]]," quindi \[EGrave] un asintoto orizzontale.", " quindi \[EGrave] un asintoto verticale."]]&/@estremiInferiori;
-	Print["Il limite per x->",# ," nell'intorno sinistro = ",Limit[f[x],x->#,Direction->-1],If[NumberQ[Limit[f[x],x->#,Direction->-1]]," quindi \[EGrave] un asintoto orizzontale.", " quindi \[EGrave] un asintoto verticale."]]&/@estremiSuperiori;
+	Print["Il limite per x->",# ," nell'intorno destro = ",Limit[f[x],x->#,Direction->-1],If[NumberQ[Limit[f[x],x->#,Direction->-1]]," quindi \[EGrave] un asintoto orizzontale.", " quindi \[EGrave] un asintoto verticale."]]&/@estremiInferiori;
+	Print["Il limite per x->",# ," nell'intorno sinistro = ",Limit[f[x],x->#,Direction->1],If[NumberQ[Limit[f[x],x->#,Direction->1]]," quindi \[EGrave] un asintoto orizzontale.", " quindi \[EGrave] un asintoto verticale."]]&/@estremiSuperiori;
 );
 
 (* Derivata Prima *)
@@ -275,7 +276,28 @@ SegnoDerivataPrima[f_, x_] := (
       StampaMonotonia[intervalliPositivi, intervalliNegativi], 
       StampaIntervalli[intervalliPositivi, intervalliNegativi]];
 	Print["Il grafico della derivata prima \[EGrave] il seguente:"];
-	Plot[d, {x, -5, 5}]
+
+	dominio=FunctionDomain[f[x],x];
+	dominio=If[Head[dominio]===Or,dominio,{dominio}];
+
+	listaDominio={};
+	CreazioneListaDominio[listaDominio,dominio];
+
+	estremiInferiori={};
+	CalcolaEstremiInferiori[estremiInferiori,listaDominio];
+
+	estremiSuperiori = {};
+	CalcolaEstremiSuperiori[estremiSuperiori,listaDominio];
+
+	calcolaInfinito=If[Max[estremiInferiori]>= Max[estremiSuperiori],True,False];
+	calcolaMenoInfinito=If[Min[estremiInferiori]>= Min[estremiSuperiori],True,False];
+	
+	estremoInferiore=Min[estremiInferiori];
+	estremoSuperiore=Max[estremiSuperiori];
+	If[calcolaInfinito, estremoSuperiore=10];
+	If[calcolaMenoInfinito, estremoInferiore=-10];
+
+	Plot[d, {x, estremoInferiore, estremoSuperiore}]
 )
 
 (* Derivata Seconda *)
@@ -320,7 +342,29 @@ SegnoDerivataSeconda[f_, x_] := (
 	If[Length[intervalliConvessa] == 0 || Length[intervalliConcava] == 0,
 		StampaConcavoConvessoNoSoluzioni[d2], StampaIntervalliDerivataSeconda[intervalliConvessa, intervalliConcava]];
 	Print["Il grafico della derivata seconda \[EGrave] il seguente:"];
-	Plot[d2, {x, -5, 5}]
+
+	dominio=FunctionDomain[f[x],x];
+	dominio=If[Head[dominio]===Or,dominio,{dominio}];
+
+	listaDominio={};
+	CreazioneListaDominio[listaDominio,dominio];
+
+	estremiInferiori={};
+	CalcolaEstremiInferiori[estremiInferiori,listaDominio];
+
+	estremiSuperiori = {};
+	CalcolaEstremiSuperiori[estremiSuperiori,listaDominio];
+
+	calcolaInfinito=If[Max[estremiInferiori]>= Max[estremiSuperiori],True,False];
+	calcolaMenoInfinito=If[Min[estremiInferiori]>= Min[estremiSuperiori],True,False];
+	
+	estremoInferiore=Min[estremiInferiori];
+	estremoSuperiore=Max[estremiSuperiori];
+	If[calcolaInfinito, estremoSuperiore=10];
+	If[calcolaMenoInfinito, estremoInferiore=-10];
+
+
+	Plot[d2, {x, estremoInferiore, estremoSuperiore}]
 )
 
 (* Grafico *)
