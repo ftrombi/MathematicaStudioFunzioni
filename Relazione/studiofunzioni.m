@@ -393,4 +393,5 @@ GraficoFunzione[f_, x_]:=(
 	Plot[f[x],{x, estremoInferiore, estremoSuperiore}]); 
 
 End[]
+Protect[StudioFunzioni];
 EndPackage[]
